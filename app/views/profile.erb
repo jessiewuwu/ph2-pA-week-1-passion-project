@@ -6,11 +6,18 @@
 <p>Age: <%= @view_dog.age%> </p><br>
 <p>Description: <%= @view_dog.description%> </p><br>
 <br><br><br>
+
+<p>Affectionate: <%=@view_dog.ratings.where(affectionate: "on").count %> votes </p>
+<p>Independent: <%=@view_dog.ratings.where(independent: "on").count %> votes </p>
+<p>Playful: <%=@view_dog.ratings.where(playful: "on").count %> votes </p>
+<p>Timid: <%=@view_dog.ratings.where(timid: "on").count %> votes </p>
+<p>Good with Kids: <%=@view_dog.ratings.where(good_with_kids: "on").count %> votes </p>
+<p>High Energy: <%=@view_dog.ratings.where(high_energy: "on").count %> votes </p>
+<p>Chill: <%=@view_dog.ratings.where(chill: "on").count %> votes </p><br>
+<br><br><br>
+
 <a href="/dogs/<%=@view_dog.id%>/new">Rate this dog!</a>
 
-
-
-
-
-
 </div>
+
+
