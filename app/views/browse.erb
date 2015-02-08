@@ -1,0 +1,21 @@
+<div class="search_randomize_bar">
+<a href="/search">search by breed</a>
+
+<a href="#">randomize!</a>
+
+</div>
+
+<div class="list">
+<% @all_dogs.each do |dog| %>
+<br>
+<img src="./imgs/<%= dog.id %>.jpg" width="300px" style="float:left; padding-bottom: 20px"/>
+<p>Name: <%= dog.name%> </p>
+<p>Breed: <%= dog.breed%> </p>
+<p>Age: <%= dog.age%> </p><br>
+<a href="/dogs/<%=dog.id%>">Click here for more information about <%= dog.name %></a>
+<br><br><br>
+
+<% end %>
+
+
+</div>

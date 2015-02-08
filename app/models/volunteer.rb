@@ -9,6 +9,7 @@ class Volunteer < ActiveRecord::Base
   validates :email, presence: true
   validates :username, presence: true
   validates :password, :presence => true, length: {minimum: 6}, confirmation: true
+  validates :password_hash, length: {minimum: 6}
 
   def password
     @password ||= Password.new(password_hash)

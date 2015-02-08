@@ -6,8 +6,9 @@ Volunteer.create!(name: "Jessie", email: "jessie@wu.com", username: "jwu", passw
 
 Volunteer.create!(name: "Michelle", email: "michelle@gmail.com", username: "mish", password: "michelle")
 
+Dog.create!(name: "Nala", breed: "Labrador", age: 2, description: "Andrew gave up this poor dog because of his beard...and because Amadou yelled at him.")
 
+Volunteer.create!(name: "Andrew", email: "andrew@gmail.com", username: "beard", password: "andrew")
 
-
-Volunteer.create!(name: "Michelle", email: "michelle@gmail.com", username: "mish", password: "m")
+Admin.create!(name: "Amadou", email: "amadou@mycode.com", username: "Jupiter", password: "amadou")
 

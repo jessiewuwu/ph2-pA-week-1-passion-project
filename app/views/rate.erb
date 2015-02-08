@@ -1,14 +1,14 @@
+<% if logged_in? %>
 
-
-<form action="/dogs/<%=@rate_dog.id %>/new" method="post">
+<form action="/dogs/<%=@view_dog.id %>" method="post">
 
   <div class="padding"></div>
 
-  <h3>Name:</h3><p> <%= @rate_dog.name%></p><br>
-  <h3>Breed:</h3><p> <%= @rate_dog.breed %></p>
+  <h3>Name:</h3><p> <%= @view_dog.name%></p><br>
+  <h3>Breed:</h3><p> <%= @view_dog.breed %></p>
 
   <br>
-  <h2>Rate <%= @rate_dog.name %>!</h2>
+  <h2>Rate <%= @view_dog.name %>!</h2>
 <br><br>
   <input type="checkbox" name="affectionate"> Affectionate <br><br>
 
@@ -31,12 +31,8 @@
 </form>
 
 
-<!--
+<% else %>
+<p> Please <a href="/login">log in</a> to rate this dog.</p>
 
-  For the checkbox, is the name correct? Will it be able to mark an attribute true or false?
-  Pseudocode:
-  - Convert the checked boxes into true values for the attributes
-  - find the dog by the dog_id
-  - create a Rating.new that takes in the volunteer_id and dog_id
+<% end %>
 
-  -->

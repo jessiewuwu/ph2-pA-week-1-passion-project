@@ -64,3 +64,52 @@ A user can sign out using the provided delete route which is from a hidden field
 
 A helper method current_user returns the current signed in user and is used to display appropriate sign in / sign out portions of the view. (This logic is already implemented in the view - you just need to finish the helper method).
 
+
+
+
+############# P4: HTML & CSS ##############
+Basic selectors like id, class and element
+  # LEARN THIS!!!
+Two advanced selectors like sibling, psuedo, child, etc.
+  # LEARN THIS!!!
+Box model styles like margin, border, and padding
+  # LEARN THIS!!! http://css-tricks.com/the-css-box-model/
+Position styles like fixed, absolute, relative and static
+  # login status fixed
+  # LEARN THIS!!! http://alistapart.com/article/css-positioning-101
+Background styles for color or image
+Font styles - DONE
+CSS3 styles like rounded border if required in your image.
+Use a color picker to get the correct colors. - DONE
+
+
+########## P5 VALIDATIONS ##########
+Invalid Events are not created when the form is posted.
+1.
+
+The user is informed for each failing validation.
+2. Show failing validatin error
+ # If everything isn't filled (do this!)
+ # If the password isn't a min 6 characters (fix this!!)
+ # If the email isn't the right format (regex)
+
+The form remains populated with the users input after posting.
+3. Generate a confirmation page with all the input
+
+Bonus points if errors are presented near the invalid form field.
+
+
+Saturday - THINGS TO DO
+
+P3 AUTHENTIFICATION & Authorization
+# make the min length of password validation work!!!
+# params.map do |key, value |
+if value == "on"
+  value = true
+else
+end
+end
+
+<!--<% if session_logged_in %>-->
+<% if session[:volunteer_id]  %>
+# @current_user.admin == false instead creating an admin table
