@@ -1,4 +1,8 @@
-
+.container {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .list {
   text-align: left;

@@ -23,21 +23,6 @@ get '/login' do
   erb :login
 end
 
-# post '/login' do
-#   @volunteer = Volunteer.find_by(username: params[:username])
-#   #if the username matches the db, then, redirect them to the main page
-#   if @volunteer && @volunteer.password == params[:password]
-#     if @volunteer.password != params[:password]
-#       @error = "Wrong password"
-#       erb :login
-#     else
-#       session[:username] = params[:username] #it stores the username, which indicates they are logged in so they don't have to keep logging in and you don't have to keep looking their volunteer info when they go to a different page
-#       redirect '/'
-#     end
-#   else
-#     redirect '/login'
-#   end
-# end
 
 post '/login' do
   @volunteer = Volunteer.find_by(username: params[:username])
@@ -48,6 +33,29 @@ post '/login' do
     redirect '/login'
   end
   redirect '/options'
+end
+
+get '/options' do
+  @all_dogs = Dog.all
+
+erb :options
+end
+
+post '/rate' do
+  @rate_this_dog = Dog.find(params[:id])
+
+  redirect "/dogs/#{params[:id]}/new"
+end
+
+get '/dogs/new' do
+
+  erb :dogs_new_profile
+end
+
+post '/dogs/new' do
+  @new_dog = Dog.create!(params)
+  p @new_dog
+  redirect "/dogs/#{@new_dog.id}"
 end
 
 get '/register' do
@@ -65,20 +73,6 @@ post '/register' do
     p "please fill everything out"
     erb :register
   end
-
-get '/options' do
-  @all_dogs = Dog.all
-
-erb :options
-end
-
-post '/options' do
-  @rate_this_dog = Dog.find(params[:id])
-
-  redirect "/dogs/#{params[:id]}/new"
-end
-
-
 end
 
 get '/browse' do
@@ -106,9 +100,6 @@ post '/dogs/:id' do
   # redirect '/dogs/:id'
   erb :profile
 end
-
-
-
 
 
 #after logging in, the header bar will recognize the user and greet them. it will also change the bar so that there is only a sign out button (rather than login and register)
