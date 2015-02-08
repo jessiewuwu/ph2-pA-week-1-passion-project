@@ -41,7 +41,7 @@ get '/options' do
 erb :options
 end
 
-post '/rate' do
+post '/options' do
   @rate_this_dog = Dog.find(params[:id])
 
   redirect "/dogs/#{params[:id]}/new"
