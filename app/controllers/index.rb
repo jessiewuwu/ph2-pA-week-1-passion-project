@@ -47,7 +47,7 @@ post '/login' do
   else
     redirect '/login'
   end
-  redirect '/'
+  redirect '/options'
 end
 
 get '/register' do
@@ -65,6 +65,19 @@ post '/register' do
     p "please fill everything out"
     erb :register
   end
+
+get '/options' do
+  @all_dogs = Dog.all
+
+erb :options
+end
+
+post '/options' do
+  @rate_this_dog = Dog.find(params[:id])
+
+  redirect "/dogs/#{params[:id]}/new"
+end
+
 
 end
 

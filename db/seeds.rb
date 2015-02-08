@@ -10,5 +10,5 @@ Dog.create!(name: "Nala", breed: "Labrador", age: 2, description: "Andrew gave u
 
 Volunteer.create!(name: "Andrew", email: "andrew@gmail.com", username: "beard", password: "andrew")
 
-Admin.create!(name: "Amadou", email: "amadou@mycode.com", username: "Jupiter", password: "amadou")
+Admin.create!(name: "Amadou", email: "amadou@mycode.com", password: "amadou")
 
