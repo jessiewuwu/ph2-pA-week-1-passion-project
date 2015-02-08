@@ -1,9 +1,10 @@
 .banner {
   width: 100%;
-  height: 500px;
+  height: 300px;
   background-color: lightblue;
   text-align: center;
   color: slategrey;
+  margin-bottom: 50px;
 }
 
 .banner h1 {
@@ -34,3 +35,43 @@ form {
 .spacing {
   padding: 100px;
 }
+
+
+/*INDEX PAGE*/
+
+.nav_bar ul li {
+  display: inline;
+  float: left;
+}
+
+.nav_bar a:link {
+  text-decoration: none;
+  display: block;
+  width: 100px;
+}
+
+
+.page_options {
+  padding-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page_options form {
+  display:inline;
+}
+
+/*browse*/
+.list {
+  display: inline-block;
+}
+
+.search_randomize_bar {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+input {
+  line-height: 3em;
+}
+
