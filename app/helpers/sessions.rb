@@ -1,8 +1,8 @@
 helpers do
 
   def current_user
-    if session[:volunteer_id]
-      @current_user ||= Volunteer.find(session[:volunteer_id])
+    if session[:id]
+      @current_user ||= Volunteer.find(session[:id])
     end
   end
 

@@ -1,4 +1,4 @@
-
+<% if session[:id] %>
 <div class="welcome" align="center">
 
 <img src="./imgs/redballlogo.png" width="200px" />
@@ -9,6 +9,16 @@
 <p>see what our volunteers have to say about the wonderful dogs available for adoption and foster.</p>
 
 
+
+<% else %>
+<div class="welcome" align="center">
+
+<img src="./imgs/redballlogo.png" width="200px" />
+<h1>red ball</h1>
+<hr width="80%">
+
+<h2>adopt a new friend today!</h2>
+<p>see what our volunteers have to say about the wonderful dogs available for adoption and foster.</p>
 
 <div class="page_options">
   <form method="link" action="/login">
@@ -31,3 +41,4 @@
 
 </div>
 
+<% end %>

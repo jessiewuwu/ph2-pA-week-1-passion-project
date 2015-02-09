@@ -23,11 +23,16 @@
 
   <div class ="nav_bar">
     <ul>
+      <% if session[:id] %>
       <li><a href="/">red ball</a> </li>
       <li><a href="/search">search</a></li>
       <li><a href="/browse">browse</a></li>
-      <li><a href="#">about us</a></li>
-      <li><a href="#">contact us</a></li>
+      <li><a href="/logout">log out</a></li>
+      <% else %>
+      <li><a href="/">red ball</a> </li>
+      <li><a href="/search">search</a></li>
+      <li><a href="/browse">browse</a></li>
+      <% end %>
     </ul>
   </div>
   <%= yield %>

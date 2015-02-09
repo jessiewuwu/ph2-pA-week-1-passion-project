@@ -1,4 +1,5 @@
 get '/' do
+  session[:id]
   erb :index
 end
 
@@ -113,10 +114,9 @@ post '/register' do
   new_volunteer = Volunteer.new(params)
   if new_volunteer.valid?
     new_volunteer.save
-  redirect '/'
+  redirect '/options'
   else
-    @invalid_error = new_volunteer.errors
-    p "please fill everything out"
+    @invalid_error = new_volunteer.errors.full_messages.join(" ")
     erb :register
   end
 end
@@ -145,6 +145,11 @@ post '/dogs/:id' do
   erb :profile
 end
 
+get '/logout' do
+  session.delete :user_id
+
+  redirect '/'
+end
 
 
 
