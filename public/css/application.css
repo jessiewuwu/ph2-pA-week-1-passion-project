@@ -7,9 +7,15 @@
   margin-left: auto;
 }
 
+.sub_container {
+  padding-top: 50px;
+  margin-left: 500px;
+}
+
 .list {
   text-align: left;
   padding-left: 70px;
+  padding-top: 50px;
 }
 
 .padding {
@@ -23,7 +29,7 @@
 }
 
 form {
-  padding-left: 100px;
+  padding-bottom: 20px;
 }
 
 .spacing {
@@ -84,7 +90,7 @@ form {
 
 
 /*browse*/
-.list {
+.browse_list {
   display: inline-block;
 }
 
@@ -94,7 +100,23 @@ form {
 }
 
 input {
-  line-height: 3em;
+  line-height: 2em;
 }
+
+
+/*profile*/
+.attribute_list {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.attribute_list ul li{
+  display: block;
+}
+
+.attribute_list img {
+  width: 20px;
+}
+
 
 

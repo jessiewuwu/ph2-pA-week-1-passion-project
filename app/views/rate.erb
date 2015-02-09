@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<div class="sub_container">
 
 <form action="/dogs/<%=@view_dog.id %>" method="post">
 
@@ -14,7 +14,7 @@
 
   <input type="checkbox" name="independent"> Independent <br><br>
 
-  <input type="checkbox" name="playful"> Playful<br><br>
+  <input type="checkbox" name="playful" > Playful<br><br>
 
   <input type="checkbox" name="timid"> Timid<br><br>
 
@@ -29,10 +29,6 @@
   <div class="padding"></div>
 
 </form>
+</div>
 
-
-<% else %>
-<p> Please <a href="/login">log in</a> to rate this dog.</p>
-
-<% end %>
 

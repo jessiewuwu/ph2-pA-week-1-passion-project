@@ -37,7 +37,7 @@ post '/login' do
 end
 
 get '/options' do
-  @all_dogs = Dog.all
+  @all_dogs = Dog.all.sort
 
 erb :options
 end

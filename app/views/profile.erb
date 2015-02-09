@@ -1,25 +1,28 @@
 
 <div class="list">
-<br>
 
-
+<img src="./imgs/<%= @view_dog.id %>.jpg" width="300px" style="float:left; padding-bottom: 20px"/>
 <p>Name: <%= @view_dog.name%> </p>
 <p>Breed: <%= @view_dog.breed%> </p>
 <p>Age: <%= @view_dog.age%> </p><br>
 <p>Description: <%= @view_dog.description%> </p><br>
 <br><br><br>
 
-<p>Affectionate: <%=@view_dog.ratings.where(affectionate: "on").count %> votes </p>
-<p>Independent: <%=@view_dog.ratings.where(independent: "on").count %> votes </p>
-<p>Playful: <%=@view_dog.ratings.where(playful: "on").count %> votes </p>
-<p>Timid: <%=@view_dog.ratings.where(timid: "on").count %> votes </p>
-<p>Good with Kids: <%=@view_dog.ratings.where(good_with_kids: "on").count %> votes </p>
-<p>High Energy: <%=@view_dog.ratings.where(high_energy: "on").count %> votes </p>
-<p>Chill: <%=@view_dog.ratings.where(chill: "on").count %> votes </p><br>
-<br><br><br>
+<div class="attribute_list">
+  <ul style="padding-left: 0px;">
+    <li>Affectionate: <%=@view_dog.ratings.where(affectionate: "on").count %> votes <img src="http://oi58.tinypic.com/2wr1dm9.jpg"></li>
+    <li>Independent: <%=@view_dog.ratings.where(independent: "on").count %> votes <img src="http://oi58.tinypic.com/f3eyc0.jpg"></li>
+    <li>Playful: <%=@view_dog.ratings.where(playful: "on").count %> votes <img src="http://oi58.tinypic.com/del9wg.jpg"></li>
+    <li>Timid: <%=@view_dog.ratings.where(timid: "on").count %> votes <img src="http://i58.tinypic.com/jzk7sg_th.png"></li>
+    <li>Good with Kids: <%=@view_dog.ratings.where(good_with_kids: "on").count %> votes <img src="http://i60.tinypic.com/9h5glj_th.png"></li>
+    <li>High Energy: <%=@view_dog.ratings.where(high_energy: "on").count %> votes <img src="http://i58.tinypic.com/657slj_th.png"></li>
+    <li>Chill: <%=@view_dog.ratings.where(chill: "on").count %> votes <img src="http://i58.tinypic.com/2ajvxva_th.png"></li>
+  </ul>
+</div>
 
 <a href="/dogs/<%=@view_dog.id%>/new">Rate this dog!</a>
 
-</div>
 
+
+</div>
 
