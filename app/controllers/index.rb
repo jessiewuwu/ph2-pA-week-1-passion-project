@@ -3,7 +3,7 @@ get '/' do
 end
 
 get '/browse' do
-  @all_dogs = Dog.all
+  @all_dogs = Dog.all.sort
   erb :browse
 end
 
@@ -77,6 +77,7 @@ put '/dogs/:id/edit' do
   redirect "/dogs/#{params[:dog_id]}"
 end
 
+
 get '/dogs/new' do
 
   erb :dogs_new_profile
@@ -85,6 +86,22 @@ end
 post '/dogs/new' do
   @new_dog = Dog.create!(params)
   redirect "/dogs/#{@new_dog.id}"
+end
+
+get '/dogs/delete' do
+  @all_dogs = Dog.all.sort
+
+  erb :dogs_delete
+end
+
+post '/dogs/delete' do
+  @delete_dog = Dog.find(params[:id])
+  p @delete_dog
+end
+
+delete '/dogs/:id/delete' do
+
+
 end
 
 get '/register' do
@@ -127,6 +144,9 @@ post '/dogs/:id' do
 
   erb :profile
 end
+
+
+
 
 
 #after logging in, the header bar will recognize the user and greet them. it will also change the bar so that there is only a sign out button (rather than login and register)
