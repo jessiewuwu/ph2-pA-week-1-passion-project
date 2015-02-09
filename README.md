@@ -5,10 +5,10 @@ red ball is an online community that encourages adoption and fostering with a so
 ### Quickstart
 
 1.  `bundle install`
-2.  `be rake db:create'
-3.  `be rake db:migrate'
-4.  `be rake db:seed'
-5.  `be shotgun'
+2.  `be rake db:create`
+3.  `be rake db:migrate`
+4.  `be rake db:seed`
+5.  `be shotgun`
 
 
 ### AHA Moments
