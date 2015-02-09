@@ -37,5 +37,7 @@ By doing this, we can count how many personality attributes that volunteers had 
 
 7. When I had my original code, it would allow me to see the options page, which you can only see if you're logged in. But then when I clicked to go rate a dog, it'd think I am no longer logged in and asked me to log in. My logout feature might not be working.
 
+8. I would like to figure out a way to store images in a database and have it show up based on an photo id or dog id. Right now pictures are inside the public/imgs folder and saved by the dog's id number. I have to manually name the photo based on the dog's id. It works for the /browse page, with the iteration, it shows the dog's picture. However if you go to the dog's profile, the picture link no longer works. I can't figure out why. The image link is exactly the same and both files are in the same folder.
+
 
 
