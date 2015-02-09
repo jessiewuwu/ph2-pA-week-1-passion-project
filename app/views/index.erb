@@ -1,9 +1,9 @@
 <% if session[:id] %>
-<div class="welcome" align="center">
+<div class="welcome">
 
 <img src="./imgs/redballlogo.png" width="200px" />
 <h1>red ball</h1>
-<hr width="80%">
+<hr width="87%">
 
 <h2>adopt a new friend today!</h2>
 <p>see what our volunteers have to say about the wonderful dogs available for adoption and foster.</p>
@@ -11,33 +11,28 @@
 
 
 <% else %>
-<div class="welcome" align="center">
+<div class="welcome">
 
-<img src="./imgs/redballlogo.png" width="200px" />
-<h1>red ball</h1>
-<hr width="80%">
+  <img src="./imgs/redballlogo.png" width="200px" class="logo_pic"/>
+  <h1>red ball</h1>
+  <hr width="87%">
 
-<h2>adopt a new friend today!</h2>
-<p>see what our volunteers have to say about the wonderful dogs available for adoption and foster.</p>
+  <h2>adopt a new friend today!</h2>
+  <p>see what our volunteers have to say about the wonderful dogs available for adoption and foster.</p>
 
-<div class="page_options">
-  <form method="link" action="/login">
-    <input type="submit" value="sign in as a volunteer">
-  </form>
+  <div class="page_options">
+    <form method="link" action="/login">
+      <input type="submit" value="sign in as a volunteer">
+    </form>
 
-  <form method="link" action="/register">
-    <input type="submit" value="register as a new volunteer">
-  </form>
+    <form method="link" action="/register">
+      <input type="submit" value="register as a new volunteer">
+    </form>
 
-  <form method="link" action="/browse">
-    <input type="submit" value="browse as a guest">
-  </form>
-
-
-<!-- <button>sign in as a volunteer</button>
-<button>register as a new volunteer</button>
-<button>browse as a guest</button> -->
-</div>
+    <form method="link" action="/browse">
+      <input type="submit" value="browse as a guest">
+    </form>
+  </div>
 
 </div>
 

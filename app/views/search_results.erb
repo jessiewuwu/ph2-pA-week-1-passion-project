@@ -11,8 +11,10 @@
   <p>Name: <%= dog.name %></p>
   <p>Breed: <%= dog.breed %></p>
   <p>Age: <%= dog.age %></p>
-  <a href="/dogs/<%=dog.id%>">Go to <%= dog.name%>'s profile</a>
+  <a href="/dogs/<%=dog.id%>">Go to <%= dog.name%>'s profile</a><br><br>
   <% end %>
+
+
 <% else %>
 <p>didn't find what you want? try our randomize option and see what you get!</p>
 

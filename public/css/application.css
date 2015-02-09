@@ -1,4 +1,7 @@
-.container {
+/** {
+  border: 2px solid black;
+}
+*/.container {
   width: 80%;
   margin-right: auto;
   margin-left: auto;
@@ -30,6 +33,19 @@ form {
 
 /*INDEX PAGE*/
 
+.welcome {
+/*  margin-left: auto;
+  margin-right: auto;*/
+  text-align: center;
+}
+
+.nav_bar {
+  display: inline-block;
+}
+.nav_bar a {
+  color: rgb(164, 41, 44);
+}
+
 .nav_bar ul li {
   display: inline;
   float: left;
@@ -52,6 +68,21 @@ form {
   display:inline;
 }
 
+.logo_pic {
+  margin:auto;
+}
+
+.welcome h1 {
+  font-size: 4em;
+  color: rgb(164, 41, 44);
+}
+
+.welcome h2 {
+  font-size: 2em;
+}
+
+
+
 /*browse*/
 .list {
   display: inline-block;
@@ -65,4 +96,5 @@ form {
 input {
   line-height: 3em;
 }
+
 

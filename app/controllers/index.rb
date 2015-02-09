@@ -97,12 +97,15 @@ end
 
 post '/dogs/delete' do
   @delete_dog = Dog.find(params[:id])
-  p @delete_dog
+  session[:dog_id] = @delete_dog.id
+
 end
 
-delete '/dogs/:id/delete' do
-
-
+delete '/dogs/delete' do
+  @delete_dog = Dog.find(session[:dog_id])
+  @delete_dog.destroy
+  p "you deleted this dog's file"
+  redirect '/browse'
 end
 
 get '/register' do
@@ -146,9 +149,16 @@ post '/dogs/:id' do
 end
 
 get '/logout' do
-  session.delete :user_id
+  session.clear
 
   redirect '/'
+end
+
+get '/randomize' do
+  length = Dog.all.count
+  random = rand(length) + 1
+
+  redirect "dogs/#{random}"
 end
 
 

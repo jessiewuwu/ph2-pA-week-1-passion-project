@@ -23,15 +23,11 @@
 
   <div class ="nav_bar">
     <ul>
-      <% if session[:id] %>
       <li><a href="/">red ball</a> </li>
       <li><a href="/search">search</a></li>
       <li><a href="/browse">browse</a></li>
+      <% if logged_in? %>
       <li><a href="/logout">log out</a></li>
-      <% else %>
-      <li><a href="/">red ball</a> </li>
-      <li><a href="/search">search</a></li>
-      <li><a href="/browse">browse</a></li>
       <% end %>
     </ul>
   </div>
