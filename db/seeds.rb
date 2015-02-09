@@ -6,7 +6,9 @@ Volunteer.create!(name: "Jessie", email: "jessie@wu.com", username: "jwu", passw
 
 Volunteer.create!(name: "Michelle", email: "michelle@gmail.com", username: "mish", password: "michelle")
 
-Dog.create!(name: "Nala", breed: "Labrador", age: 2, description: "Andrew gave up this poor dog because of his beard...and because Amadou yelled at him.")
+Dog.create!(name: "Miguel", breed: "Chihuahua", age: 1, description: "Miguel is like a cat: cool as a cucumber, gotta work a bit to get his love, but when you do, it's worth it.")
+
+Dog.create!(name: "Tomas", breed: "Chihuahua", age: 1, description: "Miguel's twin brother. He loves attention and sleeping next to you in bed.")
 
 Volunteer.create!(name: "Andrew", email: "andrew@gmail.com", username: "beard", password: "andrew")
 
