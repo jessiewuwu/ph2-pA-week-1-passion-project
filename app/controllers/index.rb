@@ -47,6 +47,36 @@ post '/options' do
   redirect "/dogs/#{params[:id]}/new"
 end
 
+get '/dogs/edit' do
+
+  erb :dogs_edit
+end
+
+post'/dogs/edit' do
+  @edit_dog = Dog.find(params[:id])
+  erb :dogs_edit
+  redirect "/dogs/#{params[:id]}/edit"
+end
+
+get '/dogs/:id/edit' do
+  @edit_dog = Dog.find(params[:id])
+
+  erb :dogs_edit
+end
+
+put '/dogs/:id/edit' do
+  @edit_dog = Dog.find(params[:dog_id])
+
+  changes = params.select {|key, value| value != ""}
+  changes.delete("_method")
+  changes.delete("dog_id")
+  changes.delete("splat")
+  changes.delete("captures")
+  changes.delete("id")
+  @edit_dog.update_attributes(changes)
+  redirect "/dogs/#{params[:dog_id]}"
+end
+
 get '/dogs/new' do
 
   erb :dogs_new_profile
@@ -54,7 +84,6 @@ end
 
 post '/dogs/new' do
   @new_dog = Dog.create!(params)
-  p @new_dog
   redirect "/dogs/#{@new_dog.id}"
 end
 
@@ -96,8 +125,6 @@ post '/dogs/:id' do
   @view_dog = Dog.find(params[:id])
   @rating = Rating.create(dog_id: @view_dog.id, affectionate: params[:affectionate], independent: params[:independent], playful: params[:playful], timid: params[:timid], good_with_kids: params[:good_with_kids], high_energy: params[:high_energy])
 
-  #need to redirect to profile page with new ratings added, right now it redirects to blank dogs/:id/new. Why doesn't redirecting '/dogs/:id' work??
-  # redirect '/dogs/:id'
   erb :profile
 end
 

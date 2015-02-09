@@ -113,3 +113,14 @@ end
 <!--<% if session_logged_in %>-->
 <% if session[:volunteer_id]  %>
 # @current_user.admin == false instead creating an admin table
+
+
+
+
+
+########### EDIT
+
+1. search by the dog_id
+2. pull up the information
+3. in the form, user can update information
+4. click submit, data gets saved & it redirects to the updated profile
