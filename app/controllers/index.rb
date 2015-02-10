@@ -45,19 +45,25 @@ end
 post '/options' do
   @rate_this_dog = Dog.find(params[:id])
 
-  redirect "/dogs/#{params[:id]}/new"
+  redirect "/options/#{params[:id]}/change"
 end
 
-get '/dogs/edit' do
+get '/options/:id/change' do
+  @view_dog = Dog.find(params[:id])
 
-  erb :dogs_edit
+  erb :changeprofile
 end
 
-post'/dogs/edit' do
-  @edit_dog = Dog.find(params[:id])
-  erb :dogs_edit
-  redirect "/dogs/#{params[:id]}/edit"
-end
+# get '/dogs/edit' do
+
+#   erb :dogs_edit
+# end
+
+# post'/dogs/edit' do
+#   @edit_dog = Dog.find(params[:id])
+#   erb :dogs_edit
+#   redirect "/dogs/#{params[:id]}/edit"
+# end
 
 get '/dogs/:id/edit' do
   @edit_dog = Dog.find(params[:id])
@@ -89,23 +95,11 @@ post '/dogs/new' do
   redirect "/dogs/#{@new_dog.id}"
 end
 
-get '/dogs/delete' do
-  @all_dogs = Dog.all.sort
 
-  erb :dogs_delete
-end
-
-post '/dogs/delete' do
+delete '/dogs/:id/delete' do
   @delete_dog = Dog.find(params[:id])
-  session[:dog_id] = @delete_dog.id
-
-end
-
-delete '/dogs/delete' do
-  @delete_dog = Dog.find(session[:dog_id])
   @delete_dog.destroy
-  p "you deleted this dog's file"
-  redirect '/browse'
+  redirect '/options'
 end
 
 get '/register' do
