@@ -45,6 +45,10 @@ form {
   text-align: center;
 }
 
+.welcome p {
+  font-size: 20px;
+}
+
 .nav_bar {
   display: inline-block;
 }
@@ -62,7 +66,6 @@ form {
   display: block;
   width: 100px;
 }
-
 
 .page_options {
   padding-top: 100px;
@@ -117,6 +120,8 @@ input {
 .attribute_list img {
   width: 20px;
 }
+
+
 
 
 

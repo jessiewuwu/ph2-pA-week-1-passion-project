@@ -1,6 +1,6 @@
 <div class="sub_container">
 
-<form action="/login" method="post">
+<form action="/login/admin" method="post">
   <input type='text' name='username' placeholder='username'>
   <input type='password' name='password' placeholder='password'>
   <input type='submit' value='submit'>
@@ -8,10 +8,8 @@
 
 
 <% if @error %>
-<p>Username or password is incorrect.</p>
+<p><%= @error %></p>
 <% end %>
-
-<a href='/register'>New User? Register here!</class>
 
 
 </div>

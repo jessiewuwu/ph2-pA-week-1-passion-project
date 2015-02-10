@@ -1,39 +1,44 @@
-<% if session[:id] %>
-<div class="welcome">
+<% if logged_in? %>
+  <div class="welcome">
 
-<img src="./imgs/redballlogo.png" width="200px" />
-<h1>red ball</h1>
-<hr width="87%">
-
-<h2>adopt a new friend today!</h2>
-<p>see what our volunteers have to say about the wonderful dogs available for adoption and foster.</p>
-
-
-
-<% else %>
-<div class="welcome">
-
-  <img src="./imgs/redballlogo.png" width="200px" class="logo_pic"/>
+  <img src="./imgs/redballlogo.png" width="200px" />
   <h1>red ball</h1>
   <hr width="87%">
 
   <h2>adopt a new friend today!</h2>
   <p>see what our volunteers have to say about the wonderful dogs available for adoption and foster.</p>
 
-  <div class="page_options">
-    <form method="link" action="/login">
-      <input type="submit" value="sign in as a volunteer">
-    </form>
+  <h3 style="padding-top:50px">You are now logged in.</h3>
 
-    <form method="link" action="/register">
-      <input type="submit" value="register as a new volunteer">
-    </form>
-
-    <form method="link" action="/browse">
-      <input type="submit" value="browse as a guest">
-    </form>
   </div>
 
-</div>
+<% else %>
+  <div class="welcome">
+
+    <img src="./imgs/redballlogo.png" width="200px" class="logo_pic"/>
+    <h1>red ball</h1>
+    <hr width="87%">
+
+    <h2>adopt a new friend today!</h2>
+    <p>see what our volunteers have to say about the wonderful dogs available for adoption and foster.</p>
+
+    <div class="page_options">
+      <form method="link" action="/login/admin">
+        <input type="submit" value="sign in as an admin">
+      </form>
+
+      <form method="link" action="/login">
+        <input type="submit" value="sign in as a volunteer">
+      </form>
+
+      <form method="link" action="/register">
+        <input type="submit" value="register as a new volunteer">
+      </form>
+
+      <form method="link" action="/browse">
+        <input type="submit" value="browse as a guest">
+      </form>
+    </div>
+  </div>
 
 <% end %>

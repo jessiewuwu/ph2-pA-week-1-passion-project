@@ -12,5 +12,8 @@ Dog.create!(name: "Tomas", breed: "Chihuahua", age: 1, description: "Miguel's tw
 
 Volunteer.create!(name: "Andrew", email: "andrew@gmail.com", username: "beard", password: "andrew")
 
-Admin.create!(name: "Amadou", email: "amadou@mycode.com", password: "amadou")
+Admin.create!(name: "Amadou", email: "amadou@mycode.com", password: "amadou", username: "admin")
 
+Rating.create!(volunteer_id: 1, dog_id: 1, independent: "on", comments: "Baby is so cute! Her tongue is always sticking out so when she sleeps, her tongue gets all dry and shriveled up.")
+
+Rating.create!(volunteer_id: 2, dog_id: 4, affectionate: "on", chill: "on", independent: "on", comments: "Tomas loves to politely ask for attention by pawing at your hand. He doesn't play much, but he does like to hang out next to you all day.")
