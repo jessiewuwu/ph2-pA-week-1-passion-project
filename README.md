@@ -11,6 +11,11 @@ red ball is an online community that encourages adoption and fostering with a so
 5.  `be shotgun`
 
 
+6. Log in as a volunteer to rate dogs: username: mish, password: michelle
+7. Log in as an admin to create, edit, delete a dog's profile: username: admin, password: amadou
+8. If both fail, the login info is in my seeds file.
+
+
 ### AHA Moments
 
 1. When you click on a checkbox form, the params value gets passed as "on". I spent a long time trying convert "on" to return a true value so that it could meet the t.boolean value for personality attributes Rating table. In the end, I decided to change t.boolean to be t.string so that it'd accept and update_attributes to "on".
@@ -38,6 +43,10 @@ By doing this, we can count how many personality attributes that volunteers had 
 **IT WORKS NOW! I had given it the wrong params name** 7. When I had my original code, it would allow me to see the options page, which you can only see if you're logged in. But then when I clicked to go rate a dog, it'd think I am no longer logged in and asked me to log in. My logout feature might not be working.
 
 **I SHOULD ASK SOREN SINCE HE HAS IT IN HIS PROJECT** 8. I would like to figure out a way to store images in a database and have it show up based on an photo id or dog id. Right now pictures are inside the public/imgs folder and saved by the dog's id number. I have to manually name the photo based on the dog's id. It works for the /browse page, with the iteration, it shows the dog's picture. However if you go to the dog's profile, the picture link no longer works. I can't figure out why. The image link is exactly the same and both files are in the same folder.
+
+9. Add a comments section that iterates through @all_comments_for_dog = Rating.where(dog_id: #) and it'll post all the volunteers' comments on the dog's profile.
+
+10. Give error message when you entered the wrong password or username.
 
 
 
