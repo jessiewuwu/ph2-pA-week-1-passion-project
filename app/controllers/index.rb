@@ -124,15 +124,21 @@ get '/dogs/:id' do |id|
   erb :profile
 end
 
-get '/dogs/:id/new' do
-  @view_dog = Dog.find(params[:id])
-  erb :rate
+get '/dogs/:id/rate' do
+  if logged_in?
+    @view_dog = Dog.find(params[:id])
+    erb :rate
+  else
+    redirect '/login'
+  end
 end
 
 post '/dogs/:id' do
   @view_dog = Dog.find(params[:id])
-  @rating = Rating.create(dog_id: @view_dog.id, affectionate: params[:affectionate], independent: params[:independent], playful: params[:playful], timid: params[:timid], good_with_kids: params[:good_with_kids], high_energy: params[:high_energy])
+  params[:dog][:volunteer_id] = session[:volunteer_id]
+  @rating = @view_dog.ratings.create(params[:dog])
   erb :profile
+  # @rating.to_json
 end
 
 get '/logout' do
