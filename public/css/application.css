@@ -7,6 +7,8 @@
   margin-left: auto;
 }
 
+
+
 .sub_container {
   padding-top: 50px;
   margin-left: 500px;
@@ -43,6 +45,34 @@ form {
 /*  margin-left: auto;
   margin-right: auto;*/
   text-align: center;
+}
+
+img.banner_pic {
+  width: 100%;
+  /*height: 500px;*/
+  position: relative;
+}
+
+
+.banner_section .tagline {
+  position: absolute;
+  top: 200px;
+  color: white;
+  font-size: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner_section .logo_text {
+  /*position: absolute;*/
+  font-size: 100px;
+  top: 100px;
+  left: 200px;
+}
+
+.banner_section .banner_pic {
+/*  position: absolute;
+*/  top: 100px;
 }
 
 .welcome p {
