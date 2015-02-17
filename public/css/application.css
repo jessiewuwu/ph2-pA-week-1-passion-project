@@ -107,6 +107,39 @@ img.banner_pic {
   width: 100px;
 }
 
+
+#search_spot {
+  text-align: center;
+  width: 270px;
+  /*margin-left: 25px;*/
+  line-height: 3em;
+  border-radius: 25px;
+  border: 2px solid slategrey;
+  position: absolute;
+  top: 400px;
+}
+
+/*forms/buttons*/
+.sub_container button {
+  width: 345px;
+}
+
+.submit_button {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+input {
+  margin-top: 10px;
+}
+
+.register_section {
+  margin-top: 20px;
+}
+
+
+
+
 .page_options {
   padding-top: 100px;
   margin-left: auto;
@@ -172,7 +205,7 @@ background: #FFFFFF;
 -webkit-border-radius: 30px;
 -moz-border-radius: 30px;
 border-radius: 30px;
-border: #287F7F solid 5px;
+border: rgb(185, 29, 32) solid 5px;
 }
 
 .bubble:after
@@ -195,7 +228,7 @@ content: '';
 position: absolute;
 border-style: solid;
 border-width: 0 25px 25px;
-border-color: #287F7F transparent;
+border-color: rgb(185, 29, 32) transparent;
 display: block;
 width: 0;
 z-index: 0;

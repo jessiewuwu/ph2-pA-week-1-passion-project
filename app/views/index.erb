@@ -19,6 +19,13 @@
     <img src="./imgs/redballlogo.png" width="200px" class="logo_pic" />
     <h1 class="logo_text">red &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball</h1>
     <h2 class="tagline">let's play</h2>
+
+    <div class="search_circle">
+      <form action="/search/results" method="get">
+      <input type='text' name='breed' placeholder="What breed are you interested in?" size="45" id="search_spot">
+      <input type='submit' value='submit' style="visibility: hidden;">
+      </form>
+    </div>
   </div>
 
 <!--     <img src="./imgs/redballlogo.png" width="200px" class="logo_pic"/>
@@ -46,13 +53,16 @@
     </div> -->
   </div>
 
+  <div class="sub_container">
+
+
 
   <div class="login_section">
-    <h2>Log In</h2>
-    <form action="/login" method="post">
+    <button><h2>Log In</h2></button>
+    <form action="/login" method="post" id="login_form">
       <input type='text' name='username' placeholder='username'>
-      <input type='password' name='password' placeholder='password'>
-      <input type='submit' value='submit'>
+      <input type='password' name='password' placeholder='password'><br>
+      <input type='submit' value='submit' class='submit_button'>
     </form>
 
 
@@ -60,33 +70,25 @@
       <p>Username or password is incorrect.</p>
     <% end %>
 
-    <a href='/register'>New User? Register here!</a>
-
-
   </div>
 
 
 
-  <div class="sub_container">
+  <div class="register_section">
+    <button><h2>Register as a New User</h2></button>
+    <form action="/register" method="post" id="register_form">
+      <input type='text' name='name' placeholder="name">
+      <input type='text' name='email' placeholder="email"><br>
+      <input type='text' name='username' placeholder="username">
+      <input type='password' name='password' placeholder="password"><br>
+      <input type='submit' value='submit' class='submit_button'>
+    </form>
 
-  <h2>Register as a New User</h2>
-  <form action="/register" method="post">
-    <input type='text' name='name' placeholder="name">
-    <input type='text' name='email' placeholder="email">
-    <input type='text' name='username' placeholder="username">
-    <input type='password' name='password' placeholder="password">
-    <input type='submit' value='submit'>
-  </form>
+    <%= @invalid_error %>
+  </div>
 
-  <%= @invalid_error %>
-</div>
 
-<div class="sub_container">
-<h2>What type of dog are you looking for?</h2>
-<form action="/search/results" method="get">
-  <input type='text' name='breed' placeholder="  type of breed" size="45">
-  <input type='submit' value='submit' style="visibility: hidden;">
-</form>
+
 </div>
 
 
