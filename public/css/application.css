@@ -11,8 +11,8 @@
 
 .sub_container {
   padding-top: 50px;
-  margin-left: 500px;
-}
+  /*margin-left: 500px;
+*/}
 
 .list {
   text-align: left;
@@ -112,7 +112,7 @@ img.banner_pic {
   text-align: center;
   width: 270px;
   /*margin-left: 25px;*/
-  line-height: 3em;
+  line-height: 40px;
   border-radius: 25px;
   border: 2px solid slategrey;
   position: absolute;
@@ -125,8 +125,8 @@ img.banner_pic {
 }
 
 .submit_button {
-  margin-left: 150px;
-  margin-top: 10px;
+/*  margin-left: 150px;
+  margin-top: 10px;*/
 }
 
 input {

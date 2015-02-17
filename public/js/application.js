@@ -6,17 +6,14 @@ $(document).ready(function() {
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   $('#login_form').hide(function(){
     $('.login_section').on('click', function(){
-      $('#login_form').slideDown('slow', function(){
-        $('this button').on('click', function(){
-          $('#login_form').slideUp('slow')
-        })
-      });
+      $('#login_form').slideToggle();
     })
   })
 
+
   $('#register_form').hide(function(){
     $('.register_section').on('click', function(){
-      $('#register_form').slideToggle('slow');
+      $('#register_form').slideToggle();
     })
   })
 

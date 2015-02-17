@@ -1,18 +1,3 @@
-<% if logged_in? %>
-<div class="welcome">
-
- <!--  <img src="./imgs/redballlogo.png" width="200px" />
- <h1>red ball</h1> -->
- <img src="http://image10.photobiz.com/4773/37_20130731095359_816837_large.jpg" class="banner_pic"/>
-
- <h2>adopt a new friend today!</h2>
- <p>see what our volunteers have to say about the wonderful dogs available for adoption and foster.</p>
-
- <h3 style="padding-top:50px">You are now logged in.</h3>
-
-</div>
-
-<% else %>
 <div class="welcome">
   <img src="http://image10.photobiz.com/4773/37_20130731095359_816837_large.jpg" class="banner_pic"/>
   <div class="banner_section">
@@ -31,24 +16,22 @@
   <h2>adopt a new friend today!</h2>
   <p>see what our volunteers have to say about the wonderful dogs available for adoption and foster.</p>
 
+
+
+<% if logged_in? %>
+  <div class="welcome">
+
+   <h3 style="padding-top:50px">You are now logged in.</h3>
+
+  </div>
+
+<% else %>
+
  <!--    <div class="page_options">
       <form method="link" action="/login/admin">
         <input type="submit" value="sign in as an admin">
       </form>
-
-      <form method="link" action="/login">
-        <input type="submit" value="sign in as a volunteer">
-      </form>
-
-      <form method="link" action="/register">
-        <input type="submit" value="register as a new volunteer">
-      </form>
-
-      <form method="link" action="/browse">
-        <input type="submit" value="browse as a guest">
-      </form>
     </div> -->
-  </div>
 
   <div class="sub_container">
 
