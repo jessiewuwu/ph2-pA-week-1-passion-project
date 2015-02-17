@@ -6,7 +6,11 @@ $(document).ready(function() {
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   $('#login_form').hide(function(){
     $('.login_section').on('click', function(){
-      $('#login_form').slideToggle('slow');
+      $('#login_form').slideDown('slow', function(){
+        $('this button').on('click', function(){
+          $('#login_form').slideUp('slow')
+        })
+      });
     })
   })
 
