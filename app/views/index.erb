@@ -48,6 +48,7 @@
 
 
   <div class="login_section">
+    <h2>Log In</h2>
     <form action="/login" method="post">
       <input type='text' name='username' placeholder='username'>
       <input type='password' name='password' placeholder='password'>
@@ -63,5 +64,30 @@
 
 
   </div>
+
+
+
+  <div class="sub_container">
+
+  <h2>Register as a New User</h2>
+  <form action="/register" method="post">
+    <input type='text' name='name' placeholder="name">
+    <input type='text' name='email' placeholder="email">
+    <input type='text' name='username' placeholder="username">
+    <input type='password' name='password' placeholder="password">
+    <input type='submit' value='submit'>
+  </form>
+
+  <%= @invalid_error %>
+</div>
+
+<div class="sub_container">
+<h2>What type of dog are you looking for?</h2>
+<form action="/search/results" method="get">
+  <input type='text' name='breed' placeholder="  type of breed" size="45">
+  <input type='submit' value='submit' style="visibility: hidden;">
+</form>
+</div>
+
 
   <% end %>

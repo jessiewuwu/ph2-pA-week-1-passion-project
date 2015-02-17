@@ -58,7 +58,7 @@ img.banner_pic {
   position: absolute;
   top: 300px;
   left: 550px;
-  color: white;
+  color: rgb(255, 249, 238);
   font-size: 50px;
   margin: 0 auto;
   text-align: center;
@@ -93,7 +93,7 @@ img.banner_pic {
   display: inline-block;
 }
 .nav_bar a {
-  color: rgb(213, 36, 40);
+  color: rgb(185, 29, 32);
 }
 
 .nav_bar ul li {
@@ -123,7 +123,7 @@ img.banner_pic {
 
 .welcome h1 {
   font-size: 4em;
-  color: rgb(213, 36, 40);
+  color: rgb(185, 29, 32);
 }
 
 .welcome h2 {
@@ -161,7 +161,46 @@ input {
   width: 20px;
 }
 
+.bubble
+{
+position: relative;
+width: 315px;
+height: 70px;
+padding: 0px;
+margin-top: 50px;
+background: #FFFFFF;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;
+border: #287F7F solid 5px;
+}
 
+.bubble:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 0 21px 21px;
+border-color: #FFFFFF transparent;
+display: block;
+width: 0;
+z-index: 1;
+top: -21px;
+left: 55px;
+}
 
+.bubble:before
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 0 25px 25px;
+border-color: #287F7F transparent;
+display: block;
+width: 0;
+z-index: 0;
+top: -30px;
+left: 51px;
+}
 
 
