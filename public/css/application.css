@@ -93,7 +93,7 @@ img.banner_pic {
 
 .nav_bar {
   display: inline-block;
-  position: fixed;
+  /*position: fixed;*/
   background-color: white;
   width: 100%;
 }
@@ -130,7 +130,7 @@ img.banner_pic {
 }
 
 .submit_button {
-  margin-left: 150px;
+/*  margin-left: 150px;*/
   margin-top: 10px;
 }
 
@@ -171,16 +171,31 @@ input {
 
 
 /*browse*/
+
 .browse_list {
   display: inline-block;
   margin-top: 460px;
+  float:left;
+  width: 40%;
 }
 
+.profile_show {
+  right: 10px;
+  background-color: pink;
+  /*float:right;*/
+  margin-top: 460px;
+  width: 60%;
+  position: fixed;
+}
+
+.clear {
+  clear: both;
+}
 .search_randomize_bar {
   text-align: center;
   padding-bottom: 50px;
   position: fixed;
-  /*top: 420px;*/
+  top: 30px;
 }
 
 input {

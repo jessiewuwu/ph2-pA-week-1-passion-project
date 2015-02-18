@@ -9,26 +9,32 @@
   <a href="/randomize">randomize!</a>
 </div>
 
+<div class="browse_container">
 
-<div class="browse_list">
-    <% @all_dogs.each do |dog| %>
-    <br>
-    <div class="profile_box" id="<%=dog.id%>">
-      <div class="photo_div">
-        <img src= <%= dog.image_link %> style="float:left;" class="browse_dog_pic" id="<%=dog.id%>"/>
+  <div class="browse_list">
+      <% @all_dogs.each do |dog| %>
+      <br>
+      <div class="profile_box" id="<%=dog.id%>">
+        <div class="photo_div">
+          <img src= <%= dog.image_link %> style="float:left;" class="browse_dog_pic" id="<%=dog.id%>"/>
+        </div>
+        <div class="text_div">
+          <p>Name: <%= dog.name%> </p>
+          <p>Breed: <%= dog.breed%> </p>
+          <p>Gender: <%= dog.gender%> </p><br>
+          <a href="/dogs/<%=dog.id%>">Click here for more information about <%= dog.name %></a>
+        </div>
+        <br><br><br>
       </div>
-      <div class="text_div">
-        <p>Name: <%= dog.name%> </p>
-        <p>Breed: <%= dog.breed%> </p>
-        <p>Gender: <%= dog.gender%> </p><br>
-        <a href="/dogs/<%=dog.id%>">Click here for more information about <%= dog.name %></a>
-      </div>
-      <br><br><br>
-    </div>
-
-    <% end %>
+      <% end %>
+  </div>
 
 
+  <div class="profile_show">
+    <p>lajg;adjksl;gjadlskjasdlklf</p>
+    <%= erb :_profiles %>
+  </div>
+
+  <div class="clear"></div>
 </div>
 
-<%= erb :_profiles %>

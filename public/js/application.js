@@ -17,15 +17,7 @@ $(document).ready(function() {
     })
   })
 
-  // $('.photo_div img').draggable({helper: 'clone'});
-  // $('.playground_section').droppable({
-  //     accept: '.photo_div img',
-  //     drop: function(event, ui){
-  //       $(this).append($(ui.helper).clone());
-  //       alert("Just added to the Playground");
-  //   }
-  // });
-
+  // BROWSE page: drag the photo and drop into playground
   $('.photo_div img').draggable({helper: 'clone'});
 
   $('.playground_section').droppable({
@@ -35,6 +27,12 @@ $(document).ready(function() {
       $(this).append($(ui.draggable).clone());
     }
   });
+
+  // BROWSE page: click the photo in the playground
+  $('.playground_section img').on('click', function(){
+      var id = $(this);
+      console.log(id);
+  })
 
 
 });
