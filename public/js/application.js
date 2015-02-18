@@ -1,9 +1,6 @@
 $(document).ready(function() {
   // This is called after the document has loaded in its entirety
   // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   $('#login_form').hide(function(){
     $('.login_section button').on('click', function(){
       $('#login_form').slideToggle();
@@ -17,7 +14,6 @@ $(document).ready(function() {
     })
   })
 
-  // BROWSE page: drag the photo and drop into playground
   $('.photo_div img').draggable({helper: 'clone'});
 
   $('.playground_section').droppable({
@@ -28,11 +24,34 @@ $(document).ready(function() {
     }
   });
 
-  // BROWSE page: click the photo in the playground
-  $('.playground_section img').on('click', function(){
-      var id = $(this);
-      console.log(id);
-  })
+    bindEvents();
+  });
+  // when we try to bind to them
+
+  function bindEvents() {
+    $('.playground_section').on('click', 'img', pullUpProfile);
+
+  }
 
 
-});
+
+    function pullUpProfile(event){
+      event.preventDefault();
+
+      var id = $(this).attr('id');
+
+      var ajaxProfile = $.ajax({
+        url: '/dogs/' + id,
+        type: 'get'
+      })
+
+      ajaxProfile.done(function(data){
+        console.log(data);
+        //append the data to the div class to make it show up
+        $('.profile_show').append(data);
+
+      })
+
+  }
+
+

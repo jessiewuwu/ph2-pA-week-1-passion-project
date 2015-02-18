@@ -182,10 +182,10 @@ input {
 .profile_show {
   right: 10px;
   background-color: pink;
-  /*float:right;*/
+  float:right;
   margin-top: 460px;
   width: 60%;
-  position: fixed;
+  /*position: fixed;*/
 }
 
 .clear {

@@ -121,7 +121,10 @@ end
 
 get '/dogs/:id' do |id|
   @view_dog = Dog.find(id)
-  erb :profile
+
+  # if it's an ajax request, apply _profile
+  # if it's an http request, apply profile
+  erb :profile, layout: false
 end
 
 get '/dogs/:id/rate' do
