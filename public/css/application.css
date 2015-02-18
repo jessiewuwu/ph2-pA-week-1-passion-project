@@ -94,6 +94,8 @@ img.banner_pic {
 .nav_bar {
   display: inline-block;
   position: fixed;
+  background-color: white;
+  width: 100%;
 }
 .nav_bar a {
   color: rgb(185, 29, 32);
@@ -206,7 +208,7 @@ input {
 
 .browse_dog_pic {
   height: 300px;
-  width: 100%;
+/*  width: 100%;*/
   object-fit: contain;
 }
 
@@ -216,6 +218,10 @@ input {
   position: fixed;
   width: 100%;
   top: 50px;
+  margin-top: 0px;
+  background-image: url("../imgs/playground.jpg");
+  background-size: 90%;
+  background-repeat: repeat;
 }
 
 /*profile*/
