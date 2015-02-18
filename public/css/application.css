@@ -93,6 +93,7 @@ img.banner_pic {
 
 .nav_bar {
   display: inline-block;
+  position: fixed;
 }
 .nav_bar a {
   color: rgb(185, 29, 32);
@@ -170,17 +171,52 @@ input {
 /*browse*/
 .browse_list {
   display: inline-block;
+  margin-top: 460px;
 }
 
 .search_randomize_bar {
   text-align: center;
   padding-bottom: 50px;
+  position: fixed;
+  /*top: 420px;*/
 }
 
 input {
   line-height: 2em;
 }
 
+.profile_box {
+  border: 2px orange solid;
+  background-color: lightblue;
+  height: 340px;
+  padding-top: 15px;
+  width: 80%;
+}
+
+.photo_div {
+  border: 2px pink solid;
+  width: 40%;
+  float: left;
+}
+
+.text_div {
+  border: 2px blue solid;
+  float: right;
+}
+
+.browse_dog_pic {
+  height: 300px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.playground_section {
+  height: 400px;
+  border: 2px pink solid;
+  position: fixed;
+  width: 100%;
+  top: 50px;
+}
 
 /*profile*/
 .attribute_list {

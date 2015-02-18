@@ -1,21 +1,32 @@
-<div class="search_randomize_bar">
-<a href="/search">search by breed</a>
-
-<a href="/randomize">randomize!</a>
+<div class="playground_section">
 
 </div>
+
+<div class="search_randomize_bar">
+  <a href="/search">search by breed</a>
+  <a href="/randomize">randomize!</a>
+</div>
+
 
 <div class="browse_list">
-<% @all_dogs.each do |dog| %>
-<br>
-<img src= <%= dog.image_link %> width="250px" style="float:left; padding-bottom: 20px"/>
-<p>Name: <%= dog.name%> </p>
-<p>Breed: <%= dog.breed%> </p>
-<p>Gender: <%= dog.gender%> </p><br>
-<a href="/dogs/<%=dog.id%>">Click here for more information about <%= dog.name %></a>
-<br><br><br>
+    <% @all_dogs.each do |dog| %>
+    <br>
+    <div class="profile_box" id="<%=dog.id%>">
+      <div class="photo_div">
+        <img src= <%= dog.image_link %> style="float:left;" class="browse_dog_pic" id="<%=dog.id%>"/>
+      </div>
+      <div class="text_div">
+        <p>Name: <%= dog.name%> </p>
+        <p>Breed: <%= dog.breed%> </p>
+        <p>Gender: <%= dog.gender%> </p><br>
+        <a href="/dogs/<%=dog.id%>">Click here for more information about <%= dog.name %></a>
+      </div>
+      <br><br><br>
+    </div>
 
-<% end %>
+    <% end %>
 
 
 </div>
+
+<%= erb :_profiles %>

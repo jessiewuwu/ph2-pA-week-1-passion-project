@@ -17,5 +17,22 @@ $(document).ready(function() {
     })
   })
 
+  $('.photo_div img').draggable();
+  $('.playground_section').droppable({
+    drop: function() {
+      alert("dropped!!!!");
+    }
+  });
+
+  // $('.photo_div img').draggable({helper: 'clone'});
+
+  // $('.playground_section').droppable({
+  //   accept: '.photo_div img',
+  //   drop: function(event, ui){
+  //     alert("Item was dropped!!!");
+  //     $(this).append($(ui.draggable).clone());
+  //   }
+  // });
+
 
 });
