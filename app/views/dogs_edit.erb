@@ -7,7 +7,7 @@
 <% if @edit_dog %>
   <p>Name: <%= @edit_dog.name %></p>
   <p>Breed: <%= @edit_dog.breed %></p>
-  <p>Age: <%= @edit_dog.age %></p>
+  <p>Age: <%= @edit_dog.gender %></p>
   <p>Description: <%= @edit_dog.description %></p>
 
   <h1>Update <%= @edit_dog.name %>'s Info</h1>
@@ -22,8 +22,8 @@
   <label for='breed'>Breed: </label>
   <input type='text' name='breed'>
 
-  <label for='age'>Age</label>
-  <input type='text' name='age'>
+  <label for='gender'>Gender</label>
+  <input type='text' name='gender'>
 
   <label for='description'>Description</label>
   <input type='text' name='description'>
