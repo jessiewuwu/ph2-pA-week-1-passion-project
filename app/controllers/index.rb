@@ -106,9 +106,9 @@ end
 
 post '/register' do
   new_volunteer = Volunteer.new(params)
-  if new_volunteer.valid?
-    new_volunteer.save
-    redirect '/options'
+  if new_volunteer.save
+    session[:volunteer_id] = new_volunteer.id
+    redirect '/'
   else
     @invalid_error = new_volunteer.errors.full_messages.join(" ")
     erb :register

@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 Dog.create!(name: "Baby", breed: "Pekingese", age: 10, description: "Sassy and always has her tongue sticking out.")
 
 Dog.create!(name: "Wilfur", breed: "Rottweiler-Corgi Mix", age: 5, description: "Big head, stubby legs. Surprisingly good at balancing on two legs, but only when treats are involved.")
@@ -17,3 +20,18 @@ Admin.create!(name: "Amadou", email: "amadou@mycode.com", password: "amadou", us
 Rating.create!(volunteer_id: 1, dog_id: 1, independent: "on", comments: "Baby is so cute! Her tongue is always sticking out so when she sleeps, her tongue gets all dry and shriveled up.")
 
 Rating.create!(volunteer_id: 2, dog_id: 4, affectionate: "on", chill: "on", independent: "on", comments: "Tomas loves to politely ask for attention by pawing at your hand. He doesn't play much, but he does like to hang out next to you all day.")
+
+
+
+# take the json object and parse it with File.open maybe?
+
+
+dog_json = File.read('dogData.json')
+dog_data = JSON.parse(dog_json)
+p dog_data
+
+# def save_as_json
+#   File.open('dogData.json', 'w') do |file|
+#   #assign new key names to the values of json objects
+#   end
+# end
