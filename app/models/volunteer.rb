@@ -6,10 +6,10 @@ class Volunteer < ActiveRecord::Base
   has_many :dogs, :through => :ratings
 
   validates :name, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: ' error - invalid'}
   validates :username, presence: true
-  validates :password, :presence => true, length: {minimum: 6}, confirmation: true
-  validates :password_hash, length: {minimum: 6}
+  validates :password, :presence => true
+  validates :password, length: {minimum: 6}
 
   def password
     @password ||= Password.new(password_hash)
@@ -19,5 +19,7 @@ class Volunteer < ActiveRecord::Base
     @password = Password.create(new_password)
     self.password_hash = @password
   end
+
+
 
 end
