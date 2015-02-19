@@ -125,7 +125,7 @@ get '/dogs/:id' do
 
   # if it's an ajax request, apply _profile
   if request.xhr?
-    erb :profile, layout: false
+    erb :_profiles, layout: false
   else
     erb :profile
   end
@@ -145,6 +145,7 @@ post '/dogs/:id' do
   @view_dog = Dog.find(params[:id])
   params[:dog][:volunteer_id] = session[:volunteer_id]
   @rating = @view_dog.ratings.create(params[:dog])
+  @all_ratings = @view_dog.ratings
   erb :profile
   # @rating.to_json
 end

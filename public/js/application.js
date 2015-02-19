@@ -48,7 +48,6 @@ $(document).ready(function() {
       })
 
       ajaxProfile.done(function(data){
-        console.log(data);
         //append the data to the div class to make it show up
         // $('.playground_section').scrollTo('.profile_show');
         $('.list').remove();

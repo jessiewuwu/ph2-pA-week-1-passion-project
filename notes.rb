@@ -13,11 +13,16 @@ Make the image clickable with dog.id saved so that the profile pops up in the ri
 
 BROKEN
   - new rating
+  - only volunteers can leave ratings
 
 
 Media
   - Watch the video
   - Volunteers can upload a picture at the profile page
   - Volunteers can post a link of a video and with the embedded html, stick the link inside the code
+
+Images/Videos
+
+
 
 
