@@ -19,7 +19,7 @@ Volunteer.create!(name: "Andrew", email: "andrew@gmail.com", username: "beard", 
 
 Admin.create!(name: "Amadou", email: "amadou@mycode.com", password: "amadou", username: "admin")
 
-Rating.create!(volunteer_id: 1, dog_id: 1, independent: "on", comments: "So cute!")
+Rating.create!(volunteer_id: 1, dog_id: 1, independent: "on", comments: "So cute!", video_url: "https://www.youtube.com/watch?v=nDJAIPliZLI")
 
 Rating.create!(volunteer_id: 2, dog_id: 4, affectionate: "on", chill: "on", independent: "on", comments: "Loves to politely ask for attention by pawing at your hand. He doesn't play much, but he does like to hang out next to you all day.")
 
@@ -33,7 +33,7 @@ def seed_dogs(data)
   # data = @dog_data["collection1"]
   i = 0
   59.times do
-    Dog.create(name: data[i]["dog_name"]["text"], breed: data[i]["breed"], image_link: data[i]["image"]["src"], description: Faker::Lorem.sentence(3), gender: data[i]["gender"])
+    Dog.create(name: data[i]["dog_name"]["text"], breed: data[i]["breed"], image_link: data[i]["image"]["src"], description: Faker::Lorem.sentence(3), gender: data[i]["gender"], direct_url: data[i]["dog_name"]["href"])
     i+=1
   end
 end

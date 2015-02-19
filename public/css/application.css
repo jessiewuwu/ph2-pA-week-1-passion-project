@@ -206,7 +206,7 @@ input {
 
 .profile_box {
   border: 2px orange solid;
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   height: 340px;
   padding-top: 15px;
   width: 80%;

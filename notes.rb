@@ -26,11 +26,31 @@ Media
 
 
 
-THINGS TO DO - THURSDAY
-- add direct url link as column/property
-- image uploader
--
+/////////////// THINGS TO DO - THURSDAY /////////////////////////
+
+INDEX:
+  - make sure it looks the same on different browsers
+  - SEARCH: regex or ilike
+
+BROWSE:
+  - slide up the playground section
+  - in playground section, after clicking, it scrolls up to the profile partial section
+
+PROFILE:
+  - fix video url post route to not include nil values
+  - include direct FDR link
+  - if there are no comments in the rating form, there should not be an empty box
+  - fix
+
+MIGRATIONS
+  - convert into three migration tables
+  - Dog table: include direct FDR link
 
 
+DOUBLECHECK
+  - all routes
 
+
+EXTRA FEATURES
+  - picture uploader
 

@@ -34,8 +34,10 @@
 
   <div class="share_feed">
     <h1>Volunteer Share Feed</h1>
+      <% if !@valid_videos.blank? %>
       <% @valid_videos.each do |rating| %>
       <iframe width="460" height="315" src=<%= rating.video_url%> frameborder="0" allowfullscreen></iframe>
+      <% end %>
     <% end %>
   </div>
 
