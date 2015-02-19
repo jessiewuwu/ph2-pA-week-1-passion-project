@@ -24,19 +24,14 @@
     </ul>
   </div>
 
-  <div class="comments_section">
-    <% @all_ratings.each do |rating| %>
-    <div class="bubble">
-      <p><%= rating.comments %></p>
-    </div>
-      <% end %>
-  </div>
+
 
   <div class="share_feed">
     <h1>Volunteer Share Feed</h1>
       <% if !@valid_videos.blank? %>
       <% @valid_videos.each do |rating| %>
-      <iframe width="460" height="315" src=<%= rating.video_url%> frameborder="0" allowfullscreen></iframe>
+
+      <iframe width="460" height="315" src="https://www.youtube.com/embed/" + <%= rating.video_url.split('=')[-1] %> frameborder="0" allowfullscreen></iframe>
       <% end %>
     <% end %>
   </div>
@@ -61,11 +56,11 @@
 
       <input type="checkbox" name="dog[chill]"> Chill <br><br>
 
-      <label for="video_link">Video Link: </label>
-      <textarea name="dog[video_url]" id="video_link" placeholder="video url"> </textarea><br>
+      <label for="video_link">Youtube Video Link: </label>
+      <input type="text" name="dog[video_url]" id="video_link"> </textarea><br>
 
       <label for="comment_field">Comments: </label>
-      <textarea name="dog[comments]" id="comment_field" placeholder="Comments"> </textarea><br>
+      <textarea name="dog[comments]" id="comment_field"> </textarea><br>
 
       <button type="submit"> Submit </button>
 
