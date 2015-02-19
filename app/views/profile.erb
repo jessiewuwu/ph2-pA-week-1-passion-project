@@ -21,20 +21,18 @@
   </div>
 
   <div class="comments_section">
+    <% @all_ratings.each do |rating| %>
     <div class="bubble">
-      <p>a comment goes here</p>
+      <p><%= p rating.comments %></p>
     </div>
-
-    <div class="bubble">
-      <p>a comment goes here</p>
-    </div>
+      <% end %>
   </div>
 
 
   <div class="rate_section">
-    <form action="/dogs/<%=@view_dog.id %>" method="post">
+    <button><h2>Rate <%= @view_dog.name %>!</h2></button><br>
+    <form action="/dogs/<%=@view_dog.id %>" method="post" class="rate_form">
 
-      <button><h2>Rate <%= @view_dog.name %>!</h2></button><br><br>
       <input type="checkbox" name="dog[affectionate]"> Affectionate <br><br>
 
       <input type="checkbox" name="dog[independent]"> Independent <br><br>
@@ -48,7 +46,7 @@
       <input type="checkbox" name="dog[high_energy]"> High Energy<br><br>
 
       <input type="checkbox" name="dog[chill]"> Chill <br><br>
-      <textarea name="dog[comments]" id="comment_field"> Comments</textarea><br>
+      <textarea name="dog[comments]" id="comment_field" placeholder="Comments"> </textarea><br>
 
       <button type="submit"> Submit </button>
 

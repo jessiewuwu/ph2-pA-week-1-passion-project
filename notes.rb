@@ -9,6 +9,15 @@ Make the image draggable to the playground div.
 Make the image clickable with dog.id saved so that the profile pops up in the right column.
   - create a two column layout
   - when clicked inside the div, partial shows up
+  - scroll up to see the profile
 
+BROKEN
+  - new rating
+
+
+Media
+  - Watch the video
+  - Volunteers can upload a picture at the profile page
+  - Volunteers can post a link of a video and with the embedded html, stick the link inside the code
 
 

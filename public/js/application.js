@@ -14,6 +14,12 @@ $(document).ready(function() {
     })
   })
 
+  $('.rate_form').hide(function(){
+    $('.rate_section button').on('click', function() {
+      $('.rate_form').slideToggle();
+    })
+  })
+
   $('.photo_div img').draggable({helper: 'clone'});
 
   $('.playground_section').droppable({
@@ -30,14 +36,10 @@ $(document).ready(function() {
 
   function bindEvents() {
     $('.playground_section').on('click', 'img', pullUpProfile);
-
   }
-
-
 
     function pullUpProfile(event){
       event.preventDefault();
-
       var id = $(this).attr('id');
 
       var ajaxProfile = $.ajax({
@@ -48,8 +50,9 @@ $(document).ready(function() {
       ajaxProfile.done(function(data){
         console.log(data);
         //append the data to the div class to make it show up
+        // $('.playground_section').scrollTo('.profile_show');
+        $('.list').remove();
         $('.profile_show').append(data);
-
       })
 
   }

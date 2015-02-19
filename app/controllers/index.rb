@@ -119,12 +119,17 @@ get '/browse' do
   erb :browse
 end
 
-get '/dogs/:id' do |id|
-  @view_dog = Dog.find(id)
+get '/dogs/:id' do
+  @view_dog = Dog.find(params[:id])
+  @all_ratings = @view_dog.ratings
 
   # if it's an ajax request, apply _profile
+  if request.xhr?
+    erb :profile, layout: false
+  else
+    erb :profile
+  end
   # if it's an http request, apply profile
-  erb :profile, layout: false
 end
 
 get '/dogs/:id/rate' do
