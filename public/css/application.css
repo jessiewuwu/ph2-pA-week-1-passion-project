@@ -255,14 +255,11 @@ input {
   width: 20px;
 }
 
-.rate_section {
-
-}
 .rate_section button {
   margin-top: 50px;
 }
 
-form #comment_field {
+form #comment_field #video_link {
   width: 300px;
 }
 

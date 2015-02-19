@@ -30,6 +30,10 @@ $(document).ready(function() {
     }
   });
 
+    // $('.playground_section h1').click(function(){
+    //   $()
+    // })
+
     bindEvents();
   });
   // when we try to bind to them
@@ -54,6 +58,8 @@ $(document).ready(function() {
         $('.profile_show').append(data);
       })
 
-  }
+
+
+}
 
 

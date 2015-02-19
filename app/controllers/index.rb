@@ -122,6 +122,7 @@ end
 get '/dogs/:id' do
   @view_dog = Dog.find(params[:id])
   @all_ratings = @view_dog.ratings
+  @valid_videos = @all_ratings.select {|rating| rating.video_url != nil }
 
   # if it's an ajax request, apply _profile
   if request.xhr?

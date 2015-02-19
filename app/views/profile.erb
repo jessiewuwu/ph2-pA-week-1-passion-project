@@ -32,10 +32,18 @@
       <% end %>
   </div>
 
+  <div class="share_feed">
+    <h1>Volunteer Share Feed</h1>
+      <% @valid_videos.each do |rating| %>
+      <iframe width="460" height="315" src=<%= rating.video_url%> frameborder="0" allowfullscreen></iframe>
+    <% end %>
+  </div>
+
 
   <div class="rate_section">
     <button><h2>Rate <%= @view_dog.name %>!</h2></button><br>
     <form action="/dogs/<%=@view_dog.id %>" method="post" class="rate_form">
+    <h3>What is <%= @view_dog.name %> like? </h3>
 
       <input type="checkbox" name="dog[affectionate]"> Affectionate <br><br>
 
@@ -50,6 +58,11 @@
       <input type="checkbox" name="dog[high_energy]"> High Energy<br><br>
 
       <input type="checkbox" name="dog[chill]"> Chill <br><br>
+
+      <label for="video_link">Video Link: </label>
+      <textarea name="dog[video_url]" id="video_link" placeholder="video url"> </textarea><br>
+
+      <label for="comment_field">Comments: </label>
       <textarea name="dog[comments]" id="comment_field" placeholder="Comments"> </textarea><br>
 
       <button type="submit"> Submit </button>

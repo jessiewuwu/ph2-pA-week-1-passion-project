@@ -19,9 +19,17 @@ BROKEN
 Media
   - Watch the video
   - Volunteers can upload a picture at the profile page
-  - Volunteers can post a link of a video and with the embedded html, stick the link inside the code
+  - Rating form:
+    - Video url link - create an attribute for rating with video url
+  - iterate through with
+  <iframe width="460" height="315" src="rating's video url" frameborder="0" allowfullscreen></iframe>
 
-Images/Videos
+
+
+THINGS TO DO - THURSDAY
+- add direct url link as column/property
+- image uploader
+-
 
 
 
