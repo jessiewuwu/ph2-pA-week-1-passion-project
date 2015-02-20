@@ -87,5 +87,6 @@ EXTRA FEATURES
 
 
 
-
+$('.rate_form input')
+iterate through this where when "$('#checkbox_independent').is(":checked")" gives us true, we will add that parameter to "on" in the post route.
 
