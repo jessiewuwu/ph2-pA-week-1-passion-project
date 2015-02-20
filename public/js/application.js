@@ -29,7 +29,7 @@ $(document).ready(function() {
 
   $('#hide').click(function(){
     $('.playground_section').hide();
-    $('#show').show(); // Adell added this line
+    $('#show').show();
   });
 
   $('#show').click(function(){
@@ -38,7 +38,6 @@ $(document).ready(function() {
 
     bindEvents();
   });
-  // when we try to bind to them
 
   function bindEvents() {
     $('.playground_section').on('click', 'img', pullUpProfile);
