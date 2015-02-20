@@ -97,6 +97,7 @@ img.banner_pic {
   background-color: white;
   width: 100%;
   z-index: 1;
+  padding-bottom: 15px;
 }
 
 .nav_bar a {
@@ -218,7 +219,7 @@ input {
 .profile_box {
   /*border: 2px orange solid;*/
   /*background-color: lightblue;*/
-  height: 340px;
+  height: 270px;
   padding-top: 15px;
   width: 64%;
 }
@@ -244,25 +245,30 @@ input {
 
 .playground_section {
   height: 400px;
-  border: 2px pink solid;
   position: fixed;
   width: 100%;
   top: 32px;
-  margin-top: 0px;
+/*  margin-top: 20px;*/
   background-image: url("../imgs/playground.jpg");
   background-size: 90%;
   background-repeat: repeat;
   float:left;
   clear:left;
+  padding-left: 92px;
+}
+
+.playground_section h1 {
+  margin-top: 60px;
 }
 
 #hide_show {
   float: left;
   position: fixed;
-  top: 35px; /*- was top: 410; Adell*/
+  top: 55px; /*- was top: 410; Adell*/
   z-index: 5; /*line added by Adell*/
   left: 5px;
   margin-bottom: 10px;
+  padding-left: 85px;
 }
 /*profile*/
 .attribute_list {
@@ -300,13 +306,16 @@ form #comment_field #video_link {
   width: 300px;
 }
 
+.comments_section {
+  margin-top: 50px;
+}
 .comments_section p {
   color: white !important;
 }
 
 .share_feed {
-  border: 2px solid pink;
   clear: both;
+  padding-top: 50px;
 }
 
 .bubble {

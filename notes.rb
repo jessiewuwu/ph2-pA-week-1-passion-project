@@ -36,7 +36,7 @@ BROWSE: DONE!!!!!!!!!!!!!!!!!!!
   - slide up the playground section
   - in playground section, after clicking, it scrolls up to the profile partial section
 
-PROFILE:
+PROFILE: DONE!!!!!!!!!!!!!!!!!!!
   - fix video url post route to not include nil values
   - include direct FDR link
   - if there are no comments in the rating form, there should not be an empty box

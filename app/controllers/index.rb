@@ -152,7 +152,7 @@ post '/dogs/:id' do
   # params[:dog][:volunteer_id] = session[:volunteer_id]
   @rating = @view_dog.ratings.create(params[:dog])
   @all_ratings = @view_dog.ratings
-  @valid_comments = @all_ratings.select {|rating| rating.comments != " "}
+  @valid_comments = @all_ratings.select {|rating| rating.comments != nil && rating.comments != " " && rating.comments != ""}
 
   @valid_videos = @all_ratings.select {|rating| rating.video_url != nil && rating.video_url != ""}
 
