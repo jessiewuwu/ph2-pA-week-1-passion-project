@@ -46,24 +46,32 @@ $(document).ready(function() {
 
   function bindEvents() {
     $('.playground_section').on('click', 'img', pullUpProfile);
-    // $('.rate_form').on('submit', function(event) {
+    $('.rate_form').on('submit', function(event) {
 
-    //   event.preventDefault();
-    //   var id = $(this).attr("action").substring(6)
+      event.preventDefault();
+      var id = $(this).attr("id")
+      // var id = $(this).attr("action").substring(6)
+      whatever = {"affectionate": "on"}
+      var ajaxRating = $.post('/dogs', { dog: whatever, id: id }, function(data, textStatus, xhr) {
 
-    //   var ajaxRating = $.ajax({
-    //     url: '/dogs/' + id,
-    //     type: 'post',
-    //     dataType: 'json',
-    //     data: $(this).serialize()
-    //   });
-    //     ajaxRating.done({
-    //       $('.affectionate').text("Affectionate: " + )
-    //     })
-    //     data.affectionate
+        debugger;
+        $('.affectionate').text(data);
+      });
 
 
-    // });
+      // var ajaxRating = $.ajax({
+      //   url: '/dogs/' + id,
+      //   type: 'post',
+      //   dataType: 'json',
+      //   data: $(this).serialize()
+      // });
+      //   ajaxRating.done(function(data){
+      //     var affectionate_count = data.affectionate;
+      //     console.log(affectionate_count);
+      //   //   $('.affectionate').text("Affectionate: " + )
+      //   })
+
+    });
   }
 
     function pullUpProfile(event){

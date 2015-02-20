@@ -146,21 +146,23 @@ get '/dogs/:id/rate' do
   end
 end
 
-post '/dogs/:id' do
-  p "8" * 100
-  p params["dog"]
+post '/dogs' do
+
   @view_dog = Dog.find(params[:id])
-  params[:dog][:volunteer_id] = session[:volunteer_id]
+  # params[:dog][:volunteer_id] = session[:volunteer_id]
   @rating = @view_dog.ratings.create(params[:dog])
   @all_ratings = @view_dog.ratings
   @valid_comments = @all_ratings.select {|rating| rating.comments != " "}
 
   @valid_videos = @all_ratings.select {|rating| rating.video_url != nil && rating.video_url != ""}
 
-  #{@view_dog.ratings.where(affectionate: "on").count}
+  content_type :json
+  dog_rating = Rating.where(dog_id: 1, affectionate: 'on').count.to_json
 
-  erb :profile
-  # {affectionate: @view_dog.ratings.affectionate.count}.to_json
+  # p params[:dog].select{|k,v| v == "on"}
+  # content_type :json
+  # {id: all_ratings.id, affectionate: all_ratings.affectionate.count, independent: all_ratings.independent.count, playful: all_ratings.playful.count, timid: all_ratings.timid.count, good_with_kids: all_ratings.good_with_kids.count, high_energy: all_ratings.high_energy.count, chill: all_ratings.chill.count, comments: all_ratings.comments.count, video_url: all_ratings.video_url.count}.to_json
+  # erb :profile
 end
 
 get '/logout' do
@@ -169,9 +171,6 @@ get '/logout' do
 end
 
 get '/randomize' do
-  # length = Dog.all.count
-  # random = rand(length) + 1
-  # redirect "dogs/#{random}"
   redirect "dogs/#{Dog.all.sample.id}"
 end
 

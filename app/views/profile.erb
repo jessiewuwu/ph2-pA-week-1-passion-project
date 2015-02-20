@@ -32,7 +32,7 @@
 
   <div class="rate_section">
     <button><h2>Rate <%= @view_dog.name %>!</h2></button><br>
-    <form action="/dogs/<%=@view_dog.id %>" method="post" class="rate_form">
+    <form onsubmit="return false;" class="rate_form" id="<%=@view_dog.id%>">
     <h3>What is <%= @view_dog.name %> like? </h3>
 
       <input type="checkbox" name="dog[affectionate]"> Affectionate <br><br>
