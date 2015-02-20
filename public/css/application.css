@@ -99,8 +99,9 @@ img.banner_pic {
   display: inline-block;
   margin: 0;
   box-sizing: border-box;
-  color: #A4292C;
+  color: #B02428;
   font-size: 89px;
+  text-shadow: 1px 1px black;
 
 }
 
@@ -220,7 +221,7 @@ input {
 
 .browse_list {
   display: inline-block;
-  margin-top: 460px;
+  margin-top: 436px;
   float:left;
   width: 40%;
   /*padding-left: 50px;*/
@@ -229,7 +230,7 @@ input {
 .profile_show {
   right: 10px;
   float:right;
-  margin-top: 460px;
+  margin-top: 409px;
   width: 60%;
 }
 
@@ -358,6 +359,10 @@ form #comment_field #video_link {
   padding-top: 50px;
 }
 
+.no_comments {
+  font-color: slategrey;
+}
+
 .bubble {
 /*position: relative;*/
 float: left;
@@ -365,7 +370,7 @@ display:inline;
 width: 315px;
 height: 70px;
 padding: 0px;
-background: #778899;
+background: slategrey;
 -webkit-border-radius: 6px;
 -moz-border-radius: 6px;
 border-radius: 6px;
