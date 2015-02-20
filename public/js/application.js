@@ -61,6 +61,4 @@ $(document).ready(function() {
           $('.profile_show').append(data);
         });
 
-
-
 }
