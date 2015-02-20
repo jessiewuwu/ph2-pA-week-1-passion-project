@@ -22,6 +22,14 @@
   width: 520px;
 }
 
+.sub_container p {
+  font-size: 22px;
+}
+
+.adopt_line {
+  font-size: 43px;
+}
+
 .list {
   text-align: left;
   padding-left: 50px;
@@ -78,13 +86,12 @@ img.banner_pic {
   color: rgb(255, 249, 238);
   font-size: 50px;
   margin: 0 auto;
+  padding-top: 30px;
   /* text-align: center; */
 
 }
 .logo_pic {
-  /* position: absolute; */
-  /* top: 100px; */
-  /* left: 550px; */
+
 }
 
 .banner_section .logo_text {
@@ -131,13 +138,26 @@ img.banner_pic {
   width: 100px;
 }
 
+.search_container {
+  width: 80%;
+  margin-right: 189px;
+  padding-top: 100px;
+  padding-left: 100px;
+
+}
+
+
+
 
 #search_spot {
   text-align: center;
   width: 270px;
-  /*margin-left: 25px;*/
+  margin-left: 70px;
   line-height: 3em;
   border-radius: 25px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  outline: none;
   /* position: absolute; */
   /* top: 400px; */
 }
@@ -156,8 +176,13 @@ input {
   margin-top: 10px;
 }
 
+.login_section {
+  margin-top: 100px;
+}
+
 .register_section {
   margin-top: 20px;
+  margin-bottom: 200px;
 }
 
 

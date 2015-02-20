@@ -1,9 +1,10 @@
 <div class="container">
-<h1>What type of dog are you looking for?</h1>
-<form action="/search/results" method="get">
-  <input type='text' name='breed' placeholder="  type of breed" size="45">
-  <input type='submit' value='submit'>
-</form>
+
+
+  <form action="/search/results" method="get">
+    <input type='text' name='breed' placeholder="  type of breed" size="45">
+    <input type='submit' value='submit'>
+  </form>
 
 <% unless @breed_list.empty? %>
 
