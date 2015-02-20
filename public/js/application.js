@@ -23,14 +23,10 @@ $(document).ready(function() {
   $('.playground_section').droppable({
     accept: '.photo_div img',
     drop: function(event, ui){
-      // alert("Added to the Playground");
       $(this).append($(ui.draggable).clone());
     }
   });
 
-  // $('.playground_section').on('click', 'h1', function(){
-  //   $('.playground_section').slideToggle();
-  // });
   $('#hide').click(function(){
     $('.playground_section').hide();
     $('#show').show(); // Adell added this line
@@ -46,15 +42,6 @@ $(document).ready(function() {
 
   function bindEvents() {
     $('.playground_section').on('click', 'img', pullUpProfile);
-    // $('.rate_form').on('submit', function(event) {
-
-    //   event.preventDefault();
-    //   var id = $(this).attr("id")
-    //   // var id = $(this).attr("action").substring(6)
-    //   whatever = {"affectionate": "on"}
-    //   var ajaxRating = $.post('/dogs', { dog: whatever, id: id }, function(data, textStatus, xhr) {
-    //     $('.affectionate').text(data.affectionate);
-    //   });
   }
 
     function pullUpProfile(event){
@@ -68,8 +55,7 @@ $(document).ready(function() {
       });
 
         ajaxProfile.done(function(data){
-          //append the data to the div class to make it show up
-          // $('.playground_section').scrollTo('.profile_show');
+
           $('.list').remove();
           $('.profile_show').append(data);
         });

@@ -277,14 +277,14 @@ input {
 }
 
 .browse_dog_pic {
-  height: 200px;
+  height: 150px;
   max-width: 200px;
 /*  width: 100%;*/
   /*object-fit: contain;*/
 }
 
 .playground_section {
-  height: 400px;
+  height: 300px;
   position: fixed;
   width: 100%;
   top: 32px;
@@ -297,8 +297,8 @@ input {
   padding-left: 92px;
 }
 
-.playground_section h1 {
-  margin-top: 60px;
+.playground_section h2 {
+  margin-top: 50px;
 }
 
 #hide_show {
