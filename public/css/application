@@ -3,6 +3,9 @@
   font-family: 'Questrial', sans-serif;
 }
 
+div {
+  border: 2px solid pink;
+}
 .container {
   width: 80%;
   margin-right: auto;
@@ -14,12 +17,6 @@
   padding-top: 50px;
   width: 23%;
   margin: auto;
-  position: absolute;
-  margin-top: 50%;
-  left: 50%;
-  margin-left: -260px;
-  text-align: center;
-  width: 520px;
 }
 
 .list {
@@ -54,21 +51,13 @@ form {
 
 img.banner_pic {
   width: 100%;
-  z-index: 0;
-  position: absolute;
+  /*height: 500px;*/
+  /* position: relative; */
 }
 
 .banner_section {
-  position: absolute;
-  z-index: 1;
-  width: 36em;
-  margin: auto;
-  margin-top: 174px;
-  display: inline-grid;
-  left: 50%;
-  margin-left: -18em;
-  text-align: center;
-  height: 206px;
+  position: absolute; z-index: 1; /* margin-top: 375px; */ width: 36em; border: 6px solid green; margin: auto; margin-top: 174px; display: inline-grid; left: 50%; margin-left: -18em; text-align: center; height: 206px;
+  /* margin: auto; */
 }
 
 .banner_section .tagline {
@@ -88,12 +77,11 @@ img.banner_pic {
 }
 
 .banner_section .logo_text {
-  display: inline-block;
-  margin: 0;
-  box-sizing: border-box;
-  color: #A4292C;
+  /* position: absolute; */
   font-size: 100px;
-
+  /* top: 100px; */
+  /* left: 410px; */
+  text-shadow: 1px 1px black;
 }
 
 
@@ -138,6 +126,7 @@ img.banner_pic {
   /*margin-left: 25px;*/
   line-height: 3em;
   border-radius: 25px;
+  border: 2px solid slategrey;
   /* position: absolute; */
   /* top: 400px; */
 }
@@ -202,6 +191,7 @@ input {
 
 .profile_show {
   right: 10px;
+  /*background-color: pink;*/
   float:right;
   margin-top: 460px;
   width: 60%;
