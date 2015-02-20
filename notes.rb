@@ -32,7 +32,7 @@ INDEX:
   - make sure it looks the same on different browsers
   - SEARCH: regex or ilike
 
-BROWSE:
+BROWSE: DONE!!!!!!!!!!!!!!!!!!!
   - slide up the playground section
   - in playground section, after clicking, it scrolls up to the profile partial section
 
@@ -52,10 +52,12 @@ DOUBLECHECK
 
 JAVASCRIPT
   - organize!
+  - ajax when there is a new rating - no refresh
 
 EXTRA FEATURES
   - picture uploader
   - comment generator - array & randomize
+  - implement feedback
 
 
 <!--   <div class="comments_section">
@@ -70,3 +72,20 @@ EXTRA FEATURES
       <% end %>
       <% end %>
   </div> -->
+
+
+
+
+   <div class="share_feed">
+    <h1>Volunteer Share Feed</h1>
+      <% if !@valid_videos.blank? %>
+      <% @valid_videos.each do |rating| %>
+
+      <iframe width="460" height="315" src="https://www.youtube.com/embed/" + <%= rating.video_url.split('=')[-1] %> frameborder="0" allowfullscreen></iframe>
+      <% end %>
+    <% end %>
+
+
+
+
+

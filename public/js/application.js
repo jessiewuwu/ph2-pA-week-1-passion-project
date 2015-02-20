@@ -34,11 +34,11 @@ $(document).ready(function() {
   $('#hide').click(function(){
     $('.playground_section').hide();
     $('#show').show(); // Adell added this line
-  })
+  });
 
   $('#show').click(function(){
     $('.playground_section').show();
-  })
+  });
 
     bindEvents();
   });
@@ -46,6 +46,24 @@ $(document).ready(function() {
 
   function bindEvents() {
     $('.playground_section').on('click', 'img', pullUpProfile);
+    // $('.rate_form').on('submit', function(event) {
+
+    //   event.preventDefault();
+    //   var id = $(this).attr("action").substring(6)
+
+    //   var ajaxRating = $.ajax({
+    //     url: '/dogs/' + id,
+    //     type: 'post',
+    //     dataType: 'json',
+    //     data: $(this).serialize()
+    //   });
+    //     ajaxRating.done({
+    //       $('.affectionate').text("Affectionate: " + )
+    //     })
+    //     data.affectionate
+
+
+    // });
   }
 
     function pullUpProfile(event){
@@ -66,6 +84,19 @@ $(document).ready(function() {
         });
 
 
+    // function newRating(event){
+    //   alert("here!");
+    //   event.preventDefault();
+    //   console.log($(this).serialize());
+
+    //   var ajaxRating = $.ajax({
+    //     url: '/dogs/' + id,
+    //     type: 'post',
+    //     dataType: 'json',
+    //     data: $(this).serialize()
+    //   });
+    // }
+
+
 
 }
-

@@ -147,6 +147,8 @@ get '/dogs/:id/rate' do
 end
 
 post '/dogs/:id' do
+  p "8" * 100
+  p params["dog"]
   @view_dog = Dog.find(params[:id])
   params[:dog][:volunteer_id] = session[:volunteer_id]
   @rating = @view_dog.ratings.create(params[:dog])
@@ -155,8 +157,10 @@ post '/dogs/:id' do
 
   @valid_videos = @all_ratings.select {|rating| rating.video_url != nil && rating.video_url != ""}
 
+  #{@view_dog.ratings.where(affectionate: "on").count}
+
   erb :profile
-  # @rating.to_json
+  # {affectionate: @view_dog.ratings.affectionate.count}.to_json
 end
 
 get '/logout' do

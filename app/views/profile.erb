@@ -6,6 +6,7 @@
     <p>Name: <%= @view_dog.name%> </p>
     <p>Breed: <%= @view_dog.breed%> </p>
     <p>Gender: <%= @view_dog.gender%> </p>
+    <p><a href=<%= @view_dog.direct_url%>>Full Profile on Family Dog Rescue</a></p>
     <p>Description: <%= @view_dog.description%> </p><br>
 
   </div>
@@ -14,7 +15,7 @@
   <div class="attribute_list">
     <h2>Personality Ratings</h2>
     <ul style="padding-left: 0px;">
-      <li>Affectionate: <%=@view_dog.ratings.where(affectionate: "on").count %> votes <img src="http://oi58.tinypic.com/2wr1dm9.jpg"></li>
+      <li class="affectionate">Affectionate: <%=@view_dog.ratings.where(affectionate: "on").count %> votes <img src="http://oi58.tinypic.com/2wr1dm9.jpg"></li>
       <li>Independent: <%=@view_dog.ratings.where(independent: "on").count %> votes <img src="http://oi58.tinypic.com/f3eyc0.jpg"></li>
       <li>Playful: <%=@view_dog.ratings.where(playful: "on").count %> votes <img src="http://oi58.tinypic.com/del9wg.jpg"></li>
       <li>Timid: <%=@view_dog.ratings.where(timid: "on").count %> votes <img src="http://i58.tinypic.com/jzk7sg_th.png"></li>
@@ -26,15 +27,7 @@
 
 
 
-  <div class="share_feed">
-    <h1>Volunteer Share Feed</h1>
-      <% if !@valid_videos.blank? %>
-      <% @valid_videos.each do |rating| %>
 
-      <iframe width="460" height="315" src="https://www.youtube.com/embed/" + <%= rating.video_url.split('=')[-1] %> frameborder="0" allowfullscreen></iframe>
-      <% end %>
-    <% end %>
-  </div>
 
 
   <div class="rate_section">
