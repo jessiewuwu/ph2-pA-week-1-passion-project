@@ -16,6 +16,7 @@ gem 'rake'
 gem 'shotgun'
 gem 'bcrypt'
 gem 'debugger'
+gem 'ilike'
 
 
 group :test do

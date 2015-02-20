@@ -14,7 +14,8 @@ end
 
 get '/search/results' do
   @breed_list = Dog.where(breed: params[:breed])
-  # p @breed_list.empty?
+
+
   erb :search_results
 end
 

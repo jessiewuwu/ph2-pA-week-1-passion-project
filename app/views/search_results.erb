@@ -1,16 +1,17 @@
-
-<h2>What type of dog are you looking for?</h2>
+<div class="container">
+<h1>What type of dog are you looking for?</h1>
 <form action="/search/results" method="get">
   <input type='text' name='breed' placeholder="  type of breed" size="45">
   <input type='submit' value='submit'>
 </form>
 
 <% unless @breed_list.empty? %>
+
   <h2>Results</h2>
   <% @breed_list.each do |dog| %>
-  <p>Name: <%= dog.name %></p>
-  <p>Breed: <%= dog.breed %></p>
-  <p>Gender: <%= dog.gender %></p>
+  <p><strong>Name:</strong> <%= dog.name %></p>
+  <p><strong>Breed:</strong> <%= dog.breed %></p>
+  <p><strong>Gender:</strong> <%= dog.gender %></p>
   <a href="/dogs/<%=dog.id%>">Go to <%= dog.name%>'s profile</a><br><br>
   <% end %>
 
@@ -21,3 +22,4 @@
 <% end %>
 
 
+</div>

@@ -18,8 +18,8 @@
 
 .list {
   text-align: left;
-  padding-left: 170px;
-  padding-top: 150px;
+  padding-left: 50px;
+  padding-top: 50px;
 }
 
 .padding {
@@ -43,6 +43,7 @@ form {
 /*  margin-left: auto;
   margin-right: auto;*/
   text-align: center;
+  position: relative;
 }
 
 img.banner_pic {
