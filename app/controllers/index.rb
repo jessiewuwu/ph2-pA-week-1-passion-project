@@ -1,5 +1,5 @@
 get '/' do
-  session[:id]
+  # session[:id]
   erb :index
 end
 
@@ -14,7 +14,7 @@ end
 
 get '/search/results' do
   @breed_list = Dog.where(breed: params[:breed])
-  p @breed_list.empty?
+  # p @breed_list.empty?
   erb :search_results
 end
 
@@ -27,10 +27,10 @@ post '/login/admin' do
   @admin = Admin.find_by(username: params[:username])
   if @admin && @admin.password == params[:password]
     session[:admin_id] = @admin.id
+    redirect '/options'
   else
     redirect '/login/admin'
   end
-  redirect '/options'
 end
 
 get '/login' do
@@ -48,6 +48,10 @@ post '/login' do
   end
   redirect '/'
 end
+
+# before '/admin/*' do
+#   # make sure theey're admin or reduirect
+# end
 
 get '/options' do
   @all_dogs = Dog.all.sort
@@ -147,7 +151,10 @@ post '/dogs/:id' do
   params[:dog][:volunteer_id] = session[:volunteer_id]
   @rating = @view_dog.ratings.create(params[:dog])
   @all_ratings = @view_dog.ratings
-  @valid_videos = @all_ratings.select {|rating| rating.video_url != nil }
+  @valid_comments = @all_ratings.select {|rating| rating.comments != " "}
+
+  @valid_videos = @all_ratings.select {|rating| rating.video_url != nil && rating.video_url != ""}
+
   erb :profile
   # @rating.to_json
 end
@@ -158,9 +165,10 @@ get '/logout' do
 end
 
 get '/randomize' do
-  length = Dog.all.count
-  random = rand(length) + 1
-  redirect "dogs/#{random}"
+  # length = Dog.all.count
+  # random = rand(length) + 1
+  # redirect "dogs/#{random}"
+  redirect "dogs/#{Dog.all.sample.id}"
 end
 
 

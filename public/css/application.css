@@ -174,13 +174,17 @@ input {
 
 /*browse*/
 
+.browse_container {
+  clear: both;
+}
+
 .browse_list {
   display: inline-block;
   margin-top: 460px;
   float:left;
   width: 40%;
+  /*padding-left: 50px;*/
 }
-
 
 .profile_show {
   right: 10px;
@@ -190,9 +194,14 @@ input {
   width: 60%;
 }
 
+
 /*.text_div {
   display: inline;
 }*/
+
+.text_div {
+  display: inline;
+}
 
 .clear {
   clear: both;
@@ -209,11 +218,11 @@ input {
 }
 
 .profile_box {
-  border: 2px orange solid;
+  /*border: 2px orange solid;*/
   /*background-color: lightblue;*/
   height: 340px;
   padding-top: 15px;
-  width: 80%;
+  width: 64%;
 }
 
 .photo_div {
@@ -224,14 +233,15 @@ input {
 }
 
 .text_div {
-  border: 2px blue solid;
+  /*border: 2px blue solid;*/
   float: right;
 }
 
 .browse_dog_pic {
   height: 200px;
+  max-width: 200px;
 /*  width: 100%;*/
-  object-fit: contain;
+  /*object-fit: contain;*/
 }
 
 .playground_section {
@@ -244,8 +254,18 @@ input {
   background-image: url("../imgs/playground.jpg");
   background-size: 90%;
   background-repeat: repeat;
+  float:left;
+  clear:left;
 }
 
+#hide_show {
+  float: left;
+  position: fixed;
+  top: 35px; /*- was top: 410; Adell*/
+  z-index: 5; /*line added by Adell*/
+  left: 5px;
+  margin-bottom: 10px;
+}
 /*profile*/
 .attribute_list {
   padding-top: 50px;

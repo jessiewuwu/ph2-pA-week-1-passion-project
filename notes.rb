@@ -42,15 +42,31 @@ PROFILE:
   - if there are no comments in the rating form, there should not be an empty box
   - fix
 
-MIGRATIONS
-  - convert into three migration tables
+MIGRATIONS -- DONE!!!!!!!!!!!!!!!!!!!!!!
+  - convert into four migration tables
   - Dog table: include direct FDR link
 
 
 DOUBLECHECK
   - all routes
 
+JAVASCRIPT
+  - organize!
 
 EXTRA FEATURES
   - picture uploader
+  - comment generator - array & randomize
 
+
+<!--   <div class="comments_section">
+    <% if !@valid_comments.blank? %>
+      <% @valid_comments.each do |rating| %>
+      <div class="bubble">
+        <p><%= rating.comments %></p>
+      </div>
+    <% else %>
+      <h1> NO COMMENTS!!!!!!!!!!</h1>
+    <% end %>
+      <% end %>
+      <% end %>
+  </div> -->
