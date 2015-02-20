@@ -71,7 +71,7 @@ img.banner_pic {
   z-index: 1;
   width: 36em;
   margin: auto;
-  margin-top: 174px;
+  margin-top: 100px;
   display: inline-grid;
   left: 50%;
   margin-left: -18em;
@@ -84,14 +84,15 @@ img.banner_pic {
   /* top: 300px; */
   /* left: 550px; */
   color: rgb(255, 249, 238);
-  font-size: 50px;
+  font-size: 35px;
   margin: 0 auto;
-  padding-top: 30px;
+  /*padding-top: 30px;*/
   /* text-align: center; */
 
 }
-.logo_pic {
 
+.banner_section a:link {
+  text-decoration: none;
 }
 
 .banner_section .logo_text {
@@ -99,7 +100,7 @@ img.banner_pic {
   margin: 0;
   box-sizing: border-box;
   color: #A4292C;
-  font-size: 100px;
+  font-size: 89px;
 
 }
 
@@ -119,7 +120,7 @@ img.banner_pic {
   position: fixed;
   background-color: white;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   padding-bottom: 15px;
 }
 
@@ -153,7 +154,7 @@ img.banner_pic {
   text-align: center;
   width: 270px;
   margin-left: 70px;
-  line-height: 3em;
+  line-height: 2em;
   border-radius: 25px;
   margin-bottom: 20px;
   margin-top: 50px;
