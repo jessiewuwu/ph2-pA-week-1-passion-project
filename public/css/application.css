@@ -3,6 +3,8 @@
   font-family: 'Questrial', sans-serif;
 }
 
+/*----------index-------------*/
+
 .container {
   width: 80%;
   margin-right: auto;
@@ -26,14 +28,9 @@
   font-size: 22px;
 }
 
+/*------------INDEX PAGE------------*/
 .adopt_line {
   font-size: 43px;
-}
-
-.list {
-  text-align: left;
-  padding-left: 50px;
-  padding-top: 50px;
 }
 
 .padding {
@@ -51,7 +48,6 @@ form {
 }
 
 
-/*INDEX PAGE*/
 
 .welcome {
 /*  margin-left: auto;
@@ -102,7 +98,6 @@ img.banner_pic {
   color: #B02428;
   font-size: 89px;
   text-shadow: 1px 1px black;
-
 }
 
 
@@ -149,8 +144,6 @@ img.banner_pic {
 }
 
 
-
-
 #search_spot {
   text-align: center;
   width: 270px;
@@ -164,7 +157,7 @@ img.banner_pic {
   /* top: 400px; */
 }
 
-/*forms/buttons*/
+/*------------forms/buttons------------*/
 .sub_container button {
   width: 345px;
 }
@@ -213,7 +206,7 @@ input {
 
 
 
-/*browse*/
+/*------------browse------------*/
 
 .browse_container {
   clear: both;
@@ -262,11 +255,53 @@ input {
 .browse_dog_pic {
   height: 315px;
   max-width: 250px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .row {
   margin-top: 35px;
 }
+
+.overlay {
+  background:rgba(0,0,0,.75);
+  text-align:center;
+  padding:45px 0 200px 0;
+  opacity:0;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+}
+
+.left_column:hover .overlay {
+  opacity:1;
+}
+
+.dog_info {
+  color: red;
+  font-size: 10px;
+}
+
+p.dog_info2 {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+ /* display: table;*/
+  height: 190px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+img:hover p.dog_info2 {
+  opacity: 1;
+}
+
 
 
 
@@ -297,7 +332,55 @@ input {
   margin-bottom: 10px;
   padding-left: 85px;
 }
-/*profile*/
+
+
+/*------------profile------------*/
+.list {
+  margin: auto;
+  text-align: left;
+  padding-top: 60px;
+}
+
+.profile_panel {
+  margin: auto;
+  background: rgb(242, 242, 242);
+  display: flex;
+}
+
+.description {
+  width: 90%;
+  margin: auto;
+  margin-top: 44px;
+}
+
+.description a:link {
+  text-decoration: none;
+}
+
+#fdr_button {
+  padding: 14px 64px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: white;
+  border: 0;
+  font-size: 13px;
+  border-radius: 5;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -1px #B1B1AE;
+  transition: all 0.3s ease 0s;
+}
+
+#fdr_button a:link {
+  text-decoration: none;
+}
+
+#fdr_button:hover {
+  background: #B02428;
+  color: white !important;
+}
+
 .attribute_list {
   padding-top: 20px;
   padding-bottom: 30px;
@@ -313,15 +396,21 @@ input {
   width: 20px;
 }
 
-.description h1 {
-  margin-top: 0px;
-  margin-bottom: 0px;
+
+.dog_name {
+  font-size: 60px;
+  font-weight: bolder;
+  text-shadow: 1px 1px lightgrey;
+
+
 }
 
 .rate_section {
-  float:left;
-  margin-top: 370px;
-  margin-bottom: 100px;
+/*  float:left;*/
+/*  margin-top: 370px;*/
+/*  margin-bottom: 100px;*/
+  width: 90%;
+  margin: auto;
 }
 
 .rate_section button {
@@ -335,6 +424,8 @@ form #comment_field #video_link {
 
 .comments_section {
   margin-top: 50px;
+  margin: auto;
+  width: 90%;
 }
 .comments_section p {
   color: white !important;
@@ -343,6 +434,8 @@ form #comment_field #video_link {
 .share_feed {
   clear: both;
   padding-top: 50px;
+  margin: auto;
+  width: 90%;
 }
 
 .no_comments {
