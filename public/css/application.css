@@ -223,24 +223,7 @@ input {
   display: inline-block;
   margin-top: 436px;
   float:left;
-  width: 40%;
-  /*padding-left: 50px;*/
-}
-
-.profile_show {
-  right: 10px;
-  float:right;
-  margin-top: 409px;
-  width: 60%;
-}
-
-
-/*.text_div {
-  display: inline;
-}*/
-
-.text_div {
-  display: inline;
+  width: 100%
 }
 
 .clear {
@@ -257,32 +240,35 @@ input {
   line-height: 2em;
 }
 
-.profile_box {
-  /*border: 2px orange solid;*/
-  /*background-color: lightblue;*/
+.left_column {
   height: 270px;
-  padding-top: 15px;
-  width: 64%;
-}
-
-.photo_div {
-  /*border: 2px pink solid;*/
-  width: 100%;
-  padding-left: 20%;
+  width: 33%;
   float: left;
 }
 
-.text_div {
-  /*border: 2px blue solid;*/
+.center_column {
+  height: 270px;
+  width: 33%;
+  display: inline-block;
+}
+
+.right_column {
+  height: 270px;
+  width: 34%;
   float: right;
 }
 
+
 .browse_dog_pic {
-  height: 150px;
-  max-width: 200px;
-/*  width: 100%;*/
-  /*object-fit: contain;*/
+  height: 315px;
+  max-width: 250px;
 }
+
+.row {
+  margin-top: 35px;
+}
+
+
 
 .playground_section {
   height: 300px;

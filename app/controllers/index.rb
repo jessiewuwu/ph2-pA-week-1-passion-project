@@ -126,7 +126,10 @@ end
 get '/dogs/:id' do
   @view_dog = Dog.find(params[:id])
   @all_ratings = @view_dog.ratings
-  @valid_videos = @all_ratings.select {|rating| rating.video_url != nil && rating.video_url != "" && rating.video_url != " "}
+
+  @valid_comments = @all_ratings.select {|rating| rating.comments != nil && rating.comments != " " && rating.comments != ""}
+
+  @valid_videos = @all_ratings.select {|rating| rating.video_url != nil && rating.video_url != ""}
 
   # if it's an ajax request, apply _profile
   if request.xhr?
@@ -150,8 +153,10 @@ post '/dogs/:id' do
 
   @view_dog = Dog.find(params[:id])
   # params[:dog][:volunteer_id] = session[:volunteer_id]
+
   @rating = @view_dog.ratings.create(params[:dog])
   @all_ratings = @view_dog.ratings
+
   @valid_comments = @all_ratings.select {|rating| rating.comments != nil && rating.comments != " " && rating.comments != ""}
 
   @valid_videos = @all_ratings.select {|rating| rating.video_url != nil && rating.video_url != ""}

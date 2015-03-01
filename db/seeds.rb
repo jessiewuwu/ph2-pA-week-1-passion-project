@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'json'
-require 'faker'
+
 
 # Dog.create!(name: "Baby", breed: "Pekingese", description: "Sassy and always has her tongue sticking out.")
 
