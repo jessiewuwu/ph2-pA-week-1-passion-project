@@ -17,7 +17,13 @@
           <% row.each do |dog| %>
           <% if dog.id.to_i % 3 == 1 %>
             <div class="left_column" id="<%=dog.id%>">
-
+              <div class="overlay">
+                  <p class="dog_info">
+                    <%= dog.name%> <br>
+                    <%= dog.breed%> <br>
+                    <%= dog.gender%> <br>
+                  </p>
+              </div>
                 <center><img src= <%= dog.image_link %> class="browse_dog_pic" id="<%=dog.id%>"/><br>
 
                 <a href="/dogs/<%=dog.id%>"> <%= dog.name %>'s Full Profile</a></center>
@@ -27,6 +33,11 @@
               <div class="center_column" id="<%=dog.id%>">
 
                 <center><img src= <%= dog.image_link %> class="browse_dog_pic" id="<%=dog.id%>"/><br>
+                  <p class="dog_info2">
+                    <%= dog.name%> <br>
+                    <%= dog.breed%> <br>
+                    <%= dog.gender%> <br>
+                  </p>
 
                 <a href="/dogs/<%=dog.id%>"> <%= dog.name %>'s Full Profile</a></center>
              </div>
