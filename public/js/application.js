@@ -22,10 +22,10 @@ $(document).ready(function() {
       });
     });
 
-    $('.photo_div img').draggable({helper: 'clone'});
+    $('.left_column img, .center_column img, .right_column img').draggable({helper: 'clone'});
 
     $('.playground_section').droppable({
-      accept: '.photo_div img',
+      accept: '.left_column img, .center_column img, .right_column img',
       drop: function(event, ui){
         $(this).append($(ui.draggable).clone());
       }
