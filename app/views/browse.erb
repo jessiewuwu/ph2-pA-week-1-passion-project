@@ -15,24 +15,36 @@
       <br>
       <div class="row">
           <% row.each do |dog| %>
-        <div class="profile_box" id="<%=dog.id%>">
-          <div class="photo_div">
-            <img src= <%= dog.image_link %> style="float:left; margin: 0 15px 0 0;" class="browse_dog_pic" id="<%=dog.id%>"/>
-          </div>
+          <% if dog.id.to_i % 3 == 1 %>
+            <div class="left_column" id="<%=dog.id%>">
 
-            <p>Name: <%= dog.name%> </p>
-            <p>Breed: <%= dog.breed%> </p>
-            <p>Gender: <%= dog.gender%> </p><br>
-            <a href="/dogs/<%=dog.id%>">Click here for more information about <%= dog.name %></a>
-        </div>
+                <img src= <%= dog.image_link %> style="float:left; margin: 0 15px 0 0;" class="browse_dog_pic" id="<%=dog.id%>"/>
+
+                <a href="/dogs/<%=dog.id%>"> <%= dog.name %>'s Full Profile</a>
+            </div>
+
+            <% elsif dog.id.to_i % 3 == 2 %>
+              <div class="center_column" id="<%=dog.id%>">
+
+                <img src= <%= dog.image_link %> style="float:left; margin: 0 15px 0 0;" class="browse_dog_pic" id="<%=dog.id%>"/>
+
+                <a href="/dogs/<%=dog.id%>"> <%= dog.name %>'s Full Profile</a>
+             </div>
+
+             <% elsif dog.id.to_i % 3 == 0 %>
+               <div class="right_column" id="<%=dog.id%>">
+
+                   <img src= <%= dog.image_link %> style="float:left; margin: 0 15px 0 0;" class="browse_dog_pic" id="<%=dog.id%>"/>
+
+                   <a href="/dogs/<%=dog.id%>"> <%= dog.name %>'s Full Profile</a>
+               </div>
+               <% else %>
+                <h1>THE IF STATEMENTS DIDNT WORK</h1>
+              <% end %>
             <%end%>
         <br>
     </div>
         <% end %>
-  </div>
-
-  <div class="profile_show">
-
   </div>
 
   <div class="clear"></div>
