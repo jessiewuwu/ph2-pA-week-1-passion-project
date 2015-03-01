@@ -26,16 +26,27 @@
   </div>
 
   <div class="attribute_list">
-    <h1>Personality Ratings</h1>
-    <ul style="padding-left: 0px;">
-      <li class="affectionate">Affectionate: <%=@view_dog.ratings.where(affectionate: "on").count %> votes <img src="http://oi58.tinypic.com/2wr1dm9.jpg"></li>
-      <li>Independent: <%=@view_dog.ratings.where(independent: "on").count %> votes <img src="http://oi58.tinypic.com/f3eyc0.jpg"></li>
-      <li>Playful: <%=@view_dog.ratings.where(playful: "on").count %> votes <img src="http://oi58.tinypic.com/del9wg.jpg"></li>
-      <li>Timid: <%=@view_dog.ratings.where(timid: "on").count %> votes <img src="http://i58.tinypic.com/jzk7sg_th.png"></li>
-      <li>Good with Kids: <%=@view_dog.ratings.where(good_with_kids: "on").count %> votes <img src="http://i60.tinypic.com/9h5glj_th.png"></li>
-      <li>High Energy: <%=@view_dog.ratings.where(high_energy: "on").count %> votes <img src="http://i58.tinypic.com/657slj_th.png"></li>
-      <li>Chill: <%=@view_dog.ratings.where(chill: "on").count %> votes <img src="http://i58.tinypic.com/2ajvxva_th.png"></li>
-    </ul>
+      <div class="affectionate" style="float:left; width: 14.2%">
+        <h1 class="attr_header">Affectionate:
+         <br> <span class="large_number"><%=@view_dog.ratings.where(affectionate: "on").count %></span> <br>votes </h1></div>
+      <div class="independent" style="float:left; width: 14.2%">
+        <h1 class="attr_header">Independent:
+       <br> <span class="large_number"><%=@view_dog.ratings.where(independent: "on").count %></span> <br>votes </h1></div>
+      <div class="playful" style="float:left; width: 14.2%">
+        <h1 class="attr_header">Playful:
+       <br> <span class="large_number"><%=@view_dog.ratings.where(playful: "on").count %></span> <br>votes </h1></div>
+      <div class="timid" style="float:left; width: 14.2%">
+        <h1 class="attr_header">Timid:
+       <br> <span class="large_number"><%=@view_dog.ratings.where(timid: "on").count %></span> <br>votes </h1></div>
+      <div class="good_with_kids" style="float:left; width: 14.2%">
+        <h1 class="attr_header">Good w/ Kids:
+       <br> <span class="large_number"><%=@view_dog.ratings.where(good_with_kids: "on").count %></span> <br>votes </h1></div>
+      <div class="high_energy" style="float:left; width: 14.2%">
+        <h1 class="attr_header">High Energy:
+       <br> <span class="large_number"><%=@view_dog.ratings.where(high_energy: "on").count %></span> <br>votes </h1></div>
+      <div class="chill" style="float:left; width: 14.2%">
+        <h1 class="attr_header">Chill:
+       <br> <span class="large_number"><%=@view_dog.ratings.where(chill: "on").count %></span> <br>votes </h1></div>
   </div>
 
   <div class="comments_section">

@@ -382,18 +382,54 @@ img:hover p.dog_info2 {
 }
 
 .attribute_list {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  clear: both;
+  width: 100%;
+  text-align: center;
 }
 
-.attribute_list ul li{
-  display: inline;
-  padding-right: 20px;
+.affectionate {
+  background: #E8A0B8;
+  height: 200px;
 }
 
-.attribute_list img {
-  width: 20px;
+.independent {
+  background: #FFC300;
+  height: 200px;
+}
+
+.playful{
+  background: #BCCF3D;
+  height: 200px;
+}
+
+.timid {
+  background: #02C9C9;
+  height: 200px;
+}
+
+.good_with_kids {
+  background: #A8AAE0;
+  height: 200px;
+}
+
+.high_energy {
+  background: rgb(216, 69, 69);
+  height: 200px;
+}
+
+.chill {
+  background: #17A697;
+  height: 200px;
+}
+
+.attr_header {
+  font-size: 27px;
+  color: white;
+  font-weight: bolder;
+  padding-top: 10px;
+}
+
+.large_number {
+  font-size: 80px;
 }
 
 
@@ -401,8 +437,6 @@ img:hover p.dog_info2 {
   font-size: 60px;
   font-weight: bolder;
   text-shadow: 1px 1px lightgrey;
-
-
 }
 
 .rate_section {
@@ -423,7 +457,7 @@ form #comment_field #video_link {
 }
 
 .comments_section {
-  margin-top: 50px;
+  margin-top: 100px;
   margin: auto;
   width: 90%;
 }
