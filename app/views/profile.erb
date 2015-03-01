@@ -26,27 +26,34 @@
   </div>
 
   <div class="attribute_list">
-      <div class="affectionate" style="float:left; width: 14.2%">
-        <h1 class="attr_header">Affectionate:
-         <br> <span class="large_number"><%=@view_dog.ratings.where(affectionate: "on").count %></span> <br>votes </h1></div>
-      <div class="independent" style="float:left; width: 14.2%">
-        <h1 class="attr_header">Independent:
-       <br> <span class="large_number"><%=@view_dog.ratings.where(independent: "on").count %></span> <br>votes </h1></div>
-      <div class="playful" style="float:left; width: 14.2%">
-        <h1 class="attr_header">Playful:
-       <br> <span class="large_number"><%=@view_dog.ratings.where(playful: "on").count %></span> <br>votes </h1></div>
-      <div class="timid" style="float:left; width: 14.2%">
-        <h1 class="attr_header">Timid:
-       <br> <span class="large_number"><%=@view_dog.ratings.where(timid: "on").count %></span> <br>votes </h1></div>
-      <div class="good_with_kids" style="float:left; width: 14.2%">
-        <h1 class="attr_header">Good w/ Kids:
-       <br> <span class="large_number"><%=@view_dog.ratings.where(good_with_kids: "on").count %></span> <br>votes </h1></div>
-      <div class="high_energy" style="float:left; width: 14.2%">
-        <h1 class="attr_header">High Energy:
-       <br> <span class="large_number"><%=@view_dog.ratings.where(high_energy: "on").count %></span> <br>votes </h1></div>
-      <div class="chill" style="float:left; width: 14.2%">
-        <h1 class="attr_header">Chill:
-       <br> <span class="large_number"><%=@view_dog.ratings.where(chill: "on").count %></span> <br>votes </h1></div>
+      <div class="affectionate">
+        <h1 class="attr_header">Affectionate
+         <br> <span class="large_number"><%=@view_dog.ratings.where(affectionate: "on").count %></span> <br>votes </h1>
+       </div>
+      <div class="independent">
+        <h1 class="attr_header">Independent
+       <br> <span class="large_number"><%=@view_dog.ratings.where(independent: "on").count %></span> <br>votes </h1>
+     </div>
+      <div class="playful">
+        <h1 class="attr_header">Playful
+       <br> <span class="large_number"><%=@view_dog.ratings.where(playful: "on").count %></span> <br>votes </h1>
+     </div>
+      <div class="timid">
+        <h1 class="attr_header">Timid
+       <br> <span class="large_number"><%=@view_dog.ratings.where(timid: "on").count %></span> <br>votes </h1>
+     </div>
+      <div class="good_with_kids">
+        <h1 class="attr_header">Good w/ Kids
+       <br> <span class="large_number"><%=@view_dog.ratings.where(good_with_kids: "on").count %></span> <br>votes </h1>
+     </div>
+      <div class="high_energy">
+        <h1 class="attr_header">High Energy
+       <br> <span class="large_number"><%=@view_dog.ratings.where(high_energy: "on").count %></span> <br>votes </h1>
+     </div>
+      <div class="chill">
+        <h1 class="attr_header">Chill
+       <br> <span class="large_number"><%=@view_dog.ratings.where(chill: "on").count %></span> <br>votes </h1>
+     </div>
   </div>
 
   <div class="comments_section">
@@ -68,6 +75,8 @@
 
       <iframe width="460" height="315" src="https://www.youtube.com/embed/<%= rating.video_url.split('=')[-1] %>" frameborder="0" allowfullscreen></iframe>
       <% end %>
+      <% else %>
+      <p>No videos available at this moment.</p>
     <% end %>
   </div>
 
@@ -94,15 +103,15 @@
       <label for="video_link">Youtube Video Link: </label>
       <input type="text" name="dog[video_url]" id="video_link"> </textarea><br>
 
-      <label for="comment_field">Comments: </label>
+      <label for="comment_field"><span id="comment_label">Comments:</span> </label>
       <textarea name="dog[comments]" id="comment_field"> </textarea><br>
 
-      <button type="submit"> Submit </button>
-
-      <div class="padding"></div>
+      <button type="submit" id="rate_submit_button"> Submit </button>
 
     </form>
   </div>
+
+      <div class="padding"></div>
 
 </div>
 
