@@ -16,7 +16,7 @@ gem 'rake'
 gem 'shotgun'
 gem 'bcrypt'
 gem 'ilike'
-  gem 'faker'
+gem 'faker'
 
 
 group :test do

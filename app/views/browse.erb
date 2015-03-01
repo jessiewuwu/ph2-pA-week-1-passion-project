@@ -11,20 +11,24 @@
 <div class="browse_container">
 
   <div class="browse_list">
-      <% @all_dogs.each do |dog| %>
+      <% @all_dogs.each_slice(3) do |row| %>
       <br>
-      <div class="profile_box" id="<%=dog.id%>">
-        <div class="photo_div">
-          <img src= <%= dog.image_link %> style="float:left; margin: 0 15px 0 0;" class="browse_dog_pic" id="<%=dog.id%>"/>
+      <div class="row">
+          <% row.each do |dog| %>
+        <div class="profile_box" id="<%=dog.id%>">
+          <div class="photo_div">
+            <img src= <%= dog.image_link %> style="float:left; margin: 0 15px 0 0;" class="browse_dog_pic" id="<%=dog.id%>"/>
+          </div>
 
-          <p>Name: <%= dog.name%> </p>
-          <p>Breed: <%= dog.breed%> </p>
-          <p>Gender: <%= dog.gender%> </p><br>
-          <a href="/dogs/<%=dog.id%>">Click here for more information about <%= dog.name %></a>
+            <p>Name: <%= dog.name%> </p>
+            <p>Breed: <%= dog.breed%> </p>
+            <p>Gender: <%= dog.gender%> </p><br>
+            <a href="/dogs/<%=dog.id%>">Click here for more information about <%= dog.name %></a>
         </div>
+            <%end%>
         <br>
-      </div>
-      <% end %>
+    </div>
+        <% end %>
   </div>
 
   <div class="profile_show">
