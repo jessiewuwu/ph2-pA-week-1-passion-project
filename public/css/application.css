@@ -381,52 +381,89 @@ img:hover p.dog_info2 {
   color: white !important;
 }
 
-.attribute_list {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  clear: both;
-}
-
-.attribute_list ul li{
-  display: inline;
-  padding-right: 20px;
-}
-
-.attribute_list img {
-  width: 20px;
-}
-
-
 .dog_name {
   font-size: 60px;
   font-weight: bolder;
   text-shadow: 1px 1px lightgrey;
-
-
 }
 
-.rate_section {
-/*  float:left;*/
-/*  margin-top: 370px;*/
-/*  margin-bottom: 100px;*/
-  width: 90%;
-  margin: auto;
+/*------------profile: ratings ------------*/
+
+
+.attribute_list {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 250px;
 }
 
-.rate_section button {
-  margin-top: 50px;
-  width: 300px;
+.affectionate {
+  background: #E8A0B8;
+  height: 200px;
+  width: 14.2%;
+  float: left;
 }
 
-form #comment_field #video_link {
-  width: 300px;
+.independent {
+  background: #FFC300;
+  height: 200px;
+  width: 14.2%;
+  float: left;
 }
+
+.playful{
+  background: #BCCF3D;
+  height: 200px;
+  width: 14.2%;
+  float: left;
+}
+
+.timid {
+  background: #02C9C9;
+  height: 200px;
+  width: 14.2%;
+  float: left;
+}
+
+.good_with_kids {
+  background: #A8AAE0;
+  height: 200px;
+  width: 14.8%;
+  float: left;
+}
+
+.high_energy {
+  background: rgb(216, 69, 69);
+  height: 200px;
+  width: 14.2%;
+  float: left;
+}
+
+.chill {
+  background: #17A697;
+  height: 200px;
+  width: 14.2%;
+  float: left;
+}
+
+.attr_header {
+  font-size: 27px;
+  color: white;
+  font-weight: bolder;
+  padding-top: 10px;
+}
+
+.large_number {
+  font-size: 80px;
+}
+
+/*------------profile: comments/videos section ------------*/
 
 .comments_section {
-  margin-top: 50px;
+  margin-top: 100px;
   margin: auto;
   width: 90%;
 }
+
 .comments_section p {
   color: white !important;
 }
@@ -458,19 +495,59 @@ margin-bottom: 20px;
 padding: 10px;
 }
 
-/*.bubble:after
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 16px 14px 0;
-border-color: #778899 transparent;
-display: block;
-width: 0;
-z-index: 1;
-bottom: -16px;
-left: 47px;
+
+/*------------profile: rate form ------------*/
+
+
+.rate_section {
+/*  float:left;*/
+/*  margin-top: 370px;*/
+/*  margin-bottom: 100px;*/
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
-*/
+
+.rate_section button {
+  margin-top: 50px;
+  width: 503px;
+}
+
+.rate_section #rate_submit_button {
+  margin-top: 50px;
+  width: 200px;
+  height: 30px;
+}
+
+.rate_section form {
+  padding-left: 25px;
+  padding-right: 10px;
+  border: 1px solid slategrey;
+  width: 465px;
+  background: #F2F2F2;
+}
+
+form #video_link {
+  width: 300px;
+  margin-bottom:15px;
+}
+
+form #comment_field {
+  width: 445px;
+  height: 91px;
+  margin-top: 18px;
+}
+
+.rate_section #comment_label {
+  display: table-cell;
+  vertical-align: middle;
+  margin-top: 18px;
+}
+
+.rate_section textarea {
+  /*float: right;*/
+  display: inline;
+}
+
 
 

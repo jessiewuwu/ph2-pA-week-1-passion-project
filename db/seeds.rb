@@ -41,7 +41,7 @@ end
 
 def seed_ratings(traits, comments)
 
-  50.times do
+  100.times do
    Rating.create(dog_id: rand(55), comments: comments.sample, affectionate: traits.sample, playful: traits.sample, good_with_kids: traits.sample, chill: traits.sample, independent: traits.sample, timid: traits.sample, high_energy: traits.sample)
   end
 
