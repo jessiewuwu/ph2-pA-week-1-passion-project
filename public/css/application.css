@@ -28,6 +28,16 @@
   font-size: 22px;
 }
 
+.blacken {
+    /* background: black; */
+
+    /* opacity: .7; */
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+}
+
 /*------------INDEX PAGE------------*/
 .adopt_line {
   font-size: 43px;

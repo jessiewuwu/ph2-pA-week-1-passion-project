@@ -59,6 +59,9 @@ $(document).ready(function() {
 
           $('.list').remove();
           $('.profile_show').append(data);
+          $('.blacken').attr("background", "black")
+          $('.blacken').attr("opacity", ".7")
+          $('.profile_show').dialog({width:'1040'});
         });
 
 }

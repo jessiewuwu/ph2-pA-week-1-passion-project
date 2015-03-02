@@ -1,29 +1,6 @@
 
-<div class="list">
 
-  <div class="profile_panel">
-    <img src=<%= @view_dog.image_link %> width="500px" style="padding: 50px"/>
-    <div class="description">
-      <span class="dog_name"><%= @view_dog.name%> </span>
-      <p><strong>Breed:</strong> <%= @view_dog.breed%> </p>
-        <% if @view_dog.gender == "Male"%>
-          <p><strong>Gender:</strong> <%= @view_dog.gender%> <i class="fa fa-mars"></i>  </p>
-
-        <% elsif @view_dog.gender == "Female" %>
-          <p><strong>Gender:</strong> <%= @view_dog.gender%> <i class="fa fa-venus"></i></p>
-        <% else %>
-          <p><strong>Gender:</strong> Unknown <i class="fa fa-circle-thin"></i></p>
-        <% end%>
-
-
-      <p><strong>Description:</strong> <%= @view_dog.description%> </p><br>
-      <button id="fdr_button"><a href=<%= @view_dog.direct_url%>>Full Profile on Family Dog Rescue</a></button><br>
-      <a href="mailto:adopt@norcalfamilydogrescue.org?subject=Interested in Adopting/Fostering&body=Hey! I would like to set a playdate!">
-        <i class="fa fa-paper-plane"></i>
-      Email FDR about this dog!</a>
-
-    </div>
-  </div>
+  <%= erb :_profiles %>
 
   <div class="attribute_list">
       <div class="affectionate">

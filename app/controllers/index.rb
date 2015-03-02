@@ -137,7 +137,6 @@ get '/dogs/:id' do
   else
     erb :profile
   end
-  # if it's an http request, apply profile
 end
 
 get '/dogs/:id/rate' do
