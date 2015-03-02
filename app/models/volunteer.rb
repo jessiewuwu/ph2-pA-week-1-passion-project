@@ -4,6 +4,8 @@ class Volunteer < ActiveRecord::Base
   include BCrypt
   has_many :ratings
   has_many :dogs, :through => :ratings
+  has_many :favorites
+  has_many :dogs, :through => :favorites
 
   validates :name, presence: true
   validates :email, presence: true

@@ -22,15 +22,33 @@ $(document).ready(function() {
       });
     });
 
-    $('.photo_div img').draggable({helper: 'clone'});
+    $('.drag-dog-container').draggable({helper: 'clone'});
 
     $('.playground_section').droppable({
-      accept: '.photo_div img',
+      accept: '.drag-dog-container',
       drop: function(event, ui){
         $(this).append($(ui.draggable).clone());
+        $('.favorite-button').show();
       }
     });
 
+    $('.favorite-button').on('click', function() {
+      var favoriteIds = getFavoriteIds();
+      var data = { favorite_ids: favoriteIds };
+      var ajaxFave = $.ajax ({
+        url: '/favorites',
+        type: 'post',
+        data: data
+      });
+    });
+
+    function getFavoriteIds() {
+      var $dogImgs = $('.playground_section').find('.browse_dog_pic');
+
+      return $dogImgs.map(function() {
+        return this.getAttribute('data-dog-id');
+      }).toArray();
+    }
 
     $('.playground_section').on('click', 'img', pullUpProfile);
 
@@ -59,6 +77,9 @@ $(document).ready(function() {
 
           $('.list').remove();
           $('.profile_show').append(data);
+          $('.blacken').attr("background", "black")
+          $('.blacken').attr("opacity", ".7")
+          $('.profile_show').dialog({width:'1040'});
         });
 
 }

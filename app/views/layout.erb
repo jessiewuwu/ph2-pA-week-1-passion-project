@@ -7,9 +7,9 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
-   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/application.css">
-    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
@@ -26,19 +26,14 @@
       <li><a href="/browse">browse</a></li>
       <li><a href="/randomize">randomize!</a></li>
 
-      <% if admin_logged_in? %>
-        <li><a href="/options">options</a></li>
-        <li><a href="/logout">log out</a></li>
-      <% end %>
-
       <% if logged_in? %>
-          <li><a href="/logout">log out</a></li>
+      <li><a href="/logout">log out</a></li>
       <% end %>
     </ul>
   </div>
-
-  <%= yield %>
-
+  <div class="blacken">
+    <%= yield %>
+  </div>
   <div class="spacing"></div>
 
 
