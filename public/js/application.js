@@ -22,12 +22,13 @@ $(document).ready(function() {
       });
     });
 
-    $('.left_column img, .center_column img, .right_column img').draggable({helper: 'clone'});
+    $('.drag-dog-container').draggable({helper: 'clone'});
 
     $('.playground_section').droppable({
-      accept: '.left_column img, .center_column img, .right_column img',
+      accept: '.drag-dog-container',
       drop: function(event, ui){
         $(this).append($(ui.draggable).clone());
+        $('.favorite-button').show();
       }
     });
 

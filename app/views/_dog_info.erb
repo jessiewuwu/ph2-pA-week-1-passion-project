@@ -1,0 +1,13 @@
+
+<div class="overlay">
+    <p class="dog_info">
+      <%= dog.name%> <br>
+      <%= dog.breed%> <br>
+      <%= dog.gender%> <br>
+    </p>
+</div>
+<div class="text-centered drag-dog-container">
+  <img src= <%= dog.image_link %> class="browse_dog_pic" id="<%=dog.id%>"/><br>
+
+</div>
+<a href="/dogs/<%=dog.id%>"> <%= dog.name %>'s Full Profile</a>

@@ -5,6 +5,14 @@
 
 /*----------index-------------*/
 
+.text-centered {
+  text-align: center;
+}
+
+.playground_section .drag-dog-container {
+  float: left;
+}
+
 .container {
   width: 80%;
   margin-right: auto;
@@ -126,7 +134,7 @@ img.banner_pic {
   position: fixed;
   background-color: white;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   padding-bottom: 15px;
 }
 
@@ -331,6 +339,10 @@ img:hover p.dog_info2 {
 
 .playground_section h2 {
   margin-top: 50px;
+}
+
+.favorite-button {
+  display: none;
 }
 
 #hide_show {
