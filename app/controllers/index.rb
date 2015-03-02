@@ -172,4 +172,9 @@ get '/randomize' do
   redirect "dogs/#{Dog.all.sample.id}"
 end
 
+post '/favorites' do
+  params[:favorite_ids].each do |id|
+    Favorite.create(dog_id: id.to_i)
+  end
+end
 

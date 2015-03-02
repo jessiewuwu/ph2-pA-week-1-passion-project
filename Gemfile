@@ -28,5 +28,6 @@ end
 
 group :test, :development do
   gem 'debugger'
+  gem 'byebug'
   gem 'factory_girl'
 end

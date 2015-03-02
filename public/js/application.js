@@ -32,6 +32,23 @@ $(document).ready(function() {
       }
     });
 
+    $('.favorite-button').on('click', function() {
+      var favoriteIds = getFavoriteIds();
+      var data = { favorite_ids: favoriteIds };
+      var ajaxFave = $.ajax ({
+        url: '/favorites',
+        type: 'post',
+        data: data
+      });
+    });
+
+    function getFavoriteIds() {
+      var $dogImgs = $('.playground_section').find('.browse_dog_pic');
+
+      return $dogImgs.map(function() {
+        return this.getAttribute('data-dog-id');
+      }).toArray();
+    }
 
     $('.playground_section').on('click', 'img', pullUpProfile);
 

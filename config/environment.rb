@@ -17,6 +17,7 @@ require 'logger'
 require 'faker'
 require 'sinatra'
 require "sinatra/reloader" if development?
+require 'byebug' if development?
 
 require 'erb'
 
