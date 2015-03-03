@@ -66,7 +66,7 @@ $(document).ready(function() {
     function pullUpProfile(event){
 
       event.preventDefault();
-      var id = $(this).attr('id');
+      var id = $(this).data('dog-id');
 
       var ajaxProfile = $.ajax({
         url: '/dogs/' + id,

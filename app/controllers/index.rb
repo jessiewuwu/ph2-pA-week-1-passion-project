@@ -18,21 +18,6 @@ get '/search/results' do
   erb :search_results
 end
 
-get '/login/admin' do
-
-  erb :loginadmin
-end
-
-post '/login/admin' do
-  @admin = Admin.find_by(username: params[:username])
-  if @admin && @admin.password == params[:password]
-    session[:admin_id] = @admin.id
-    redirect '/options'
-  else
-    redirect '/login/admin'
-  end
-end
-
 get '/login' do
   erb :login
 end
