@@ -96,3 +96,39 @@ iterate through this where when "$('#checkbox_independent').is(":checked")" give
  <p>Name: <%= dog.name%> </p>
             <p>Breed: <%= dog.breed%> </p>
             <p>Gender: <%= dog.gender%> </p><br>
+
+
+
+
+
+
+
+
+
+
+//// P10 v.2 ////
+
+*HAS MANY
+  - FAVORITES:
+    ? what if the user is not logged in?
+
+*STYLIZED SITE
+  - INDEX - Add icons & descriptions
+  - BROWSE - hover effect w/ info (javascript?); dialog box;
+  - SEARCH: ilike or autocomplete
+  - FAVORITES page - compares all the ones you favorited
+
+*API
+  - Instagram tagged photo?
+  - Rescue Orgs api?
+
+*AJAX
+  - PLAYGROUND - remove a dog from the playground with ajax
+
+*JAVASCRIPT EFFECTS - BROWSE
+  - hover effect with javascript
+  - during drag, thumbnail becomes smaller
+  -
+
+
+
