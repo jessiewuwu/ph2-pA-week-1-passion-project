@@ -2,29 +2,8 @@ $(document).ready(function() {
     bindEvents();
   });
 
-  function bindEvents() {
-
-    $('#login_form').hide(function(){
-      $('.login_section button').on('click', function(){
-        $('#login_form').slideToggle();
-      });
-    });
-
-    $('#register_form').hide(function(){
-      $('.register_section button').on('click', function(){
-        $('#register_form').slideToggle();
-      });
-    });
-
-    $('.rate_form').hide(function(){
-      $('.rate_section button').on('click', function() {
-        $('.rate_form').slideToggle();
-      });
-    });
-
-    $('.drag-dog-container').draggable({helper: 'clone'});
-
-    function shrinkImage(clone) {
+  ImageResizer = {
+    shrinkImage: function(clone) {
       var dogImage = clone[0].getElementsByTagName("img")[0];
       var currW = dogImage.width;
       var currH = dogImage.height;
@@ -47,18 +26,42 @@ $(document).ready(function() {
       }
 
       dogImage.setAttribute("style", "width:"+ newSize[0] + "px;" + "height:" + newSize[1]+"px;");
-      // dogImage.style.width = "" +newSize[0];
-      // dogImage.style.height = "" +newSize[1];
 
       return dogImage
     }
+  }
+
+  function bindEvents() {
+
+    $('#login_form').hide(function(){
+      $('.login_section button').on('click', function(){
+        $('#login_form').slideToggle();
+      });
+    });
+
+    $('#register_form').hide(function(){
+      $('.register_section button').on('click', function(){
+        $('#register_form').slideToggle();
+      });
+    });
+
+    $('.rate_form').hide(function(){
+      $('.rate_section button').on('click', function() {
+        $('.rate_form').slideToggle();
+      });
+    });
+
+    $('.drag-dog-container').draggable({helper: 'clone'});
+
+
 
     $('.playground_section').droppable({
       accept: '.drag-dog-container',
       drop: function(event, ui){
         var clone = $(ui.draggable).clone();
-        $(this).append(shrinkImage(clone));
-        $('.favorite-button').show();
+        $(this).append(ImageResizer.shrinkImage(clone));
+        $('.favorite-button').css('display','block').show();
+
       }
     });
 

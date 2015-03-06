@@ -134,7 +134,7 @@ img.banner_pic {
   position: fixed;
   background-color: white;
   width: 100%;
-  z-index: 3;
+  z-index: 8;
   padding-bottom: 15px;
 }
 
@@ -324,37 +324,45 @@ img:hover p.dog_info2 {
 
 
 .playground_section {
-  height: 300px;
+  height: 370px;
   position: fixed;
   width: 100%;
-  top: 32px;
+  top: 56px;
 /*  margin-top: 20px;*/
-  background-image: url("../imgs/playground.jpg");
-  background-size: 90%;
-  background-repeat: no-repeat;
+/*  background-image: url("../imgs/playground.jpg");
+  background-size: 68%;
+  background-repeat: repeat;*/
+  background: rgb(242, 242, 242);
   float:left;
   clear:left;
   padding-left: 92px;
 }
 
 .playground_section h2 {
-  margin-top: 50px;
+  margin-top: 65px;
 }
 
 .favorite-button {
   display: none;
+  height: 20px;
+  font-size: 15px;
+  margin-bottom: 16px;
 }
 
 #hide_show {
   float: left;
   position: fixed;
-  top: 55px; /*- was top: 410; Adell*/
+  top: 77px; /*- was top: 410; Adell*/
   z-index: 5; /*line added by Adell*/
   left: 5px;
   margin-bottom: 10px;
   padding-left: 85px;
 }
 
+#hide_show button {
+  height: 20px;
+  font-size: 15px;
+}
 
 /*------------profile------------*/
 .list {
@@ -367,6 +375,11 @@ img:hover p.dog_info2 {
   margin: auto;
   background: rgb(242, 242, 242);
   display: flex;
+}
+
+.profile_panel img {
+  max-width: 250px;
+  max-height: 350px;
 }
 
 .description {
@@ -420,62 +433,62 @@ img:hover p.dog_info2 {
 
 .affectionate {
   background: #E8A0B8;
-  height: 200px;
+  height: 142px;
   width: 14.2%;
   float: left;
 }
 
 .independent {
   background: #FFC300;
-  height: 200px;
+  height: 142px;
   width: 14.2%;
   float: left;
 }
 
 .playful{
   background: #BCCF3D;
-  height: 200px;
+  height: 142px;
   width: 14.2%;
   float: left;
 }
 
 .timid {
-  background: #02C9C9;
-  height: 200px;
+  background: #32DEDE;
+  height: 142px;
   width: 14.2%;
   float: left;
 }
 
 .good_with_kids {
   background: #A8AAE0;
-  height: 200px;
+  height: 142px;
   width: 14.8%;
   float: left;
 }
 
 .high_energy {
-  background: rgb(216, 69, 69);
-  height: 200px;
+  background: rgb(237, 87, 87);
+  height: 142px;
   width: 14.2%;
   float: left;
 }
 
 .chill {
-  background: #17A697;
-  height: 200px;
+  background: #1AC6AE;
+  height: 142px;
   width: 14.2%;
   float: left;
 }
 
 .attr_header {
-  font-size: 27px;
+  font-size: 20px;
   color: white;
   font-weight: bolder;
   padding-top: 10px;
 }
 
 .large_number {
-  font-size: 80px;
+  font-size: 57px;
 }
 
 /*------------profile: comments/videos section ------------*/
