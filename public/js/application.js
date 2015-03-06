@@ -24,10 +24,40 @@ $(document).ready(function() {
 
     $('.drag-dog-container').draggable({helper: 'clone'});
 
+    function shrinkImage(clone) {
+      var dogImage = clone[0].getElementsByTagName("img")[0];
+      var currW = dogImage.width;
+      var currH = dogImage.height;
+
+      var newSize = scaleSize(130, 130, currW, currH);
+
+      function scaleSize(maxW, maxH, currW, currH){
+
+        var ratio = currH / currW;
+
+        if(currW >= maxW && ratio <= 1){
+          currW = maxW;
+          currH = currW * ratio;
+        } else if(currH >= maxH){
+          currH = maxH;
+          currW = currH / ratio;
+        }
+
+        return [currW, currH];
+      }
+
+      dogImage.setAttribute("style", "width:"+ newSize[0] + "px;" + "height:" + newSize[1]+"px;");
+      // dogImage.style.width = "" +newSize[0];
+      // dogImage.style.height = "" +newSize[1];
+
+      return dogImage
+    }
+
     $('.playground_section').droppable({
       accept: '.drag-dog-container',
       drop: function(event, ui){
-        $(this).append($(ui.draggable).clone());
+        var clone = $(ui.draggable).clone();
+        $(this).append(shrinkImage(clone));
         $('.favorite-button').show();
       }
     });
@@ -81,5 +111,7 @@ $(document).ready(function() {
           $('.blacken').attr("opacity", ".7")
           $('.profile_show').dialog({width:'1040'});
         });
+
+
 
 }
