@@ -6,15 +6,13 @@
     <button id="add" type="submit">Search</button>
   </form>
 
-<% if @breed_list.length > 0 %>
+<div class="search_section">
 
-  <h2>Results</h2>
-  <% @breed_list.each do |dog| %>
-  <p><strong>Name:</strong> <%= dog.name %></p>
-  <p><strong>Breed:</strong> <%= dog.breed %></p>
-  <p><strong>Gender:</strong> <%= dog.gender %></p>
-  <a href="/dogs/<%=dog.id%>">Go to <%= dog.name%>'s profile</a><br><br>
-  <% end %>
+
+</div>
+
+<% if @breed_list.length > 0 %>
+  <p>testing, the breed_list length is > 0 </p>
 
 
 <% else %>
