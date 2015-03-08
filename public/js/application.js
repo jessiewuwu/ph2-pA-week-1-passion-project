@@ -112,7 +112,7 @@ $(document).ready(function() {
           $('.profile_show').append(data);
           $('.blacken').attr("background", "black")
           $('.blacken').attr("opacity", ".7")
-          $('.profile_show').dialog({width:'1040'});
+          $('.profile_show').dialog({width:'1240', height: '700'});
         });
 
 

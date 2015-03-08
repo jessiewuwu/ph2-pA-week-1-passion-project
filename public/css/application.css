@@ -281,13 +281,17 @@ input {
   margin-top: 35px;
 }
 
-.overlay {
+/*.overlay {
   background:rgba(0,0,0,.75);
   text-align:center;
   padding:45px 0 200px 0;
   opacity:0;
   -webkit-transition: opacity .25s ease;
   -moz-transition: opacity .25s ease;
+}*/
+
+.overlay {
+  text-align: center;
 }
 
 .left_column:hover .overlay {
@@ -377,11 +381,11 @@ img:hover p.dog_info2 {
   display: flex;
 }
 
-.profile_panel img {
+/*.profile_panel img {
   max-width: 250px;
   max-height: 350px;
 }
-
+*/
 .profile_panel p {
   font-size: 25px;
 }
