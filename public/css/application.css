@@ -386,8 +386,11 @@ img:hover p.dog_info2 {
 .profile_panel {
   margin: auto;
   background: rgb(242, 242, 242);
-  display: flex;
+  height: 400px;
+  padding-bottom: 55px;
+  padding-top: 4px;
 }
+
 
 /*.profile_panel img {
   max-width: 250px;
@@ -398,14 +401,14 @@ img:hover p.dog_info2 {
   font-size: 25px;
 }
 
-.bio {
-  margin-right: 150px;
-  margin-top: 101px;
-  float:left;
+.pic_left {
+  float: left;
+  width: 23%;
 }
 
-.words {
-  font-size: 17px;
+.pic_left img {
+  max-width: 300px;
+  max-height: 350px;
 }
 
 .description {
@@ -413,6 +416,21 @@ img:hover p.dog_info2 {
   margin: auto;
   margin-left: 0px;
   margin-top: 40px;
+  display: inline-block;
+  width: 25%;
+  /*overflow: /*hidden*/;*/
+}
+
+.bio {
+  margin-right: 150px;
+  margin-top: 101px;
+  float:right;
+  width: 42%;
+}
+
+
+.words {
+  font-size: 17px;
 }
 
 .description a:link {
