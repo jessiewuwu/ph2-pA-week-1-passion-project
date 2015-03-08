@@ -1,6 +1,6 @@
 <div class="list">
 <div class="profile_panel">
-    <img src=<%= @view_dog.image_link %> style="padding: 50px"/>
+    <img src=<%= @view_dog.image_link %> style="padding: 50px 50px 50px 150px"/>
     <div class="description">
       <span class="dog_name"><%= @view_dog.name%> </span>
       <p><strong>Breed:</strong> <%= @view_dog.breed%> </p>
@@ -13,8 +13,6 @@
           <p><strong>Gender:</strong> Unknown <i class="fa fa-circle-thin"></i></p>
         <% end%>
 
-
-      <p><strong>Description:</strong> <%= @view_dog.description%> </p><br>
       <button id="fdr_button"><a href=<%= @view_dog.direct_url%>>Full Profile on Family Dog Rescue</a></button><br>
       <a href="mailto:adopt@norcalfamilydogrescue.org?subject=Interested in Adopting/Fostering&body=Hey! I would like to set a playdate!">
         <i class="fa fa-paper-plane"></i>
@@ -25,4 +23,10 @@
       <% end %>
 
     </div>
+
+    <div class="bio">
+       <p>Description:</p>
+       <span class="words"> <%= @view_dog.description%> </span>
+    </div>
+
   </div>

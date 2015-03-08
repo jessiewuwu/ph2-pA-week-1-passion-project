@@ -10,18 +10,17 @@ require 'json'
 
 # Dog.create!(name: "Tomas", breed: "Chihuahua", description: "Miguel's twin brother. He loves attention and sleeping next to you in bed.")
 
-Volunteer.create!(name: "Jessie", email: "jessie@wu.com", username: "jwu", password: "jessie")
+User.create(name: "Jessie", email: "jessie@wu.com", username: "jessie", password: "jessie")
 
-Volunteer.create!(name: "Michelle", email: "michelle@gmail.com", username: "mish", password: "michelle")
+User.create(name: "Michelle", email: "michelle@gmail.com", username: "michelle", password: "michelle")
 
 
-Volunteer.create!(name: "Andrew", email: "andrew@gmail.com", username: "beard", password: "andrew")
+User.create(name: "Andrew", email: "andrew@gmail.com", username: "beard", password: "andrew")
 
-Admin.create!(name: "Amadou", email: "amadou@mycode.com", password: "amadou", username: "admin")
 
-Rating.create!(volunteer_id: 1, dog_id: 1, independent: "on", comments: "So cute!", video_url: "https://www.youtube.com/watch?v=nDJAIPliZLI")
+Rating.create(user_id: 1, dog_id: 6, independent: "on", chill:"on", affectionate: "on", comments: "So cute! I love her little tongue sticking out. Sometimes when she sleeps, her tongue gets all dried and shriveled up.", video_url: "https://www.youtube.com/watch?v=9DU9mcMBIGA")
 
-Rating.create!(volunteer_id: 2, dog_id: 4, affectionate: "on", chill: "on", independent: "on", comments: "Loves to politely ask for attention by pawing at your hand. He doesn't play much, but he does like to hang out next to you all day.")
+Rating.create(user_id: 2, dog_id: 59, affectionate: "on", chill: "on", independent: "on", comments: "Loves to politely ask for attention by pawing at your hand. He doesn't play much on hot days, but he does like to hang out next to you all day every day.", video_url: "https://www.youtube.com/watch?v=1HE3bZq9ztg")
 
 def parse_dogs_json
   @dog_data = JSON.parse(IO.read('dogsData.json'))
@@ -33,7 +32,7 @@ def seed_dogs(data)
   # data = @dog_data["collection1"]
   i = 0
   59.times do
-    Dog.create(name: data[i]["dog_name"]["text"], breed: data[i]["breed"], image_link: data[i]["image"]["src"], description: Faker::Lorem.sentence(3), gender: data[i]["gender"], direct_url: data[i]["dog_name"]["href"])
+    Dog.create(name: data[i]["dog_name"]["text"], breed: data[i]["breed"], image_link: data[i]["image"]["src"], description: Faker::Lorem.paragraph(2), gender: data[i]["gender"], direct_url: data[i]["dog_name"]["href"])
     i+=1
   end
 end
@@ -41,7 +40,7 @@ end
 
 def seed_ratings(traits, comments)
 
-  100.times do
+  200.times do
    Rating.create(dog_id: rand(55), comments: comments.sample, affectionate: traits.sample, playful: traits.sample, good_with_kids: traits.sample, chill: traits.sample, independent: traits.sample, timid: traits.sample, high_energy: traits.sample)
   end
 
