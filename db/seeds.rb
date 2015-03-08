@@ -32,7 +32,7 @@ def seed_dogs(data)
   # data = @dog_data["collection1"]
   i = 0
   59.times do
-    Dog.create(name: data[i]["dog_name"]["text"], breed: data[i]["breed"], image_link: data[i]["image"]["src"], description: Faker::Lorem.sentence(9), gender: data[i]["gender"], direct_url: data[i]["dog_name"]["href"])
+    Dog.create(name: data[i]["dog_name"]["text"], breed: data[i]["breed"], image_link: data[i]["image"]["src"], description: Faker::Lorem.paragraph(2), gender: data[i]["gender"], direct_url: data[i]["dog_name"]["href"])
     i+=1
   end
 end
