@@ -33,6 +33,8 @@ $(document).ready(function() {
 
   function bindEvents() {
 
+  $('#search_form').on('submit', getSearchResults);
+
     $('#login_form').hide(function(){
       $('.login_section button').on('click', function(){
         $('#login_form').slideToggle();
@@ -116,5 +118,40 @@ $(document).ready(function() {
         });
 
 
+}
+
+var getSearchResults = function(event){
+  event.preventDefault();
+  var formData = $(this).serialize();
+  console.log(formData)
+  $.ajax({
+    url: '/search',
+    type: 'post',
+    data: formData,
+  })
+  .done(function(serverData) {
+    for (var i in serverData) {
+      var id = serverData[i]["id"];
+      var name = serverData[i]["name"];
+      var breed = serverData[i]["breed"];
+      var gender = serverData[i]["gender"];
+      var image_link = serverData[i]["image_link"];
+      // <img src="direct_url">
+      var imgTag = "<img src='"+image_link+"'style='max-width: 350px; max-height: 500px'>"
+      var aTag = "<a href='/dogs/" + id + "'>Click here to see their ratings</a>"
+      var infoTag = "<span class='search_results'>"+ name +
+       "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " +breed +
+      "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + gender +
+      "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + aTag +
+      "</span><br><br>";
+      $('.search_container').append(imgTag, infoTag)
+    }
+  })
+  .fail(function() {
+    console.log("error");
+  })
+  .always(function() {
+    console.log("complete");
+  });
 
 }

@@ -1,9 +1,9 @@
 <div class="search_container">
 
 
-  <form action="/search" method="post">
+  <form action="/search" method="post" id="search_form">
     <input type='text' name='breed' placeholder="  type of breed" size="45">
-    <input type='submit' value='submit'>
+    <button id="add" type="submit">Search</button>
   </form>
 
 <% if @breed_list.length > 0 %>

@@ -178,6 +178,11 @@ img.banner_pic {
   /* top: 400px; */
 }
 
+.search_results {
+  padding-left: 90px;
+  font-size: 20px;
+}
+
 /*------------forms/buttons------------*/
 .sub_container button {
   width: 345px;

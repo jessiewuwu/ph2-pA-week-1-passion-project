@@ -22,6 +22,9 @@ post '/search' do
     p 'else statement'
   end
   erb :search_results
+
+  content_type :json
+  @breed_list.to_json
 end
 
 get '/login' do
