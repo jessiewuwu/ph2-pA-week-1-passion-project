@@ -116,7 +116,11 @@ $(document).ready(function() {
           $('.profile_show').dialog({width:'1240', height: '700'});
         });
 
+  $('button#show_browse').on('click', function(){
+    alert('clicked');
+    $('.browse_list').css("display", "inline");
 
+  });
 
 }
 
@@ -143,8 +147,11 @@ var getSearchResults = function(event){
       "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + gender +
       "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + aTag +
       "</span><br><br>";
+      $('.playground_section').hide();
+      $('.browse_list').hide();
       $('.search_section').empty();
       $('.search_section').append(imgTag, infoTag);
+      $('.search_section').append("<button id='show_browse'>Browse</button>");
     }
   })
   .fail(function() {

@@ -59,6 +59,7 @@
 
 form {
   padding-bottom: 20px;
+  margin-left: 41%;
 }
 
 .spacing {
@@ -356,6 +357,7 @@ img:hover p.dog_info2 {
   float:left;
   clear:left;
   padding-left: 92px;
+  z-index: -1;
 }
 
 .playground_section h2 {
