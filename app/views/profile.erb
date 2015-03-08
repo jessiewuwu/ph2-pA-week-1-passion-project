@@ -37,7 +37,7 @@
     <h1>What Everyone is Saying About <%=@view_dog.name%></h1>
     <% if !@valid_comments.blank? %>
       <% @valid_comments.each do |rating| %>
-      <div class="bubble">
+      <div class="bubble" style="background-color: <%= @colors.sample %>">
         <p><%= rating.comments %></p>
       </div>
       <% end %>
