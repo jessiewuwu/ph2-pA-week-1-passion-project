@@ -23,10 +23,10 @@ get '/login' do
 end
 
 post '/login' do
-  @volunteer = Volunteer.find_by(username: params[:username])
+  @user = User.find_by(username: params[:username])
   #if the username matches the db, then, redirect them to the main page
-  if @volunteer && @volunteer.password == params[:password]
-    session[:volunteer_id] = @volunteer.id #it stores the volunteer_id, which indicates they are logged in so they don't have to keep logging in and you don't have to keep looking their volunteer info when they go to a different page
+  if @user && @user.password == params[:password]
+    session[:user_id] = @user.id #it stores the volunteer_id, which indicates they are logged in so they don't have to keep logging in and you don't have to keep looking their volunteer info when they go to a different page
   else
     @error = true
     erb :login
@@ -94,12 +94,12 @@ get '/register' do
 end
 
 post '/register' do
-  new_volunteer = Volunteer.new(params)
-  if new_volunteer.save
-    session[:volunteer_id] = new_volunteer.id
+  new_user = User.new(params)
+  if new_user.save
+    session[:user_id] = new_user.id
     redirect '/'
   else
-    @invalid_error = new_volunteer.errors.full_messages.join(" ")
+    @invalid_error = new_user.errors.full_messages.join(" ")
     erb :register
   end
 end

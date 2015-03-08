@@ -1,6 +1,6 @@
 require 'bcrypt'
 
-class Volunteer < ActiveRecord::Base
+class User < ActiveRecord::Base
   include BCrypt
   has_many :ratings
   has_many :dogs, :through => :ratings

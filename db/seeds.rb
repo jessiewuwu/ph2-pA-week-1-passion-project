@@ -33,7 +33,7 @@ def seed_dogs(data)
   # data = @dog_data["collection1"]
   i = 0
   59.times do
-    Dog.create(name: data[i]["dog_name"]["text"], breed: data[i]["breed"], image_link: data[i]["image"]["src"], description: Faker::Lorem.sentence(3), gender: data[i]["gender"], direct_url: data[i]["dog_name"]["href"])
+    Dog.create(name: data[i]["dog_name"]["text"], breed: data[i]["breed"], image_link: data[i]["image"]["src"], description: Faker::Lorem.sentence(9), gender: data[i]["gender"], direct_url: data[i]["dog_name"]["href"])
     i+=1
   end
 end
@@ -41,7 +41,7 @@ end
 
 def seed_ratings(traits, comments)
 
-  100.times do
+  200.times do
    Rating.create(dog_id: rand(55), comments: comments.sample, affectionate: traits.sample, playful: traits.sample, good_with_kids: traits.sample, chill: traits.sample, independent: traits.sample, timid: traits.sample, high_energy: traits.sample)
   end
 

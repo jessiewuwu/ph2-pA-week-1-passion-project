@@ -1,7 +1,7 @@
 class CreateRatings < ActiveRecord::Migration
   def change
     create_table  :ratings do |t|
-      t.references  :volunteer
+      t.references  :user
       t.references  :dog
       t.string  :affectionate
       t.string  :independent
