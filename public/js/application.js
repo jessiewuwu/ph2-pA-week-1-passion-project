@@ -109,7 +109,6 @@ $(document).ready(function() {
       });
 
         ajaxProfile.done(function(data){
-
           $('.list').remove();
           $('.profile_show').append(data);
           $('.blacken').attr("background", "black")
@@ -137,15 +136,15 @@ var getSearchResults = function(event){
       var breed = serverData[i]["breed"];
       var gender = serverData[i]["gender"];
       var image_link = serverData[i]["image_link"];
-      // <img src="direct_url">
-      var imgTag = "<img src='"+image_link+"'style='max-width: 350px; max-height: 500px'>"
+      var imgTag = "<img src=' "+ image_link + "'style='padding-top: 90px; max-width: 350px; max-height: 400px'>"
       var aTag = "<a href='/dogs/" + id + "'>Click here to see their ratings</a>"
       var infoTag = "<span class='search_results'>"+ name +
-       "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " +breed +
+       "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + breed +
       "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + gender +
       "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + aTag +
       "</span><br><br>";
-      $('.search_container').append(imgTag, infoTag)
+      $('.search_section').empty();
+      $('.search_section').append(imgTag, infoTag);
     }
   })
   .fail(function() {

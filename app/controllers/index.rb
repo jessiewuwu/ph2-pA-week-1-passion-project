@@ -5,6 +5,9 @@ end
 
 get '/browse' do
   @all_dogs = Dog.all.sort
+  # @breed_list = Dog.where(breed: params[:breed])
+  # content_type :json
+  # @breed_list.to_json
   erb :browse
 end
 

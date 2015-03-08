@@ -158,7 +158,15 @@ img.banner_pic {
   margin-right: 189px;
   padding-top: 100px;
   padding-left: 100px;
+}
 
+.search section {
+  width: 80%;
+}
+.search_section img {
+  max-height: 350px;
+  max-width: 300px;
+  padding-left: 471px;
 }
 
 .error_red {

@@ -1,3 +1,18 @@
+  <div class="search_show">
+    <div class="search_container">
+      <form action="/search" method="post" id="search_form">
+        <input type='text' name='breed' placeholder="  type of breed" size="45">
+        <button id="add" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="search_section">
+
+    </div>
+  </div>
+
+
+
 <div class="playground_section">
   <h2>Add dogs to the Playground!</h2>
   <h3>Drag the dog's photo here and click on it to get their profile</h3>
@@ -9,7 +24,7 @@
   <button id="show">Show Playground</button>
 </div>
 
-<div class="browse_container">
+<div class="browse_container" >
 
   <div class="browse_list">
       <% @all_dogs.each_slice(3) do |row| %>
@@ -37,9 +52,10 @@
         <% end %>
   </div>
 
-  <div class="profile_show">
+<div class="profile_show">
 
-  </div>
+</div>
+
 
   <div class="clear"></div>
 </div>
