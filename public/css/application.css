@@ -161,6 +161,9 @@ img.banner_pic {
 
 }
 
+.error_red {
+  color: #C11D20;
+}
 
 #search_spot {
   text-align: center;

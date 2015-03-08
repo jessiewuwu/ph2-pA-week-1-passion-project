@@ -9,12 +9,18 @@ get '/browse' do
 end
 
 get '/search' do
-  erb :search
+  @breed_list = Dog.where(breed: params[:breed])
+  erb :search_results
 end
 
-get '/search/results' do
-  @breed_list = Dog.where(breed: params[:breed])
-
+post '/search' do
+  # search_breed = params[:breed]
+  @breed_list = Dog.where(breed: params[:breed].capitalize)
+  if @breed_list.empty?
+    @no_breed = "no results. please try again."
+  else
+    p 'else statement'
+  end
   erb :search_results
 end
 
