@@ -112,7 +112,7 @@
         "breed": "Poodle",
         "gender": "Female",
         "image": {
-          "src": "http://cdn-1.dooziedog.com/dog_breeds/images/full/Poodle-6.jpg",
+          "src": "https://s3.amazonaws.com/filestore.rescuegroups.org/4516/pictures/animals/8250/8250817/25025910_480x640.jpg",
           "href": "",
           "text": ""
         }

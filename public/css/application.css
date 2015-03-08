@@ -134,7 +134,7 @@ img.banner_pic {
   position: fixed;
   background-color: white;
   width: 100%;
-  z-index: 8;
+  z-index: 1000;
   padding-bottom: 25px;
 }
 
@@ -341,9 +341,9 @@ img:hover p.dog_info2 {
   width: 100%;
   top: 56px;
 /*  margin-top: 20px;*/
-/*  background-image: url("../imgs/playground.jpg");
-  background-size: 68%;
-  background-repeat: repeat;*/
+/*  background-image: url("http://wallpaperscraft.com/image/texture_grass_field_green_83892_2048x1152.jpg");
+  background-size: 90%;
+  background-repeat: no-repeat;*/
   background: rgb(242, 242, 242);
   float:left;
   clear:left;
@@ -442,9 +442,10 @@ img:hover p.dog_info2 {
   margin-bottom: 20px;
   text-transform: uppercase;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  background: white;
+/*  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+*/  background: white;
   border: 0;
+  color: grey;
   font-size: 13px;
   border-radius: 5;
   cursor: pointer;
@@ -454,11 +455,12 @@ img:hover p.dog_info2 {
 
 #fdr_button a:link {
   text-decoration: none;
+ /* color: white;*/
 }
 
 #fdr_button:hover {
-  background: #B02428;
-  color: white !important;
+  background: rgb(223, 223, 223);
+  color: white!important;
 }
 
 .dog_name {

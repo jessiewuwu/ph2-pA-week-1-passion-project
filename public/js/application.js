@@ -118,6 +118,7 @@ $(document).ready(function() {
         });
 
 
+
 }
 
 var getSearchResults = function(event){
