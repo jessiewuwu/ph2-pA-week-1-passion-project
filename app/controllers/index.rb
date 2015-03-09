@@ -125,7 +125,6 @@ get '/dogs/:id' do
   @valid_comments = @all_ratings.select {|rating| rating.comments != nil && rating.comments != " " && rating.comments != ""}
 
   @valid_videos = @all_ratings.select {|rating| rating.video_url != nil && rating.video_url != ""}
-  p "***"*100
   @colors = ["#E8A0B8", "#FFC300", "#BCCF3D", "#32DEDE", "#A8AAE0", "rgb(237, 87, 87)", "#1AC6AE" ]
   # if it's an ajax request, apply _profile
   if request.xhr?

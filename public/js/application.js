@@ -57,7 +57,7 @@ function bindEvents() {
     });
   });
 
-  $('.drag-dog-container').draggable({helper: 'clone'});
+  $('.drag-dog-container').draggable({helper: 'clone'}, {stack: "div"});
 
 
 
@@ -90,7 +90,6 @@ function bindEvents() {
   }
 
 
-
   $('#hide').click(function(){
     $('.playground_section').hide();
     $('#show').show();
@@ -100,7 +99,7 @@ function bindEvents() {
     $('.playground_section').show();
   });
 
-  $('.playground_section').click('img', pullUpProfile);
+  $('.playground_section').on('click','img', pullUpProfile);
 
   $('button#show_browse').on('click', function(){
     alert('clicked');
@@ -112,7 +111,6 @@ function bindEvents() {
 
 var pullUpProfile = function(event){
     event.preventDefault();
-    console.log('clicked image in playground')
     var id = $(this).data('dog-id');
 
     var ajaxProfile = $.ajax({
@@ -124,7 +122,8 @@ var pullUpProfile = function(event){
       $('.profile_show').append(data);
           // $('.blacken').attr("background", "black")
           // $('.blacken').attr("opacity", ".7")
-      $('.profile_show').dialog({width:'1240', height: '700'});
+      // $('.ui-dialog').css('z-index', 9999);
+      $('.profile_show').dialog({zindex: '9999',width:'1240', height: '700'});
         });
   }
 
