@@ -57,7 +57,7 @@ function bindEvents() {
     });
   });
 
-  $('.drag-dog-container').draggable({helper: 'clone'}, {stack: "div"});
+  $('.drag-dog-container').draggable({helper: 'clone'});
 
 
 
@@ -123,8 +123,11 @@ var pullUpProfile = function(event){
           // $('.blacken').attr("background", "black")
           // $('.blacken').attr("opacity", ".7")
       // $('.ui-dialog').css('z-index', 9999);
-      $('.profile_show').dialog({zindex: '9999',width:'1240', height: '700'});
+      // $('.browse_list').hide();
+      $('.profile_show').dialog({width:'1240', height: '700'});
         });
+      $('.profile_show').dialog( "moveToTop" );
+      // $('.ui-dialog').first().css('z-index', '9999');      // $('.profile_show').css('z-index', '9999');
   }
 
 var getSearchResults = function(event){
