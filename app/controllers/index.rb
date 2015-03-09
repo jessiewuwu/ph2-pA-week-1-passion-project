@@ -159,7 +159,7 @@ post '/dogs/:id' do
 end
 
 get '/logout' do
-  session.clear
+  sessionn.clear
   redirect '/'
 end
 
