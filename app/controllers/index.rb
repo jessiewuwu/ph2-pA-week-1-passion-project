@@ -12,7 +12,7 @@ get '/browse' do
 end
 
 get '/search' do
-  @breed_list = Dog.where(breed: params[:breed])
+  # @breed_list = Dog.where(breed: params[:breed])
   erb :search_results
 end
 
@@ -22,8 +22,7 @@ post '/search' do
   if @breed_list.empty?
     @no_breed = "no results. please try again."
   end
-  erb :search_results
-
+  # erb :search_results
   content_type :json
   @breed_list.to_json
 end

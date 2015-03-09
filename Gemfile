@@ -17,6 +17,7 @@ gem 'shotgun'
 gem 'bcrypt'
 gem 'ilike'
 gem 'faker'
+gem 'httparty'
 
 
 group :test do
