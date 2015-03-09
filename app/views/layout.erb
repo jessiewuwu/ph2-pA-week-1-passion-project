@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/application.css">
-  <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Questrial|Press+Start+2P' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
@@ -18,13 +18,25 @@
   <div class ="nav_bar">
     <ul>
       <li><a href="/">red ball</a> </li>
-      <li><a href="/search">search</a></li>
       <li><a href="/browse">browse</a></li>
       <li><a href="/randomize">randomize!</a></li>
-
+      <li><a href="/crazydogs">crazy dog person</a></li>
       <% if logged_in? %>
-      <li><a href="/logout">log out</a></li>
+      <li id="logout_link"><a href="/logout">log out</a></li>
       <% end %>
+      <div class="search_show">
+        <div class="search_container">
+          <form action="/search" method="post" id="search_form">
+            <input type='text' name='breed' placeholder="  search for a breed" size="40">
+            <input type='submit' value='submit' style="visibility: hidden;">
+            </form>
+        </div>
+
+        <div class="search_section">
+
+        </div>
+      </div>
+
     </ul>
   </div>
   <div class="blacken">

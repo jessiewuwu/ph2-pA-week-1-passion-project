@@ -21,8 +21,6 @@ post '/search' do
   @breed_list = Dog.where(breed: params[:breed].capitalize)
   if @breed_list.empty?
     @no_breed = "no results. please try again."
-  else
-    p 'else statement'
   end
   erb :search_results
 
@@ -176,3 +174,7 @@ post '/favorites' do
   end
 end
 
+get '/crazydogs' do
+
+  erb :crazydogperson
+end
