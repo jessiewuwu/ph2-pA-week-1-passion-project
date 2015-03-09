@@ -151,7 +151,7 @@ img.banner_pic {
 .nav_bar a:link {
   text-decoration: none;
   display: block;
-  width: 100px;
+  width: 141px;
 }
 
 #logout_link {
@@ -700,4 +700,21 @@ form #comment_field {
   z-index: -1;
   overflow: hidden;
   font-family: 'Press Start 2P', cursive;
+}
+
+
+/*-------------favorites-------------*/
+
+.favorites_section {
+  width: 80%;
+  padding: 150px;
+}
+
+.favorites_section .sub_container {
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.favorites_section p {
+  text-align: center;
 }

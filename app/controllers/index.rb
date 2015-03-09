@@ -37,11 +37,12 @@ post '/login' do
   #if the username matches the db, then, redirect them to the main page
   if @user && @user.password == params[:password]
     session[:user_id] = @user.id #it stores the volunteer_id, which indicates they are logged in so they don't have to keep logging in and you don't have to keep looking their volunteer info when they go to a different page
+    redirect '/'
   else
     @error = true
     erb :login
   end
-  redirect '/'
+
 end
 
 # before '/admin/*' do
@@ -167,10 +168,29 @@ get '/randomize' do
   redirect "dogs/#{Dog.all.sample.id}"
 end
 
-post '/favorites' do
-  params[:favorite_ids].each do |id|
-    Favorite.create(dog_id: id.to_i)
+get '/favorites' do
+  if session[:user_id]
+    user_id = session[:user_id]
+    @user_faves = User.find(user_id).favorites
+  else
+    @login_error = "please log in to see your favorites."
   end
+
+  erb :favorites
+end
+
+
+post '/favorites' do
+
+  if session[:user_id]
+    user_id = session[:user_id]
+    params[:favorite_ids].each do |id|
+      Favorite.create(user_id: user_id, dog_id: id.to_i)
+    end
+  else
+    redirect '/favorites'
+  end
+
 end
 
 get '/crazydogs' do
