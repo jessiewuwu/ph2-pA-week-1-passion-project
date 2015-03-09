@@ -161,7 +161,10 @@ var getSearchResults = function(event){
 
 var dogToHTML = function(dog){
   var html = $('.search-result-template').clone().removeClass('search-result-template').show();
+  var aTag = "<a href='/dogs/" + dog["id"] + "'>Click here to see their ratings</a>"
   html.find('img').attr('src', dog["image_link"]);
+  html.find('.search_results').text(dog["name"] + " | " + dog["breed"] + " | " + dog["gender"] );
+  html.find('.search_results').append(aTag);
   return html;
   // var id = dog["id"];
   // var name = dog["name"];
@@ -169,7 +172,6 @@ var dogToHTML = function(dog){
   // var gender = dog["gender"];
   // var image_link = dog["image_link"];
   // var imgTag = "<img src=' "+ image_link + "'style='padding-top: 90px; max-width: 350px; max-height: 400px'>"
-  // var aTag = "<a href='/dogs/" + id + "'><br>Click here to see their ratings</a>"
   // var infoTag = "<p class='search_results'>"+ name +
   // "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + breed +
   // "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + gender + aTag +

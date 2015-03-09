@@ -152,6 +152,10 @@ img.banner_pic {
 .nav_bar a:link {
   text-decoration: none;
   display: block;
+  /*width: 141px;*/
+}
+
+#crazy_dogs_link{
   width: 141px;
 }
 
@@ -200,6 +204,9 @@ img.banner_pic {
   font-size: 20px;
 }
 
+.search_result a:link {
+  width: 100%;
+}
 
 .error_search {
   text-align: center;
