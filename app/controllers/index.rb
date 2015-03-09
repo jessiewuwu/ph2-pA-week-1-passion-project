@@ -172,6 +172,14 @@ get '/favorites' do
   if session[:user_id]
     user_id = session[:user_id]
     @user_faves = User.find(user_id).favorites
+    # dog_array = []
+    # User.find(1).favorites.each {|fave|
+    #  dog_array << Dog.find(fave.dog_id).name}
+
+    # duplicates = dog_array.detect{|e|dog_array.count(e)}
+
+    # @clean_faves = dog_array - duplicates.split(' ')
+
   else
     @login_error = "please log in to see your favorites."
   end

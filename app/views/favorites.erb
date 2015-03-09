@@ -3,8 +3,9 @@
   <% if session[:user_id] %>
 
     <% @user_faves.each do |fave| %>
-      <p><%= Dog.find(fave.dog_id).name %></p>
+      <p><%= Dog.find(fave.dog_id).name  %></p>
     <% end %>
+
 
 
   <% else %>
@@ -14,3 +15,4 @@
   <% end  %>
 
 </div>
+
