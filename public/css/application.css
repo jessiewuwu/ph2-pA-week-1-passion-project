@@ -146,6 +146,7 @@ img.banner_pic {
 .nav_bar ul li {
   display: inline;
   float: left;
+  width:103px;
 }
 
 .nav_bar a:link {
@@ -224,6 +225,14 @@ input {
 .register_section {
   margin-top: 20px;
   margin-bottom: 200px;
+}
+
+#register {
+  margin-top: 10%;
+}
+
+#login_div {
+  margin-top: 10%;
 }
 
 
