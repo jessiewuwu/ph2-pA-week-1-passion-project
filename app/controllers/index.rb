@@ -19,10 +19,10 @@ end
 post '/search' do
   # search_breed = params[:breed]
   @breed_list = Dog.where(breed: params[:breed].capitalize)
-  if @breed_list.empty?
-    @no_breed = "no results. please try again."
+  if @breed_list.nil?
+
+    redirect '/crazydogs'
   end
-  # erb :search_results
   content_type :json
   @breed_list.to_json
 end
@@ -158,10 +158,6 @@ post '/dogs/:id' do
   erb :profile
 end
 
-get '/logout' do
-  sessionn.clear
-  redirect '/'
-end
 
 get '/randomize' do
   redirect "dogs/#{Dog.all.sample.id}"
@@ -171,14 +167,6 @@ get '/favorites' do
   if session[:user_id]
     user_id = session[:user_id]
     @user_faves = User.find(user_id).favorites
-    # dog_array = []
-    # User.find(1).favorites.each {|fave|
-    #  dog_array << Dog.find(fave.dog_id).name}
-
-    # duplicates = dog_array.detect{|e|dog_array.count(e)}
-
-    # @clean_faves = dog_array - duplicates.split(' ')
-
   else
     @login_error = "please log in to see your favorites."
   end
@@ -203,4 +191,12 @@ end
 get '/crazydogs' do
 
   erb :crazydogperson
+end
+
+post '/crazydogs' do
+
+  #receive json object
+  #turn into a ruby hash
+  #make a Gif Model
+  #create the gifs and save them
 end

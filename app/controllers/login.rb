@@ -1,15 +1,3 @@
-<!-- Login -->
-<div>
-  <% if session['oauth'][:access_token] %>
-    <a class='fb-button' href='/facebook'>facebook login</a>
-  <% end %>
-</div>
-
-<!-- Find User Profile Picture-->
-<% @facebook_user = User.find_by(profile_picture: @json["id"])%>
-
-<!-- Controller -->
-<%
 require "json"
 require 'open-uri'
 require "net/http"
@@ -62,8 +50,7 @@ get "/fbcallback" do
   redirect "/facebook"
 end
 
-get "/logout" do
+get '/logout' do
   session.clear
-  redirect "/"
+  redirect '/'
 end
-

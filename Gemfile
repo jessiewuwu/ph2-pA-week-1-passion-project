@@ -18,6 +18,7 @@ gem 'bcrypt'
 gem 'ilike'
 gem 'faker'
 gem 'httparty'
+gem 'dotenv'
 
 
 group :test do

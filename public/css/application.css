@@ -729,3 +729,9 @@ form #comment_field {
 .favorites_section p {
   text-align: center;
 }
+
+
+.fb-button {
+  display: block;
+  border: 2px solid red;
+}

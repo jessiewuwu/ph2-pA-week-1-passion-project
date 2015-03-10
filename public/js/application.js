@@ -141,13 +141,23 @@ var getSearchResults = function(event){
   });
 
   request.done(function(dogs) {
-    var dogNodes = dogs.map(dogToHTML);
-    $('.search_section').empty();
-    $('.playground_section').hide();
-    $('.browse_list').hide();
-    $('.search_section').html(dogNodes);
-    $('.search_section').append("<button id='show_browse'>Browse</button>");
-  });
+    console.log(dogs);
+    if(dogs.length === 0){
+      $('.search_section').empty();
+      $('.playground_section').hide();
+      $('.search_section').append("<p>No results. Please try again.</p>")
+      $('.search_section').css("padding-top", "100px");
+      $('.search_section').css("text-align", "center");
+      $('.search_section p').addClass("error_red");
+    }else {
+      var dogNodes = dogs.map(dogToHTML);
+      $('.search_section').empty();
+      $('.playground_section').hide();
+      $('.browse_list').hide();
+      $('.search_section').html(dogNodes);
+      $('.search_section').append("<button id='show_browse'>Browse</button>");
+    }
+    });
 
   request.fail(function() {
     console.log("error");
@@ -181,6 +191,23 @@ var dogToHTML = function(dog){
 
 
 var randomDog = function() {
+  // $.ajax({
+  //   url: 'https://www.googleapis.com/customsearch/v1?cx=016871532285775593244%3Ahitwjirk3ac&q=dog%20transparent%20gif&searchType=image&num=10&start=11&key=AIzaSyAy1FwWb_llGer7CJZk65r63ZidHFqdJ9Q',
+  //   type: 'get',
+  //   dataType: 'json',
+  // })
+  // .done(function(response) {
+  //   console.log(response.responseText);
+  //   //give variable name for the dog array of links to response.responseText["link"] or whatever, used as argument for useAndSaveDogGifs function
+  //   //invoke functions with the variable name with the array variable as the args
+  //   useDogGifs(args);
+  //   saveDogGifs(args);
+  //   //send data to server to save the json array object thing of dog gifs
+  // })
+  // .fail(function(error) {
+  //   console.log(error.responseText);
+  //   //get data (dogs) from server if the api call doesn't work
+  });
 
   var images = ['http://tobystereo.com/wp-content/uploads/2014/05/VVBatchExportergiphy_dog.gif', 'http://24.media.tumblr.com/tumblr_ma2dhq2hsu1qkb04po1_500.gif', 'https://31.media.tumblr.com/d59648a7c875658955dbf9aeab7a8059/tumblr_inline_n0rlqc38vl1s0subn.gif', 'https://33.media.tumblr.com/d2c8354c4159407804910207dc13c9eb/tumblr_n3hgaa9wmz1so0ukuo1_500.gif', 'https://31.media.tumblr.com/25ec1da1ceb3d8c59ff61abda466e66d/tumblr_mqpocpPXk01rtd1nko2_500.gif', 'https://33.media.tumblr.com/4fbb61f48f4c5cfa451a88e14f6579e7/tumblr_mwwh9w2vJf1s6294bo1_400.gif', 'http://24.media.tumblr.com/6c964b25e6e545e116d7062278979b65/tumblr_msy9f60uGy1qcdozto1_r3_500.gif', 'http://media.giphy.com/media/cdnHZOmT7y1Jm/giphy.gif', 'http://media.giphy.com/media/omuVatiGBMBIQ/giphy.gif', 'http://media.giphy.com/media/1snUe9sDi9R2U/giphy.gif', 'http://media.giphy.com/media/2EJRTwQPrYju0/giphy.gif']
 
@@ -196,6 +223,35 @@ var randomDog = function() {
 
 };
 
-// <img src='' width='150' top='200' left='500'>
+
+//function - for success where we get the dog gifs from the api, there will be an ajax call
+// var useDogGifs = function(dogGifArray){
+//   var randomImage = dogGifArray[Math.floor(Math.random()*dogGifArray.length)]
+
+//   var randomAxis = Math.floor(Math.random()*1500)
+//   var marginTopRandom = Math.floor(Math.random()*500)
+
+//   $('.crazy_section').append("<img src='" + randomImage + "' width='200'>");
+//   $('.crazy_section img').last().css('left', randomAxis +'px')
+//   $('.crazy_section img').last().css('margin-top', marginTopRandom + 'px')
+// }
+
+// var saveDogGifs = function(dogGifArray){
+//   $.ajax({
+//     url: '/crazydogs',
+//     type: 'post',
+//     contentType: 'json',
+//     data: {gif_array: dogGifArray}
+//   })
+//   .always(function(response) {
+//     console.log(response);
+//   });
+
+
+// }
+
+//function - for failure where we make the ajax call to the server to get data from the server
+
+
 
 
