@@ -10,5 +10,9 @@ helpers do
     !current_user.nil?
   end
 
+  def user_login(user)
+    session[:user_id] = user.id
+  end
+
 end
 
