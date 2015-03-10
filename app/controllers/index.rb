@@ -1,3 +1,17 @@
+# before '/favorites' do
+#   save_intended_url
+#   # session[:intended_page] = "/s/#{params[:splat]}"
+#   redirect "/login" unless logged_in?
+# end
+
+# after '/login' do
+#   visit_intended_url
+# end
+
+before '/favorites' do
+  redirect "/login" unless logged_in?
+end
+
 get '/' do
   # session[:id]
   erb :index
@@ -164,6 +178,7 @@ get '/randomize' do
 end
 
 get '/favorites' do
+
   if session[:user_id]
     user_id = session[:user_id]
     @user_faves = User.find(user_id).favorites
@@ -194,7 +209,10 @@ get '/crazydogs' do
 end
 
 post '/crazydogs' do
-
+  # params {"gifArray"=>["a", "b", "c"]}
+  dog_json = params['gifArray']
+  p "~~~"*100
+  p dog_json #should print out an array
   #receive json object
   #turn into a ruby hash
   #make a Gif Model

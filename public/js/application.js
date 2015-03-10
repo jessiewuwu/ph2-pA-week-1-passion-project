@@ -205,16 +205,15 @@ var randomDog = function() {
     //give variable name for the dog array of links to response.responseText["link"] or whatever, used as argument for useAndSaveDogGifs function
     //invoke functions with the variable name with the array variable as the args
     useDogGifs(gifLinks);
-    // saveDogGifs(args);
+    saveDogGifs(gifLinks);
     //send data to server to save the json array object thing of dog gifs
   })
   .fail(function(error) {
-    console.log(error.responseText);
+    console.log(error);
+    saveDogGifs();
     //get data (dogs) from server if the api call doesn't work
   })
-  .always(function(response)){
-    //maybe always save the array??
-  }
+
 
 // ------------- BACKUP IF API DAILY USE EXCEEDED ----------------------
   // var images = ['http://tobystereo.com/wp-content/uploads/2014/05/VVBatchExportergiphy_dog.gif', 'http://24.media.tumblr.com/tumblr_ma2dhq2hsu1qkb04po1_500.gif', 'https://31.media.tumblr.com/d59648a7c875658955dbf9aeab7a8059/tumblr_inline_n0rlqc38vl1s0subn.gif', 'https://33.media.tumblr.com/d2c8354c4159407804910207dc13c9eb/tumblr_n3hgaa9wmz1so0ukuo1_500.gif', 'https://31.media.tumblr.com/25ec1da1ceb3d8c59ff61abda466e66d/tumblr_mqpocpPXk01rtd1nko2_500.gif', 'https://33.media.tumblr.com/4fbb61f48f4c5cfa451a88e14f6579e7/tumblr_mwwh9w2vJf1s6294bo1_400.gif', 'http://24.media.tumblr.com/6c964b25e6e545e116d7062278979b65/tumblr_msy9f60uGy1qcdozto1_r3_500.gif', 'http://media.giphy.com/media/cdnHZOmT7y1Jm/giphy.gif', 'http://media.giphy.com/media/omuVatiGBMBIQ/giphy.gif', 'http://media.giphy.com/media/1snUe9sDi9R2U/giphy.gif', 'http://media.giphy.com/media/2EJRTwQPrYju0/giphy.gifaasdf'];
@@ -250,19 +249,20 @@ var useDogGifs = function(dogGifArray){
   })
 }
 
-// var saveDogGifs = function(dogGifArray){
-//   $.ajax({
-//     url: '/crazydogs',
-//     type: 'post',
-//     contentType: 'json',
-//     data: {gif_array: dogGifArray}
-//   })
-//   .always(function(response) {
-//     console.log(response);
-//   });
+var saveDogGifs = function(dogGifArray){
+  $.ajax({
+    url: '/crazydogs',
+    type: 'post',
+    data: {
+      gifArray: ['a', 'b', 'c']
+    }
+  })
+  .always(function(response) {
+    console.log(response);
+  });
 
 
-// }
+}
 
 // function imgError(image) {
 //     image.onerror = "";

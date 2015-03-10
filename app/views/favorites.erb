@@ -1,19 +1,11 @@
 <div class="favorites_section">
 
-  <% if session[:user_id] %>
+
 
     <% @user_faves.each do |fave| %>
       <p><%= Dog.find(fave.dog_id).name  %></p>
     <% end %>
 
-
-
-  <% else %>
-    <p><%= @login_error %></p>
-    <%= erb :login, layout: false %>
-    <%= erb :_facebook_login, layout: false %>
-
-  <% end  %>
 
 </div>
 

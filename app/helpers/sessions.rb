@@ -14,5 +14,12 @@ helpers do
     session[:user_id] = user.id
   end
 
+  def save_intended_url
+    session[:intended_url] = request.url
+  end
+
+  def visit_intended_url
+    redirect session[:intended_url]
+  end
 end
 
