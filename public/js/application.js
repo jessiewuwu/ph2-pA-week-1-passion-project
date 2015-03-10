@@ -196,14 +196,11 @@ var randomDog = function() {
     dataType: 'json',
   })
   .done(function(response) {
-    console.log(response);
     var searchResultObjects = response.items
-    console.log(searchResultObjects);
     var gifLinks = [];
     for(var object in searchResultObjects) {
       gifLinks.push(searchResultObjects[object]['link']);
     }
-    console.log(gifLinks);
 
     //give variable name for the dog array of links to response.responseText["link"] or whatever, used as argument for useAndSaveDogGifs function
     //invoke functions with the variable name with the array variable as the args
@@ -216,7 +213,8 @@ var randomDog = function() {
     //get data (dogs) from server if the api call doesn't work
   });
 
-  // var images = ['http://tobystereo.com/wp-content/uploads/2014/05/VVBatchExportergiphy_dog.gif', 'http://24.media.tumblr.com/tumblr_ma2dhq2hsu1qkb04po1_500.gif', 'https://31.media.tumblr.com/d59648a7c875658955dbf9aeab7a8059/tumblr_inline_n0rlqc38vl1s0subn.gif', 'https://33.media.tumblr.com/d2c8354c4159407804910207dc13c9eb/tumblr_n3hgaa9wmz1so0ukuo1_500.gif', 'https://31.media.tumblr.com/25ec1da1ceb3d8c59ff61abda466e66d/tumblr_mqpocpPXk01rtd1nko2_500.gif', 'https://33.media.tumblr.com/4fbb61f48f4c5cfa451a88e14f6579e7/tumblr_mwwh9w2vJf1s6294bo1_400.gif', 'http://24.media.tumblr.com/6c964b25e6e545e116d7062278979b65/tumblr_msy9f60uGy1qcdozto1_r3_500.gif', 'http://media.giphy.com/media/cdnHZOmT7y1Jm/giphy.gif', 'http://media.giphy.com/media/omuVatiGBMBIQ/giphy.gif', 'http://media.giphy.com/media/1snUe9sDi9R2U/giphy.gif', 'http://media.giphy.com/media/2EJRTwQPrYju0/giphy.gif'];
+// ------------- BACKUP IF API DAILY USE EXCEEDED ----------------------
+  // var images = ['http://tobystereo.com/wp-content/uploads/2014/05/VVBatchExportergiphy_dog.gif', 'http://24.media.tumblr.com/tumblr_ma2dhq2hsu1qkb04po1_500.gif', 'https://31.media.tumblr.com/d59648a7c875658955dbf9aeab7a8059/tumblr_inline_n0rlqc38vl1s0subn.gif', 'https://33.media.tumblr.com/d2c8354c4159407804910207dc13c9eb/tumblr_n3hgaa9wmz1so0ukuo1_500.gif', 'https://31.media.tumblr.com/25ec1da1ceb3d8c59ff61abda466e66d/tumblr_mqpocpPXk01rtd1nko2_500.gif', 'https://33.media.tumblr.com/4fbb61f48f4c5cfa451a88e14f6579e7/tumblr_mwwh9w2vJf1s6294bo1_400.gif', 'http://24.media.tumblr.com/6c964b25e6e545e116d7062278979b65/tumblr_msy9f60uGy1qcdozto1_r3_500.gif', 'http://media.giphy.com/media/cdnHZOmT7y1Jm/giphy.gif', 'http://media.giphy.com/media/omuVatiGBMBIQ/giphy.gif', 'http://media.giphy.com/media/1snUe9sDi9R2U/giphy.gif', 'http://media.giphy.com/media/2EJRTwQPrYju0/giphy.gifaasdf'];
 
   // var randomImage = images[Math.floor(Math.random()*images.length)];
 
@@ -227,7 +225,10 @@ var randomDog = function() {
   // $('.crazy_section img').last().css('left', randomAxis +'px');
   // $('.crazy_section img').last().css('margin-top', marginTopRandom + 'px');
 
-
+  // $('.crazy_section img').error(function(){
+  //   $(this).unbind("error").attr("src", "http://media1.giphy.com/media/91Denlid80mUU/giphy.gif")
+  // })
+  // ------------- BACKUP IF API DAILY USE EXCEEDED ----------------------
 };
 
 
@@ -237,10 +238,13 @@ var useDogGifs = function(dogGifArray){
 
   var randomAxis = Math.floor(Math.random()*1500)
   var marginTopRandom = Math.floor(Math.random()*500)
-
+  var $crazyImgs = $('.crazy_section img')
   $('.crazy_section').append("<img src='" + randomImage + "' width='200'>");
-  $('.crazy_section img').last().css('left', randomAxis +'px')
-  $('.crazy_section img').last().css('margin-top', marginTopRandom + 'px')
+  $crazyImgs.last().css('left', randomAxis +'px')
+  $crazyImgs.last().css('margin-top', marginTopRandom + 'px')
+  $crazyImgs.error(function(){
+    $(this).unbind("error").attr("src", "http://media1.giphy.com/media/91Denlid80mUU/giphy.gif")
+  })
 }
 
 // var saveDogGifs = function(dogGifArray){
@@ -255,6 +259,12 @@ var useDogGifs = function(dogGifArray){
 //   });
 
 
+// }
+
+// function imgError(image) {
+//     image.onerror = "";
+//     image.src = "http://25.media.tumblr.com/3274a78bd1ea4d67ca54b03c70771f2c/tumblr_miavcw7PIn1rj3x28o1_500.gif";
+//     return true;
 // }
 
 //function - for failure where we make the ajax call to the server to get data from the server
