@@ -27,7 +27,7 @@ ImageResizer = {
 
     dogImage.setAttribute("style", "width:"+ newSize[0] + "px;" + "height:" + newSize[1]+"px;");
 
-    return dogImage
+    return dogImage;
   }
 };
 
@@ -58,7 +58,6 @@ function bindEvents() {
   });
 
   $('.drag-dog-container').draggable({helper: 'clone'});
-
 
 
   $('.playground_section').droppable({
@@ -105,7 +104,7 @@ function bindEvents() {
     alert('clicked');
     $('.browse_list').css("display", "inline");
   });
-};
+}
 
 
 
@@ -133,7 +132,7 @@ var pullUpProfile = function(event){
 var getSearchResults = function(event){
   event.preventDefault();
   var formData = $(this).serialize();
-  console.log(formData)
+  console.log(formData);
   var request = $.ajax({
     url: '/search',
     type: 'post',
@@ -145,7 +144,7 @@ var getSearchResults = function(event){
     if(dogs.length === 0){
       $('.search_section').empty();
       $('.playground_section').hide();
-      $('.search_section').append("<p>No results. Please try again.</p>")
+      $('.search_section').append("<p>No results. Please try again.</p>");
       $('.search_section').css("padding-top", "100px");
       $('.search_section').css("text-align", "center");
       $('.search_section p').addClass("error_red");
@@ -171,7 +170,7 @@ var getSearchResults = function(event){
 
 var dogToHTML = function(dog){
   var html = $('.search-result-template').clone().removeClass('search-result-template').show();
-  var aTag = "<a href='/dogs/" + dog["id"] + "'>Click here to see their ratings</a>"
+  var aTag = "<a href='/dogs/" + dog["id"] + "'>Click here to see their ratings</a>";
   html.find('img').attr('src', dog["image_link"]);
   html.find('.search_results').text(dog["name"] + " | " + dog["breed"] + " | " + dog["gender"] );
   html.find('.search_results').append(aTag);
@@ -187,7 +186,7 @@ var dogToHTML = function(dog){
   // "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + gender + aTag +
   // "</p><br><br>";
   // return $('<div>').append(imgTag, infoTag);
-}
+};
 
 
 var randomDog = function() {
@@ -207,18 +206,18 @@ var randomDog = function() {
   // .fail(function(error) {
   //   console.log(error.responseText);
   //   //get data (dogs) from server if the api call doesn't work
-  });
+  //});
 
-  var images = ['http://tobystereo.com/wp-content/uploads/2014/05/VVBatchExportergiphy_dog.gif', 'http://24.media.tumblr.com/tumblr_ma2dhq2hsu1qkb04po1_500.gif', 'https://31.media.tumblr.com/d59648a7c875658955dbf9aeab7a8059/tumblr_inline_n0rlqc38vl1s0subn.gif', 'https://33.media.tumblr.com/d2c8354c4159407804910207dc13c9eb/tumblr_n3hgaa9wmz1so0ukuo1_500.gif', 'https://31.media.tumblr.com/25ec1da1ceb3d8c59ff61abda466e66d/tumblr_mqpocpPXk01rtd1nko2_500.gif', 'https://33.media.tumblr.com/4fbb61f48f4c5cfa451a88e14f6579e7/tumblr_mwwh9w2vJf1s6294bo1_400.gif', 'http://24.media.tumblr.com/6c964b25e6e545e116d7062278979b65/tumblr_msy9f60uGy1qcdozto1_r3_500.gif', 'http://media.giphy.com/media/cdnHZOmT7y1Jm/giphy.gif', 'http://media.giphy.com/media/omuVatiGBMBIQ/giphy.gif', 'http://media.giphy.com/media/1snUe9sDi9R2U/giphy.gif', 'http://media.giphy.com/media/2EJRTwQPrYju0/giphy.gif']
+  var images = ['http://tobystereo.com/wp-content/uploads/2014/05/VVBatchExportergiphy_dog.gif', 'http://24.media.tumblr.com/tumblr_ma2dhq2hsu1qkb04po1_500.gif', 'https://31.media.tumblr.com/d59648a7c875658955dbf9aeab7a8059/tumblr_inline_n0rlqc38vl1s0subn.gif', 'https://33.media.tumblr.com/d2c8354c4159407804910207dc13c9eb/tumblr_n3hgaa9wmz1so0ukuo1_500.gif', 'https://31.media.tumblr.com/25ec1da1ceb3d8c59ff61abda466e66d/tumblr_mqpocpPXk01rtd1nko2_500.gif', 'https://33.media.tumblr.com/4fbb61f48f4c5cfa451a88e14f6579e7/tumblr_mwwh9w2vJf1s6294bo1_400.gif', 'http://24.media.tumblr.com/6c964b25e6e545e116d7062278979b65/tumblr_msy9f60uGy1qcdozto1_r3_500.gif', 'http://media.giphy.com/media/cdnHZOmT7y1Jm/giphy.gif', 'http://media.giphy.com/media/omuVatiGBMBIQ/giphy.gif', 'http://media.giphy.com/media/1snUe9sDi9R2U/giphy.gif', 'http://media.giphy.com/media/2EJRTwQPrYju0/giphy.gif'];
 
-  var randomImage = images[Math.floor(Math.random()*images.length)]
+  var randomImage = images[Math.floor(Math.random()*images.length)];
 
-  var randomAxis = Math.floor(Math.random()*1500)
-  var marginTopRandom = Math.floor(Math.random()*500)
+  var randomAxis = Math.floor(Math.random()*1500);
+  var marginTopRandom = Math.floor(Math.random()*500);
 
   $('.crazy_section').append("<img src='" + randomImage + "' width='200'>");
-  $('.crazy_section img').last().css('left', randomAxis +'px')
-  $('.crazy_section img').last().css('margin-top', marginTopRandom + 'px')
+  $('.crazy_section img').last().css('left', randomAxis +'px');
+  $('.crazy_section img').last().css('margin-top', marginTopRandom + 'px');
 
 
 };
@@ -251,7 +250,6 @@ var randomDog = function() {
 // }
 
 //function - for failure where we make the ajax call to the server to get data from the server
-
 
 
 
