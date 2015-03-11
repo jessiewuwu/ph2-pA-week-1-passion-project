@@ -31,14 +31,18 @@ get '/search' do
 end
 
 post '/search' do
+
   # search_breed = params[:breed]
   @breed_list = Dog.where(breed: params[:breed].capitalize)
-  if @breed_list.nil?
 
-    redirect '/crazydogs'
-  end
   content_type :json
   @breed_list.to_json
+end
+
+get '/search/results' do
+  @breed_list = Dog.where(breed: params[:breed].capitalize)
+
+  erb :search_results_index
 end
 
 get '/login' do

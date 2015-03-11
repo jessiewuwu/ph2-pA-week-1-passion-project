@@ -144,10 +144,9 @@ var getSearchResults = function(event){
   });
 
   request.done(function(dogs) {
-    console.log(dogs);
     if(dogs.length === 0){
       $('.search_section').empty();
-      $('.playground_section').hide();
+      // $('.playground_section').hide();
       $('.search_section').append("<p>No results. Please try again.</p>");
       $('.search_section').css("padding-top", "100px");
       $('.search_section').css("text-align", "center");
@@ -155,8 +154,8 @@ var getSearchResults = function(event){
     }else {
       var dogNodes = dogs.map(dogToHTML);
       $('.search_section').empty();
-      $('.playground_section').hide();
-      $('.browse_list').hide();
+      // $('.playground_section').hide();
+      // $('.browse_list').hide();
       $('.search_section').html(dogNodes);
       $('.search_section').append("<button id='show_browse'>Browse</button>");
     }
