@@ -82,6 +82,9 @@ function bindEvents() {
       type: 'post',
       data: data
     });
+    ajaxFave.done(function(){
+      window.location.href='/favorites';
+    })
   });
 
   function getFavoriteIds() {

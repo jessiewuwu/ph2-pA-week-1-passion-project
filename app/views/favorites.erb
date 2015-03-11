@@ -1,6 +1,11 @@
 <div id="fave_container">
 
   <h1>Your Favorites!</h1>
+
+  <% if @user_faves.empty? %>
+    <p>You currently have no favorites. Check out the <a href="/browse">Browse</a>page for available dogs.</p>
+
+  <% else %>
       <% @user_faves.each do |fave| %>
   <div class="whole">
   <div class="type">
@@ -30,3 +35,4 @@
     <button><a href="/dogs/<%= fave.dog_id%>">Remove from Favorites</a></button>
 </div>
       <% end %>
+<% end %>
