@@ -205,6 +205,7 @@ var loadRandomDogGifUrls = function(callback) {
     for(var object in searchResultObjects) {
       gifLinks.push(searchResultObjects[object]['link']);
     }
+    useDogGifs(gifLinks);
     saveDogGifs(gifLinks);
     callback(gifLinks);
   })
@@ -242,13 +243,13 @@ var useDogGifs = function(dogGifArray){
   $crazyImgs.last().css('left', randomAxis +'px')
   $crazyImgs.last().css('margin-top', marginTopRandom + 'px')
   $crazyImgs.error(function(){
-    $(this).unbind("error").attr("src", "http://media1.giphy.com/media/91Denlid80mUU/giphy.gif")
+    $(this).unbind("error").attr("src", "http://25.media.tumblr.com/3274a78bd1ea4d67ca54b03c70771f2c/tumblr_miavcw7PIn1rj3x28o1_500.gif")
   })
 }
 
-var saveDogGifs = function(dogGifs, callback){
+var saveDogGifs = function(dogGifs){
   // TEMP
-  dogGifs = [ "http://webyippie.com/png.imageextra.com/png_files/dog.png", "http://i.imgur.com/ZtgHoaE.gif", "https://33.media.tumblr.com/4fbb61f48f4c5cfa451a88e14f6579e7/tumblr_mwwh9w2vJf1s6294bo1_400.gif"]
+  // dogGifs = [ "http://webyippie.com/png.imageextra.com/png_files/dog.png", "http://i.imgur.com/ZtgHoaE.gif", "https://33.media.tumblr.com/4fbb61f48f4c5cfa451a88e14f6579e7/tumblr_mwwh9w2vJf1s6294bo1_400.gif"]
   // function(dogGifArray){
   return $.ajax({
     url: '/crazydogs',
