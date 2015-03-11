@@ -19,7 +19,7 @@ gem 'ilike'
 gem 'faker'
 gem 'httparty'
 gem 'dotenv'
-
+gem 'pry'
 
 group :test do
   gem 'shoulda-matchers'

@@ -140,6 +140,7 @@ get '/dogs/:id' do
 
   @valid_videos = @all_ratings.select {|rating| rating.video_url != nil && rating.video_url != ""}
   @colors = ["#E8A0B8", "#FFC300", "#BCCF3D", "#32DEDE", "#A8AAE0", "rgb(237, 87, 87)", "#1AC6AE" ]
+  # binding.pry
   # if it's an ajax request, apply _profile
   if request.xhr?
     erb :_profiles, layout: false
@@ -158,18 +159,9 @@ get '/dogs/:id/rate' do
 end
 
 post '/dogs/:id' do
-
-  @view_dog = Dog.find(params[:id])
-  # params[:dog][:volunteer_id] = session[:volunteer_id]
-
-  @rating = @view_dog.ratings.create(params[:dog])
-  @all_ratings = @view_dog.ratings
-
-  @valid_comments = @all_ratings.select {|rating| rating.comments != nil && rating.comments != " " && rating.comments != ""}
-
-  @valid_videos = @all_ratings.select {|rating| rating.video_url != nil && rating.video_url != ""}
-
-  erb :profile
+  view_dog = Dog.find(params[:id])
+  rating = view_dog.ratings.create(params[:dog])
+  redirect "/dogs/#{view_dog.id}"
 end
 
 

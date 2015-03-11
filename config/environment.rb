@@ -18,7 +18,7 @@ require 'faker'
 require 'sinatra'
 require "sinatra/reloader" if development?
 require 'byebug' if development?
-
+require 'pry'
 require 'erb'
 require 'dotenv'
 Dotenv.load

@@ -249,7 +249,6 @@ var useDogGifs = function(dogGifArray){
 var saveDogGifs = function(dogGifs, callback){
   // TEMP
   dogGifs = [ "http://webyippie.com/png.imageextra.com/png_files/dog.png", "http://i.imgur.com/ZtgHoaE.gif", "https://33.media.tumblr.com/4fbb61f48f4c5cfa451a88e14f6579e7/tumblr_mwwh9w2vJf1s6294bo1_400.gif"]
-
   // function(dogGifArray){
   return $.ajax({
     url: '/crazydogs',
