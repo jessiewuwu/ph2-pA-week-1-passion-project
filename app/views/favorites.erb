@@ -1,4 +1,5 @@
 <div id="fave_container">
+      <% @user_faves.each do |fave| %>
   <div class="whole">
   <div class="type">
     <p>FAVORITE</p>
@@ -6,19 +7,17 @@
   <div class="plan">
 
     <div class="dog-name-header">
-      <% @user_faves.each do |fave| %>
       <sup><%= Dog.find(fave.dog_id).name  %></sup>
-      <% end %>
     </div>
     <div class="content">
-        <p>BREED</p>
-        <p>GENDER</p>
-        <p># FAVORITED</p>
-        <p>FDR PROFILE</p>
+        <p>Breed: <%= Dog.find(fave.dog_id).breed%></p>
+        <p>Sex: <%= Dog.find(fave.dog_id).gender%></p>
+        <p>Favorited <strong><%= Dog.find(fave.dog_id).favorites.count%></strong> times</p>
     </div>
 
     <div class="price">
-      <a href="#" class="bottom"><p class="cart">RATING PROFILE</p></a>
+      <a href="/dogs/<%= fave.dog_id%>" class="bottom"><p class="cart">Red Ball Rating Profile</p></a>
     </div>
   </div>
+      <% end %>
 </div>
