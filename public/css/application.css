@@ -759,17 +759,20 @@ form #comment_field {
   border: 2px solid red;
 }
 
+#login_div .fb_login {
+  padding-top: 50%;
+}
+
 /*FAVORITE TABLE*/
 #fave_container{
   width: 100%;
   text-align:center;
-  color: white !important;
+  padding-top: 8%;
 }
 
 .whole{
   display: inline-block;
-  top: 20%;
-
+  margin-right: 1%;
 }
 
 
@@ -780,7 +783,7 @@ form #comment_field {
   background-color: #BD1D20;
   height: 62px;
   border-bottom: 4px solid #761113;
-  margin-top: 100px;
+
 }
 
 .type p{

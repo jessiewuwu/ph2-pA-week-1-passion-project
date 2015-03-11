@@ -1,4 +1,6 @@
 <div id="fave_container">
+
+  <h1>Your Favorites!</h1>
       <% @user_faves.each do |fave| %>
   <div class="whole">
   <div class="type">
@@ -10,6 +12,7 @@
       <sup><%= Dog.find(fave.dog_id).name  %></sup>
     </div>
     <div class="content">
+        <a href="/dogs/<%= fave.dog_id%>"><img src="<%= Dog.find(fave.dog_id).image_link%>" height="170px"></a>
         <p>Breed: <%= Dog.find(fave.dog_id).breed%></p>
         <p>Sex: <%= Dog.find(fave.dog_id).gender%></p>
         <% if Dog.find(fave.dog_id).favorites.count == 1 %>
@@ -24,5 +27,6 @@
       <a href="/dogs/<%= fave.dog_id%>" class="bottom"><p class="cart">Red Ball Rating Profile</p></a>
     </div>
   </div>
+    <button><a href="/dogs/<%= fave.dog_id%>">Remove from Favorites</a></button>
 </div>
       <% end %>

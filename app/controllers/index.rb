@@ -179,7 +179,7 @@ get '/favorites' do
     user_id = session[:user_id]
     @user_faves = User.find(user_id).favorites
   else
-    @login_error = "please log in to see your favorites."
+    @login_error = "please log in to see your      <% end %> favorites."
   end
 
   erb :favorites
