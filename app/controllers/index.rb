@@ -208,13 +208,17 @@ get '/crazydogs' do
   erb :crazydogperson
 end
 
+get '/gifs' do
+  content_type :json
+  Gif.all.to_json
+end
+
 post '/crazydogs' do
-  # params {"gifArray"=>["a", "b", "c"]}
-  dog_json = params['gifArray']
-  p "~~~"*100
-  p dog_json #should print out an array
-  #receive json object
-  #turn into a ruby hash
-  #make a Gif Model
-  #create the gifs and save them
+  dog_json = params['gifArray'] #should be an array
+  dog_json.each {|url| Gif.create(url: url)}
+  array_of_gif_objects = Gif.all
+
+  content_type :json
+  array_of_gif_objects.to_json
+
 end
