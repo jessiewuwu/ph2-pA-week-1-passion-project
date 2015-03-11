@@ -25,7 +25,7 @@
   width: 23%;
   margin: auto;
   position: absolute;
-  margin-top: 50%;
+  margin-top: 99%;
   left: 50%;
   margin-left: -260px;
   text-align: center;
@@ -210,6 +210,10 @@ img.banner_pic {
 
 .error_search {
   text-align: center;
+}
+
+.facebook_login {
+  margin-top: -45%;
 }
 /*------------forms/buttons------------*/
 .sub_container button {
@@ -497,13 +501,13 @@ input {
   text-align: center;
 /*  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 */  background: white;
-border: 0;
-color: grey;
-font-size: 13px;
-border-radius: 5;
-cursor: pointer;
--webkit-box-shadow: inset 0 -1px #B1B1AE;
-transition: all 0.3s ease 0s;
+  border: 0;
+  color: grey;
+  font-size: 13px;
+  border-radius: 5;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -1px #B1B1AE;
+  transition: all 0.3s ease 0s;
 }
 
 #fdr_button a:link {

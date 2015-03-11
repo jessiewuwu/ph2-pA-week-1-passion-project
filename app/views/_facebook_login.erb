@@ -1,5 +1,5 @@
-<div class='facebook_login'>
+<div class='facebook_login sub_container' >
     <% if !session['oauth'][:access_token] %>
-      <a class='fb-button' href='/facebook'>facebook login</a>
+      <button><a href='/facebook'><h2>Log In with Facebook</h2></a></button>
     <% end %>
 </div>
