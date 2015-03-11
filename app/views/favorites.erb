@@ -12,12 +12,17 @@
     <div class="content">
         <p>Breed: <%= Dog.find(fave.dog_id).breed%></p>
         <p>Sex: <%= Dog.find(fave.dog_id).gender%></p>
+        <% if Dog.find(fave.dog_id).favorites.count == 1 %>
+        <p>Favorited <strong><%= Dog.find(fave.dog_id).favorites.count%></strong> time</p>
+        <% else %>
         <p>Favorited <strong><%= Dog.find(fave.dog_id).favorites.count%></strong> times</p>
+        <% end %>
+
     </div>
 
     <div class="price">
       <a href="/dogs/<%= fave.dog_id%>" class="bottom"><p class="cart">Red Ball Rating Profile</p></a>
     </div>
   </div>
-      <% end %>
 </div>
+      <% end %>
