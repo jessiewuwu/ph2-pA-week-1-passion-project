@@ -7,11 +7,11 @@
 
   <% else %>
       <% @user_faves.each do |fave| %>
-  <div class="whole">
-  <div class="type">
+  <div class="whole_profile">
+  <div class="fave-header">
     <p>FAVORITE</p>
-    </div>
-  <div class="plan">
+  </div>
+  <div class="dog-info-table">
 
     <div class="dog-name-header">
       <sup><%= Dog.find(fave.dog_id).name  %></sup>
@@ -28,8 +28,8 @@
 
     </div>
 
-    <div class="price">
-      <a href="/dogs/<%= fave.dog_id%>" class="bottom"><p class="cart">Red Ball Rating Profile</p></a>
+    <div class="link-bottom">
+      <a href="/dogs/<%= fave.dog_id%>" class="bottom"><p class="rb-link">Red Ball Rating Profile</p></a>
     </div>
   </div>
     <button><a href="/dogs/<%= fave.dog_id%>">Remove from Favorites</a></button>

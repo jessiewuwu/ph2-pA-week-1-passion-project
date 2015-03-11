@@ -69,8 +69,10 @@ function bindEvents() {
     drop: function(event, ui){
       var clone = $(ui.draggable).clone();
       $(this).append(ImageResizer.shrinkImage(clone));
+      var id = $('.playground_section img').last().data('dog-id')
+      var button = "<button class='remove-button' id='" + id +"'>Remove</button>"
+      $(this).append(button)
       $('.favorite-button').css('display','block').show();
-
     }
   });
 
