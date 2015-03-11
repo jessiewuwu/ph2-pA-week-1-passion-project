@@ -157,7 +157,7 @@ var getSearchResults = function(event){
       // $('.playground_section').hide();
       // $('.browse_list').hide();
       $('.search_section').html(dogNodes);
-      $('.search_section').append("<button id='show_browse'>Browse</button>");
+      // $('.search_section').append("<button id='show_browse'>Browse</button>");
     }
     });
 
@@ -175,7 +175,7 @@ var dogToHTML = function(dog){
   var html = $('.search-result-template').clone().removeClass('search-result-template').show();
   var aTag = "<a href='/dogs/" + dog["id"] + "'>Click here to see their ratings</a>";
   html.find('img').attr('src', dog["image_link"]);
-  html.find('.search_results').text(dog["name"] + " | " + dog["breed"] + " | " + dog["gender"] );
+  html.find('.search_results').text(dog["name"] + " | " + dog["breed"] + " | " + dog["gender"] + "  " );
   html.find('.search_results').append(aTag);
   return html;
   // var id = dog["id"];

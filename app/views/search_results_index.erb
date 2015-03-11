@@ -1,10 +1,14 @@
 <div class="search_container">
+
+
+  <%= erb :_search_form, layout: false %>
+
+
   <div class="search_section">
-
-
-  <% @breed_list.each do |dog| %>
-  <%= dog.name %>
-
-  <% end %>
+    <% @breed_list.each do |dog| %>
+    <img src="<%= dog.image_link %>">
+    <p><%= dog.name %> | <%= dog.breed %> | <%= dog.gender  %></p>
+    <a href="/dogs/<%= dog.id  %>">Click here to see their ratings</a>
+    <% end %>
   </div>
 </div>
