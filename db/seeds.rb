@@ -2,14 +2,6 @@
 require 'json'
 
 
-# Dog.create!(name: "Baby", breed: "Pekingese", description: "Sassy and always has her tongue sticking out.")
-
-# Dog.create!(name: "Wilfur", breed: "Rottweiler-Corgi Mix", description: "Big head, stubby legs. Surprisingly good at balancing on two legs, but only when treats are involved.")
-
-# Dog.create!(name: "Miguel", breed: "Chihuahua", description: "Miguel is like a cat: cool as a cucumber, gotta work a bit to get his love, but when you do, it's worth it.")
-
-# Dog.create!(name: "Tomas", breed: "Chihuahua", description: "Miguel's twin brother. He loves attention and sleeping next to you in bed.")
-
 User.create(name: "Jessie", email: "jessie@wu.com", username: "jessie", password: "jessie")
 
 User.create(name: "Michelle", email: "michelle@gmail.com", username: "michelle", password: "michelle")

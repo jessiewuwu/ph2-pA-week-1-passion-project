@@ -758,3 +758,70 @@ form #comment_field {
   display: block;
   border: 2px solid red;
 }
+
+/*FAVORITE TABLE*/
+#fave_container{
+  width: 100%;
+  text-align:center;
+  color: white !important;
+}
+
+.whole{
+  display: inline-block;
+  top: 20%;
+
+}
+
+
+
+.type{
+  width: 300px;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #BD1D20;
+  height: 62px;
+  border-bottom: 4px solid #761113;
+  margin-top: 100px;
+}
+
+.type p{
+  font-family: 'Press Start 2P', 'Questrial', sans-serif;
+  font-weight: 800;
+  font-size: 35px;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.plan{
+  width: 300px;
+
+  background: #e9e9e9;
+  border-radius: 0px 0px 5px 5px;
+    font-style:condensed;
+
+  font-size: 17px;
+    color: white;
+    text-align: center;
+}
+
+.price{
+  height:80px;
+}
+
+.cart{
+
+  color: black;
+  position: relative;
+  top: 16px;
+}
+
+.dog-name-header {
+  font-size: 45px;
+  padding-top: 15%;
+  font-weight: bolder;
+}
+
+.content p {
+  border-bottom: 2px solid white;
+}
