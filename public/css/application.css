@@ -776,8 +776,6 @@ form #comment_field {
   margin-bottom: 3%;
 }
 
-
-
 .fave-header {
   width: 300px;
   border-radius: 5px 5px 0px 0px;
@@ -820,6 +818,7 @@ form #comment_field {
   font-weight: bold;
   position: relative;
   top: 16px;
+  font-size: 22px;
 }
 
 
@@ -831,4 +830,9 @@ form #comment_field {
 
 .content p {
   border-bottom: 2px solid white;
+}
+
+.remove-button {
+  margin-top: 3%;
+  padding: 5px;
 }

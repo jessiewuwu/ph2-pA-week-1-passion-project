@@ -218,7 +218,8 @@ post '/crazydogs' do
 end
 
 delete '/favorites' do
-  delete_dog = Favorite.where(dog_id: params[:dog_id]).first
+  user_id = session[:user_id]
+  delete_dog = Favorite.where(user_id: user_id, dog_id: params[:dog_id]).first
   delete_dog.destroy
 
 end

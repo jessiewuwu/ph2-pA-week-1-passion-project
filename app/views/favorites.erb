@@ -3,7 +3,7 @@
   <h1>Your Favorites!</h1>
 
   <% if @user_faves.empty? %>
-    <p>You currently have no favorites. Check out the <a href="/browse">Browse</a>page for available dogs.</p>
+    <p>You currently have no favorites. Check out the <a href="/browse">Browse</a> page for available dogs.</p>
 
   <% else %>
       <% @user_faves.each do |fave| %>
@@ -32,7 +32,7 @@
       <a href="/dogs/<%= fave.dog_id%>" class="bottom"><p class="rb-link">Red Ball Rating Profile</p></a>
     </div>
   </div>
-    <button class='remove-button'><a href="#">Remove from Favorites</a></button>
+    <button class='remove-button'>Remove from Favorites</button>
 </div>
       <% end %>
 <% end %>
