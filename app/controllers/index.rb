@@ -216,3 +216,9 @@ post '/crazydogs' do
   array_of_gif_objects.to_json
 
 end
+
+delete '/favorites' do
+  delete_dog = Favorite.where(dog_id: params[:dog_id]).first
+  delete_dog.destroy
+
+end

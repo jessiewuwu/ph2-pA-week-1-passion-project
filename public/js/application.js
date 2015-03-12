@@ -123,9 +123,25 @@ function bindEvents() {
 
 
 var deleteFaveDog = function(event){
+  event.preventDefault();
   $this = $(this)
-  var id = $this.closest('div').attr('data-dog-id');
-  $("div[data-dog-id='" + id + "']").remove();
+  var dog_id = $this.closest('div').attr('data-dog-id');
+  $.ajax({
+    url: '/favorites',
+    type: 'delete',
+    data: {dog_id: dog_id}
+  })
+  .done(function() {
+    console.log("success");
+    $("div[data-dog-id='" + dog_id + "']").remove();
+  })
+  .fail(function() {
+    console.log("error");
+  })
+  .always(function() {
+    console.log("complete");
+  });
+
 };
 
 var pullUpProfile = function(event){
