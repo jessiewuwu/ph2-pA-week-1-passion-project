@@ -97,6 +97,7 @@ function bindEvents() {
     }).toArray();
   }
 
+// REMOVE FROM FAVORITES
   $('.playground_section').on('click', 'button.remove-button', removeDogFave)
 
   $('#hide').click(function(){
@@ -114,9 +115,18 @@ function bindEvents() {
     alert('clicked');
     $('.browse_list').css("display", "inline");
   });
+
+  // FAVORITES PAGE - REMOVE
+  $('.whole_profile .remove-button').on('click', deleteFaveDog)
+
 }
 
 
+var deleteFaveDog = function(event){
+  $this = $(this)
+  var id = $this.closest('div').attr('data-dog-id');
+  $("div[data-dog-id='" + id + "']").remove();
+};
 
 var pullUpProfile = function(event){
   event.preventDefault();
@@ -129,8 +139,8 @@ var pullUpProfile = function(event){
   ajaxProfile.done(function(data){
     $('.list').remove();
     $('.profile_show').append(data);
-        // $('.blacken').attr("background", "black")
-        // $('.blacken').attr("opacity", ".7")
+    // $('.blacken').attr("background", "black")
+    // $('.blacken').attr("opacity", ".7")
     // $('.ui-dialog').css('z-index', 9999);
     // $('.browse_list').hide();
     $('.profile_show').dialog({width:'1240', height: '700'});
