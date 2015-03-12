@@ -36,6 +36,10 @@
   font-size: 22px;
 }
 
+
+.index-greeting {
+  margin-top:40%;
+}
 .blacken {
   /* background: black; */
 
@@ -191,10 +195,11 @@ img.banner_pic {
 }
 
 .search_container_index {
-  margin-right: 10%;
+  margin-right: 1%;
   display: inline;
-  margin-left: 10%;
+  margin-left: 1%;
   text-align: center;
+  width: 50%;
 }
 
 .search section {
@@ -214,14 +219,13 @@ img.banner_pic {
 #search_spot {
   text-align: center;
   width: 270px;
-  margin-left: 70px;
   line-height: 2em;
   border-radius: 25px;
   margin-bottom: 20px;
   margin-top: 30px;
   outline: none;
-  /* position: absolute; */
-  /* top: 400px; */
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 .search-result {
@@ -723,7 +727,11 @@ form #comment_field {
 /*------------ crazy_dog section ------------ */
 
 .crazy_section {
-  height: 500px;
+  height: 450px;
+  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;'
+ unselectable: on;
+ onselectstart: return false;
+ onmousedown: return false;
 }
 
 .crazy_section img {
