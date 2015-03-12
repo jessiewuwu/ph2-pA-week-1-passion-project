@@ -270,11 +270,12 @@ var useDogGifs = function(dogGifArray){
   var randomAxis = Math.floor(Math.random()*1500)
   var marginTopRandom = Math.floor(Math.random()*500)
   var $crazyImgs = $('.crazy_section img')
-  $('.crazy_section').append("<img src='" + randomImage + "' width='200'>");
+  $('.crazy_section').append("<img src='" + randomImage + "' width='200' onerror='imgError(this)';> ");
   $crazyImgs.last().css('left', randomAxis +'px')
   $crazyImgs.last().css('margin-top', marginTopRandom + 'px')
   $crazyImgs.error(function(){
-    $(this).unbind("error").attr("src", "http://25.media.tumblr.com/3274a78bd1ea4d67ca54b03c70771f2c/tumblr_miavcw7PIn1rj3x28o1_500.gif")
+    $(this).unbind("error").attr("src", "http://25.media.tumblr.com/3274a78bd1ea4d67ca54b03c70771f2c/tumblr_miavcw7PIn1rj3x28o1_500.gif");
+    // $(this).unbind("error").attr("src", "http://media.giphy.com/media/MCtZL1YFcZthS/giphy.gif");
   })
 }
 
@@ -289,11 +290,11 @@ var saveDogGifs = function(dogGifs){
 
 }
 
-// function imgError(image) {
-//     image.onerror = "";
-//     image.src = "http://25.media.tumblr.com/3274a78bd1ea4d67ca54b03c70771f2c/tumblr_miavcw7PIn1rj3x28o1_500.gif";
-//     return true;
-// }
+function imgError(image) {
+    image.onerror = "";
+    image.src = "http://media.giphy.com/media/5xtDarniHFmiZuCoW40/giphy.gif";
+    return true;
+}
 
 var removeDogFave = function(){
   var id = $(this).attr('id')
