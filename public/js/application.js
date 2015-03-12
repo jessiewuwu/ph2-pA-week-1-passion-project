@@ -97,6 +97,7 @@ function bindEvents() {
     }).toArray();
   }
 
+  $('.playground_section').on('click', 'button.remove-button', removeDogFave)
 
   $('#hide').click(function(){
     $('.playground_section').hide();
@@ -252,9 +253,6 @@ var useDogGifs = function(dogGifArray){
 }
 
 var saveDogGifs = function(dogGifs){
-  // TEMP
-  // dogGifs = [ "http://webyippie.com/png.imageextra.com/png_files/dog.png", "http://i.imgur.com/ZtgHoaE.gif", "https://33.media.tumblr.com/4fbb61f48f4c5cfa451a88e14f6579e7/tumblr_mwwh9w2vJf1s6294bo1_400.gif"]
-  // function(dogGifArray){
   return $.ajax({
     url: '/crazydogs',
     type: 'post',
@@ -271,7 +269,10 @@ var saveDogGifs = function(dogGifs){
 //     return true;
 // }
 
-//function - for failure where we make the ajax call to the server to get data from the server
-
+var removeDogFave = function(){
+  var id = $(this).attr('id')
+  $(".playground_section img[data-dog-id='" + id +"']").remove();
+  $("button[id='" + id +"']").remove();
+}
 
 
