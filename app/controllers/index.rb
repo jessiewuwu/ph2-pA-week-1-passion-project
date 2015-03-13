@@ -29,8 +29,9 @@ get '/search' do
 end
 
 post '/search' do
-
-  # search_breed = params[:breed]
+  # search_word = params[:breed]
+  # ilike = Dog.ilike(:breed => '%search_word')
+  # p ilike
   @breed_list = Dog.where(breed: params[:breed].capitalize)
 
   content_type :json

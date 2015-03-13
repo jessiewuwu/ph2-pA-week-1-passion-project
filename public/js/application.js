@@ -36,9 +36,9 @@ ImageResizer = {
 };
 
 
-
-
 function bindEvents() {
+  searchComplete();
+
   $('.crazy_section').on('click', addRandomDogToPage);
 
   $('#search_form').on('submit', getSearchResults);
@@ -132,7 +132,6 @@ var deleteFaveDog = function(event){
     data: {dog_id: dog_id}
   })
   .done(function() {
-    console.log("success");
     $("div[data-dog-id='" + dog_id + "']").remove();
   })
   .fail(function() {
@@ -164,6 +163,8 @@ var pullUpProfile = function(event){
     $('.profile_show').dialog( "moveToTop" );
     // $('.ui-dialog').first().css('z-index', '9999');      // $('.profile_show').css('z-index', '9999');
 };
+
+
 
 var getSearchResults = function(event){
   event.preventDefault();
@@ -210,17 +211,6 @@ var dogToHTML = function(dog){
   html.find('.search_results').text(dog["name"] + " | " + dog["breed"] + " | " + dog["gender"] + "  " );
   html.find('.search_results').append(aTag);
   return html;
-  // var id = dog["id"];
-  // var name = dog["name"];
-  // var breed = dog["breed"];
-  // var gender = dog["gender"];
-  // var image_link = dog["image_link"];
-  // var imgTag = "<img src=' "+ image_link + "'style='padding-top: 90px; max-width: 350px; max-height: 400px'>"
-  // var infoTag = "<p class='search_results'>"+ name +
-  // "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + breed +
-  // "&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; " + gender + aTag +
-  // "</p><br><br>";
-  // return $('<div>').append(imgTag, infoTag);
 };
 
 
@@ -301,5 +291,4 @@ var removeDogFave = function(){
   $(".playground_section img[data-dog-id='" + id +"']").remove();
   $("button[id='" + id +"']").remove();
 }
-
 
