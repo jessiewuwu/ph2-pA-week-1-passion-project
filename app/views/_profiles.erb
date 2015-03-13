@@ -32,7 +32,11 @@
         <span class="words"> <%= @view_dog.description%> </span>
         <p><i class="fa fa-heart"></i>  Favorited: </p>
 
-        <span class="words"><%= @view_dog.favorites.count%> times <span class="words"> </span>
+        <% if @view_dog.favorites.count == 1 %>
+          <span class="words"><%= @view_dog.favorites.count%> time <span class="words"> </span>
+        <% else  %>
+          <span class="words"><%= @view_dog.favorites.count%> times <span class="words"> </span>
+        <% end %>
 
     </div>
 

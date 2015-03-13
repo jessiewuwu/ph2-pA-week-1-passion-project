@@ -154,7 +154,7 @@ img.banner_pic {
 .nav_bar ul li {
   display: inline;
   float: left;
-  width:103px;
+  width: 112px;
 }
 
 .nav_bar a:link {
@@ -165,12 +165,20 @@ img.banner_pic {
 
 #crazy_dogs_link{
   width: 141px;
+  padding-left: 75px;
 }
 
 #logout_link {
   float:right;
 }
 
+#favorites-link {
+  width: 141px;
+}
+
+#randomize-link {
+  padding-left: 55px;
+}
 .search-form-spacing {
   position: fixed;
   padding-bottom: 4%;
@@ -407,14 +415,14 @@ input {
     width: 100%;
     top: 53px;
     /*  margin-top: 20px;*/
-/*  background-image: url("http://wallpaperscraft.com/image/texture_grass_field_green_83892_2048x1152.jpg");
-  background-size: 90%;
-  background-repeat: no-repeat;*/
-  background: rgb(242, 242, 242);
-  float:left;
-  clear:left;
-  padding-left: 92px;
-  z-index: 5;
+    background-image: url("../imgs/playground.jpg");
+    background-size: 99%;
+/*    background-repeat: no-repeat;
+*/    /*background: rgb(242, 242, 242);*/
+    float:left;
+    clear:left;
+    padding-left: 92px;
+    z-index: 5;
 }
 
 .playground_section h2 {
