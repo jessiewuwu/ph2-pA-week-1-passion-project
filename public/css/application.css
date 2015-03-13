@@ -369,54 +369,35 @@ input {
   overflow: hidden;
 }
 
+
+
+/*.drag-dog-container img {
+
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+.drag-dog-container img:hover {
+  height: 250%;
+}*/
+
 .row {
   margin-top: 35px;
   z-index: -200;
 }
 
-/*.overlay {
-  background:rgba(0,0,0,.75);
-  text-align:center;
-  padding:45px 0 200px 0;
-  opacity:0;
-  -webkit-transition: opacity .25s ease;
-  -moz-transition: opacity .25s ease;
-  }*/
-
   .overlay {
     text-align: center;
   }
 
-  .left_column:hover .overlay {
-    opacity:1;
-  }
 
   .dog_info {
-    color: red;
-    font-size: 10px;
+    color: slategrey;
+    font-size: 16px;
   }
-
-  p.dog_info2 {
-    background: rgba(0,0,0,0.5);
-    color: white;
-    cursor: pointer;
-    /* display: table;*/
-    height: 190px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100px;
-    opacity: 0;
-    -webkit-transition: opacity 500ms;
-    -moz-transition: opacity 500ms;
-    -o-transition: opacity 500ms;
-    transition: opacity 500ms;
-  }
-
-  img:hover p.dog_info2 {
-    opacity: 1;
-  }
-
 
 
 
